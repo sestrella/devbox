@@ -1,0 +1,6 @@
+---
+- name: "Clone repository - {{ pyenv_version }}"
+  git:
+    repo: "{{ pyenv_repo }}"
+    dest: "{{ pyenv_dest }}"
+    version: "{{ pyenv_version }}"

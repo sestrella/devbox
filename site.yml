@@ -2,4 +2,5 @@
 - hosts: all
   roles:
     - nvm
+    - pyenv
     - rbenv
