@@ -1,5 +1,5 @@
 ---
-- name: Clone repository
+- name: "Clone repository - {{ nvm_version }}"
   git:
     repo: "{{ nvm_repo }}"
     dest: "{{ nvm_dest }}"
