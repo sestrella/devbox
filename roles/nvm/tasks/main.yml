@@ -1,0 +1,6 @@
+---
+- name: Clone repository
+  git:
+    repo: "{{ nvm_repo }}"
+    dest: "{{ nvm_dest }}"
+    version: "{{ nvm_version }}"
