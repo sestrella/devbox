@@ -1,6 +1,13 @@
 ---
-- name: "Clone repository - {{ rbenv_version }}"
+- name: "Clone rbenv"
   git:
     repo: "{{ rbenv_repo }}"
     dest: "{{ rbenv_dest }}"
     version: "{{ rbenv_version }}"
+
+- name: "Clone rbenv plugins"
+  git:
+    repo: "{{ item.value.repo }}"
+    dest: "{{ rbenv_dest }}/plugins/{{ item.key }}"
+    version: "{{ item.value.version }}"
+  with_dict: "{{ rbenv_plugins }}"
