@@ -20,7 +20,7 @@
     src: nvm-updater.service.j2
     dest: "{{ systemd_user_dir }}/nvm-updater.service"
 
-- name: Start nvm updater timer
+- name: Enable nvm updater timer
   systemd:
     name: nvm-updater.timer
     state: started
