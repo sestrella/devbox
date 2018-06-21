@@ -1,0 +1,9 @@
+[Unit]
+Description=tpm updater
+
+[Service]
+WorkingDirectory={{ tpm_dest }}
+ExecStart=/bin/bash -c '/usr/bin/git checkout $(/usr/bin/git describe --tags)'
+
+[Install]
+WantedBy=multi-user.target

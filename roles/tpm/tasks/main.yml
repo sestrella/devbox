@@ -5,3 +5,20 @@
     dest: "{{ tpm_dest }}"
     version: "{{ tpm_version }}"
 
+- name: Copy tpm updater timer
+  copy:
+    src: tpm-updater.timer
+    dest: "{{ systemd_user_dir }}/tpm-updater.timer"
+
+- name: Copy tpm updater service
+  template:
+    src: tpm-updater.service.j2
+    dest: "{{ systemd_user_dir }}/tpm-updater.service"
+
+- name: Enable tpm updater timer
+  systemd:
+    name: tpm-updater.timer
+    state: started
+    enabled: yes
+    daemon_reload: yes
+    user: yes
