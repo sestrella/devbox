@@ -1,7 +1,5 @@
 ---
 - hosts: all
   roles:
-    - nvm
-    - pyenv
-    - rbenv
+    - version_managers
     - tpm

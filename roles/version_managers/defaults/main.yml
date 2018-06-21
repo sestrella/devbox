@@ -1,0 +1,14 @@
+---
+version_managers:
+  nvm:
+    repo: https://github.com/creationix/nvm.git
+    dest: "{{ ansible_user_dir }}/.nvm"
+    version: v0.33.11
+  pyenv:
+    repo: https://github.com/pyenv/pyenv.git
+    dest: "{{ ansible_user_dir }}/.pyenv"
+    version: v1.2.4
+  rbenv:
+    repo: https://github.com/rbenv/rbenv.git
+    dest: "{{ ansible_user_dir }}/.rbenv"
+    version: v1.1.1

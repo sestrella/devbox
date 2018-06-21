@@ -1,9 +1,0 @@
-[Unit]
-Description=pyenv updater
-
-[Service]
-WorkingDirectory={{ nvm_dir }}
-ExecStart=/bin/bash -c '/usr/bin/git checkout $(/usr/bin/git describe --tags)'
-
-[Install]
-WantedBy=multi-user.target

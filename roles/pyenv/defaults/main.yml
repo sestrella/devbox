@@ -1,4 +1,0 @@
----
-pyenv_repo: https://github.com/pyenv/pyenv.git
-pyenv_dir: "{{ ansible_user_dir }}/.pyenv"
-pyenv_version: v1.2.4

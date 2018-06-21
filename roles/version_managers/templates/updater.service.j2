@@ -1,8 +1,8 @@
 [Unit]
-Description=NVM updater
+Description={{ item.key }} updater
 
 [Service]
-WorkingDirectory={{ nvm_dir }}
+WorkingDirectory={{ item.value.dest }}
 ExecStart=/bin/bash -c '/usr/bin/git checkout $(/usr/bin/git describe --tags)'
 
 [Install]
