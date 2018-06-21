@@ -1,13 +1,36 @@
 ---
-- name: "Clone rbenv"
+- name: Clone rbenv
   git:
     repo: "{{ rbenv_repo }}"
     dest: "{{ rbenv_dir }}"
     version: "{{ rbenv_version }}"
 
-- name: "Clone rbenv plugins"
+- name: Clone rbenv plugins
   git:
     repo: "{{ item.value.repo }}"
     dest: "{{ rbenv_dir }}/plugins/{{ item.key }}"
     version: "{{ item.value.version }}"
   with_dict: "{{ rbenv_plugins }}"
+
+- name: Create systemd user directory
+  file:
+    path: "{{ systemd_user_dir }}"
+    state: directory
+
+- name: Copy rbenv updater timer
+  copy:
+    src: rbenv-updater.timer
+    dest: "{{ systemd_user_dir }}/rbenv-updater.timer"
+
+- name: Copy rbenv updater service
+  template:
+    src: rbenv-updater.service.j2
+    dest: "{{ systemd_user_dir }}/rbenv-updater.service"
+
+- name: Enable rbenv updater timer
+  systemd:
+    name: rbenv-updater.timer
+    state: started
+    enabled: yes
+    daemon_reload: yes
+    user: yes

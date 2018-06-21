@@ -1,6 +1,29 @@
 ---
-- name: "Clone pyenv"
+- name: Clone pyenv
   git:
     repo: "{{ pyenv_repo }}"
     dest: "{{ pyenv_dir }}"
     version: "{{ pyenv_version }}"
+
+- name: Create systemd user directory
+  file:
+    path: "{{ systemd_user_dir }}"
+    state: directory
+
+- name: Copy pyenv updater timer
+  copy:
+    src: pyenv-updater.timer
+    dest: "{{ systemd_user_dir }}/pyenv-updater.timer"
+
+- name: Copy pyenv updater service
+  template:
+    src: pyenv-updater.service.j2
+    dest: "{{ systemd_user_dir }}/pyenv-updater.service"
+
+- name: Enable pyenv updater timer
+  systemd:
+    name: pyenv-updater.timer
+    state: started
+    enabled: yes
+    daemon_reload: yes
+    user: yes
