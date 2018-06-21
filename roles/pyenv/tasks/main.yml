@@ -2,5 +2,5 @@
 - name: "Clone pyenv"
   git:
     repo: "{{ pyenv_repo }}"
-    dest: "{{ pyenv_dest }}"
+    dest: "{{ pyenv_dir }}"
     version: "{{ pyenv_version }}"

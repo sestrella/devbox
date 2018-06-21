@@ -3,7 +3,7 @@
   git:
     repo: "{{ nvm_repo }}"
     version: "{{ nvm_version }}"
-    dest: "{{ nvm_dest }}"
+    dest: "{{ nvm_dir }}"
 
 - name: Create systemd user directory
   file:

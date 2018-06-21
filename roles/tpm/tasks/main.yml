@@ -2,7 +2,7 @@
 - name: Clone tpm
   git:
     repo: "{{ tpm_repo }}"
-    dest: "{{ tpm_dest }}"
+    dest: "{{ tpm_dir }}"
     version: "{{ tpm_version }}"
 
 - name: Copy tpm updater timer

@@ -2,7 +2,7 @@
 Description=NVM updater
 
 [Service]
-WorkingDirectory={{ nvm_dest }}
+WorkingDirectory={{ nvm_dir }}
 ExecStart=/bin/bash -c '/usr/bin/git checkout $(/usr/bin/git describe --tags)'
 
 [Install]
