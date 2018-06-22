@@ -1,2 +1,2 @@
 ---
-systemd_user_dir: ~/.local/share/systemd/user
+systemd_user_dir: "{{ ansible_user_dir }}/.local/share/systemd/user"
