@@ -14,3 +14,8 @@ version_managers:
     repo: https://github.com/rbenv/rbenv.git
     dest: "{{ ansible_user_dir }}/.rbenv"
     version: v1.1.1
+    plugins:
+      ruby-build:
+        repo: https://github.com/rbenv/ruby-build.git
+        dest: "{{ ansible_user_dir }}/.rbenv/plugins/ruby-build"
+        version: v20180618

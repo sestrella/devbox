@@ -1,33 +1,15 @@
 ---
-- name: Clone version manager
-  git:
-    repo: "{{ item.value.repo }}"
-    dest: "{{ item.value.dest }}"
-    version: "{{ item.value.version }}"
-  with_dict: "{{ version_managers }}"
+- import_tasks: version_manager.yml
+  vars:
+    name: nvm
+    version_manager: "{{ version_managers.nvm }}"
 
-- name: Create systemd user directory
-  file:
-    path: "{{ systemd_user_dir }}"
-    state: directory
+- import_tasks: version_manager.yml
+  vars:
+    name: pyenv
+    version_manager: "{{ version_managers.pyenv }}"
 
-- name: Copy updater timer
-  template:
-    src: updater.timer.j2
-    dest: "{{ systemd_user_dir }}/{{ item }}-updater.timer"
-  with_items: "{{ version_managers.keys() }}"
-
-- name: Copy updater service
-  template:
-    src: updater.service.j2
-    dest: "{{ systemd_user_dir }}/{{ item.key }}-updater.service"
-  with_dict: "{{ version_managers }}"
-
-- name: Enable updater timer
-  systemd:
-    name: "{{ item }}-updater.timer"
-    state: started
-    enabled: yes
-    daemon_reload: yes
-    user: yes
-  with_items: "{{ version_managers.keys() }}"
+- import_tasks: version_manager.yml
+  vars:
+    name: rbenv
+    version_manager: "{{ version_managers.rbenv }}"

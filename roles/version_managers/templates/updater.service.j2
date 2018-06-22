@@ -1,8 +1,9 @@
 [Unit]
-Description={{ item.key }} updater
+Description={{ name }} updater
 
 [Service]
-WorkingDirectory={{ item.value.dest }}
+WorkingDirectory={{ version_manager.dest }}
+ExecStartPre=/usr/bin/git fetch --tags
 ExecStart=/bin/bash -c '/usr/bin/git checkout $(/usr/bin/git describe --tags)'
 
 [Install]
