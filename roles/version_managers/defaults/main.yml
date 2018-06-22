@@ -1,21 +1,18 @@
 ---
-version_managers:
-  nvm:
-    repo: https://github.com/creationix/nvm.git
-    dest: "{{ ansible_user_dir }}/.nvm"
-    version: v0.33.11
+version_manager_nvm_repo: https://github.com/creationix/nvm.git
+version_manager_nvm_dest: "{{ ansible_user_dir }}/.nvm"
+version_manager_nvm_version: v0.33.11
 
-  pyenv:
-    repo: https://github.com/pyenv/pyenv.git
-    dest: "{{ ansible_user_dir }}/.pyenv"
-    version: v1.2.4
+version_manager_pyenv_repo: https://github.com/pyenv/pyenv.git
+version_manager_pyenv_dest: "{{ ansible_user_dir }}/.pyenv"
+version_manager_pyenv_version: v1.2.4
 
-  rbenv:
-    repo: https://github.com/rbenv/rbenv.git
-    dest: "{{ ansible_user_dir }}/.rbenv"
-    version: v1.1.1
-    plugins:
-      ruby-build:
-        repo: https://github.com/rbenv/ruby-build.git
-        dest: "{{ ansible_user_dir }}/.rbenv/plugins/ruby-build"
-        version: v20180618
+version_manager_rbenv_repo: https://github.com/rbenv/rbenv.git
+version_manager_rbenv_dest: "{{ ansible_user_dir }}/.rbenv"
+version_manager_rbenv_version: v1.1.1
+
+version_manager_rbenv_plugins:
+  ruby-build:
+    repo: https://github.com/rbenv/ruby-build.git
+    dest: "{{ version_manager_rbenv_dest }}/plugins/ruby-build"
+    version: v20180618

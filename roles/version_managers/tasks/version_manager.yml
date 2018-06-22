@@ -1,17 +1,17 @@
 ---
 - name: "Clone {{ name }}"
   git:
-    repo: "{{ version_manager.repo }}"
-    dest: "{{ version_manager.dest }}"
-    version: "{{ version_manager.version }}"
+    repo: "{{ repo }}"
+    dest: "{{ dest }}"
+    version: "{{ version }}"
 
 - name: "Clone {{ name }} plugins"
   git:
     repo: "{{ item.value.repo }}"
     dest: "{{ item.value.dest }}"
     version: "{{ item.value.version }}"
-  with_dict: "{{ version_manager.plugins }}"
-  when: version_manager.plugins is defined
+  with_dict: "{{ plugins }}"
+  when: plugins is defined
 
 - name: Create systemd user directory
   file:
