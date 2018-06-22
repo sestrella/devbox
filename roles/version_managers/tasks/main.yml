@@ -3,13 +3,16 @@
   vars:
     name: nvm
     version_manager: "{{ version_managers.nvm }}"
+  tags: nvm
 
 - import_tasks: version_manager.yml
   vars:
     name: pyenv
     version_manager: "{{ version_managers.pyenv }}"
+  tags: pyenv
 
 - import_tasks: version_manager.yml
   vars:
     name: rbenv
     version_manager: "{{ version_managers.rbenv }}"
+  tags: rbenv
