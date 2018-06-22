@@ -2,24 +2,24 @@
 - import_tasks: version_manager.yml
   vars:
     name: nvm
-    repo: "{{ version_manager_nvm_repo }}"
-    dest: "{{ version_manager_nvm_dest }}"
-    version: "{{ version_manager_nvm_version }}"
+    repo: "{{ version_managers_nvm_repo }}"
+    dest: "{{ version_managers_nvm_dest }}"
+    version: "{{ version_managers_nvm_version }}"
   tags: nvm
 
 - import_tasks: version_manager.yml
   vars:
     name: pyenv
-    repo: "{{ version_manager_pyenv_repo }}"
-    dest: "{{ version_manager_pyenv_dest }}"
-    version: "{{ version_manager_pyenv_version }}"
+    repo: "{{ version_managers_pyenv_repo }}"
+    dest: "{{ version_managers_pyenv_dest }}"
+    version: "{{ version_managers_pyenv_version }}"
   tags: pyenv
 
 - import_tasks: version_manager.yml
   vars:
     name: rbenv
-    repo: "{{ version_manager_rbenv_repo }}"
-    dest: "{{ version_manager_rbenv_dest }}"
-    version: "{{ version_manager_rbenv_version }}"
-    plugins: "{{ version_manager_rbenv_plugins }}"
+    repo: "{{ version_managers_rbenv_repo }}"
+    dest: "{{ version_managers_rbenv_dest }}"
+    version: "{{ version_managers_rbenv_version }}"
+    plugins: "{{ version_managers_rbenv_plugins }}"
   tags: rbenv
