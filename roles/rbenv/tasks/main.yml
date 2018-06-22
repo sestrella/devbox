@@ -1,0 +1,9 @@
+---
+- include_role:
+    name: version_manager
+  vars:
+    version_manager_name: rbenv
+    version_manager_repo: "{{ rbenv_repo }}"
+    version_manager_dest: "{{ rbenv_dest }}"
+    version_manager_version: "{{ rbenv_version }}"
+    plugins_manager_plugins: "{{ rbenv_plugins }}"

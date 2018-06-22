@@ -1,8 +1,8 @@
 [Unit]
-Description={{ name }} updater
+Description={{ version_manager_name }} updater
 
 [Service]
-WorkingDirectory={{ dest }}
+WorkingDirectory={{ version_manager_dest }}
 ExecStartPre=/usr/bin/git fetch --tags
 ExecStart=/bin/bash -c '/usr/bin/git checkout $(/usr/bin/git describe --tags)'
 

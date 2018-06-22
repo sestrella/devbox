@@ -1,0 +1,9 @@
+---
+rbenv_repo: https://github.com/rbenv/rbenv.git
+rbenv_dest: "{{ ansible_user_dir }}/.rbenv"
+rbenv_version: v1.1.1
+rbenv_plugins:
+  ruby-build:
+    repo: https://github.com/rbenv/ruby-build.git
+    dest: "{{ rbenv_dest }}/plugins/ruby-build"
+    version: v20180618
