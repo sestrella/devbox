@@ -1,8 +1,9 @@
 [Unit]
-Description=tpm updater
+Description={{ updater_name }} updater
 
 [Service]
-WorkingDirectory={{ tpm_dir }}
+WorkingDirectory={{ updater_dest }}
+ExecStartPre=/usr/bin/git fetch --tags
 ExecStart=/bin/bash -c '/usr/bin/git checkout $(/usr/bin/git describe --tags)'
 
 [Install]

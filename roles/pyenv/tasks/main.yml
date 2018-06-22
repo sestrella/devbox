@@ -1,8 +1,12 @@
 ---
+- name: Clone pyenv
+  git:
+    repo: "{{ pyenv_repo }}"
+    dest: "{{ pyenv_dest }}"
+    version: "{{ pyenv_version }}"
+
 - include_role:
-    name: version_manager
+    name: updater
   vars:
-    version_manager_name: pyenv
-    version_manager_repo: "{{ pyenv_repo }}"
-    version_manager_dest: "{{ pyenv_dest }}"
-    version_manager_version: "{{ pyenv_version }}"
+    updater_name: pyenv
+    updater_dest: "{{ pyenv_dest }}"

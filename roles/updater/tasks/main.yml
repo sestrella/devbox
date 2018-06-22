@@ -1,0 +1,23 @@
+---
+- name: Create systemd user directory
+  file:
+    path: "{{ systemd_user_dir }}"
+    state: directory
+
+- name: "Copy {{ updater_name }} updater timer"
+  template:
+    src: updater.timer.j2
+    dest: "{{ systemd_user_dir }}/{{ updater_name }}-updater.timer"
+
+- name: "Copy {{ updater_name }} updater service"
+  template:
+    src: updater.service.j2
+    dest: "{{ systemd_user_dir }}/{{ updater_name }}-updater.service"
+
+- name: "Enable {{ updater_name }} updater timer"
+  systemd:
+    name: "{{ updater_name }}-updater.timer"
+    state: started
+    enabled: yes
+    daemon_reload: yes
+    user: yes

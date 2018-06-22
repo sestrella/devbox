@@ -1,8 +1,12 @@
 ---
+- name: Clone nvm
+  git:
+    repo: "{{ nvm_repo }}"
+    dest: "{{ nvm_dest }}"
+    version: "{{ nvm_version }}"
+
 - include_role:
-    name: version_manager
+    name: updater
   vars:
-    version_manager_name: nvm
-    version_manager_repo: "{{ nvm_repo }}"
-    version_manager_dest: "{{ nvm_dest }}"
-    version_manager_version: "{{ nvm_version }}"
+    updater_name: nvm
+    updater_dest: "{{ nvm_dest }}"
