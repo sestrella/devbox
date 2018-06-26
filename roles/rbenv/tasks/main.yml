@@ -1,11 +1,23 @@
 ---
-- name: Clone rbenv
+- name: Clone repository
   git:
     repo: "{{ rbenv_repo }}"
     dest: "{{ rbenv_dest }}"
     version: "{{ rbenv_version }}"
 
-- name: Clone rbenv plugins
+- name: Update cache
+  apt:
+    update_cache: yes
+  become: yes
+
+- name: Install dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ rbenv_deps }}"
+  become: yes
+
+- name: Clone plugins
   git:
     repo: "{{ item.value.repo }}"
     dest: "{{ item.value.dest }}"

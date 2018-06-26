@@ -1,9 +1,21 @@
 ---
-- name: Clone pyenv
+- name: Clone repository
   git:
     repo: "{{ pyenv_repo }}"
     dest: "{{ pyenv_dest }}"
     version: "{{ pyenv_version }}"
+
+- name: Update cache
+  apt:
+    update_cache: yes
+  become: yes
+
+- name: Install dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ pyenv_deps }}"
+  become: yes
 
 - include_role:
     name: updater

@@ -3,6 +3,19 @@ rbenv_repo: https://github.com/rbenv/rbenv.git
 rbenv_dest: "{{ ansible_user_dir }}/.rbenv"
 rbenv_version: v1.1.1
 
+rbenv_deps:
+  - autoconf
+  - bison
+  - build-essential
+  - libffi-dev
+  - libgdbm-dev
+  - libgdbm5
+  - libncurses5-dev
+  - libreadline6-dev
+  - libssl-dev
+  - libyaml-dev
+  - zlib1g-dev
+
 rbenv_plugins:
   ruby-build:
     repo: https://github.com/rbenv/ruby-build.git
