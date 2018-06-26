@@ -1,9 +1,15 @@
 ---
 - hosts: all
   roles:
-    - nvm
+    - role: nvm
+      tags: version_manager
     - role: postgres
       tags: database
-    - pyenv
-    - rbenv
-    - tpm
+    - role: pyenv
+      tags: version_manager
+    - role: rbenv
+      tags: version_manager
+    - role: tpm
+      tags: plugin_manager
+    - role: vim_plug
+      tags: plugin_manager

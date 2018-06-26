@@ -1,0 +1,4 @@
+---
+vim_plug_repo: https://github.com/junegunn/vim-plug.git
+vim_plug_dest: "{{ ansible_user_dir }}/.vim-plug"
+vim_plug_version: 0.9.1

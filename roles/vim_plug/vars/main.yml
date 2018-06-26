@@ -1,0 +1,2 @@
+---
+vim_plug_autoload_dir: "{{ ansible_user_dir }}/.local/share/nvim/site/autoload"

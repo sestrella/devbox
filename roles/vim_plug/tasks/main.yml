@@ -1,0 +1,17 @@
+---
+- name: Clone repository
+  git:
+    repo: "{{ vim_plug_repo }}"
+    dest: "{{ vim_plug_dest }}"
+    version: "{{ vim_plug_version }}"
+
+- name: Create autoload directory
+  file:
+    path: "{{ vim_plug_autoload_dir }}"
+    state: directory
+
+- name: Symlink plug.vim file
+  file:
+    src: "{{ vim_plug_dest }}/plug.vim"
+    dest: "{{ vim_plug_autoload_dir }}/plug.vim"
+    state: link
