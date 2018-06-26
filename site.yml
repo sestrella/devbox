@@ -2,6 +2,8 @@
 - hosts: all
   roles:
     - nvm
+    - role: postgres
+      tags: database
     - pyenv
     - rbenv
     - tpm
