@@ -1,6 +1,8 @@
 ---
 - hosts: all
   roles:
+    - role: google-chrome
+      tags: browser
     - role: nvm
       tags: version_manager
     - role: postgres
