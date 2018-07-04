@@ -1,6 +1,8 @@
 ---
 - hosts: all
   roles:
+    - role: antigen
+      tags: shell
     - role: google-chrome
       tags: browser
     - role: nvm
