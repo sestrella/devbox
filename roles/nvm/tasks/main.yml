@@ -4,9 +4,3 @@
     repo: "{{ nvm_repo }}"
     dest: "{{ nvm_dest }}"
     version: "{{ nvm_version }}"
-
-- include_role:
-    name: updater
-  vars:
-    updater_name: nvm
-    updater_dest: "{{ nvm_dest }}"

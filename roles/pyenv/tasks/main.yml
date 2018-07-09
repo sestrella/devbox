@@ -12,13 +12,7 @@
 
 - name: Install dependencies
   apt:
-    name: "{{ item }}"
+    name: "{{ pyenv_deps }}"
     state: present
-  with_items: "{{ pyenv_deps }}"
+    update_cache: yes
   become: yes
-
-- include_role:
-    name: updater
-  vars:
-    updater_name: pyenv
-    updater_dest: "{{ pyenv_dest }}"
