@@ -1,0 +1,6 @@
+---
+- hosts: all
+  roles:
+    - role: gnome-shell
+      tags: gnome
+    - spotify

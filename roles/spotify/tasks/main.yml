@@ -1,0 +1,4 @@
+---
+- name: Install package
+  command: snap install spotify
+  become: yes
