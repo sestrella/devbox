@@ -5,14 +5,16 @@
     dest: "{{ pyenv_dest }}"
     version: "{{ pyenv_version }}"
 
-- name: Update cache
-  apt:
-    update_cache: yes
-  become: yes
-
 - name: Install dependencies
   apt:
     name: "{{ pyenv_deps }}"
     state: present
     update_cache: yes
   become: yes
+
+- name: Clone plugins
+  git:
+    repo: "{{ item.value.repo }}"
+    dest: "{{ pyenv_dest }}/plugins/{{ item.key }}"
+    version: "{{ item.value.version }}"
+  with_dict: "{{ pyenv_plugins }}"

@@ -19,3 +19,8 @@ pyenv_deps:
   - wget
   - xz-utils
   - zlib1g-dev
+
+pyenv_plugins:
+  pyenv-virtualenv:
+    repo: https://github.com/pyenv/pyenv-virtualenv.git
+    version: v1.1.3
