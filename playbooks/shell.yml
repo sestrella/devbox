@@ -3,4 +3,6 @@
   roles:
     - antigen
     - rcm
+    - role: tpm
+      tags: tmux
     - zsh

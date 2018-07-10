@@ -1,12 +1,6 @@
 ---
-- name: Clone tpm
+- name: Clone repository
   git:
     repo: "{{ tpm_repo }}"
-    dest: "{{ tpm_dest }}"
     version: "{{ tpm_version }}"
-
-- include_role:
-    name: updater
-  vars:
-    updater_name: tpm
-    updater_dest: "{{ tpm_dest }}"
+    dest: "{{ tpm_dest }}"
