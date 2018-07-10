@@ -4,3 +4,5 @@
     - nvm
     - pyenv
     - rbenv
+    - role: stack
+      tags: haskell
