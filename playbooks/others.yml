@@ -3,4 +3,6 @@
   roles:
     - role: gnome-shell
       tags: gnome
+    - role: slack
+      tags: slack
     - spotify
