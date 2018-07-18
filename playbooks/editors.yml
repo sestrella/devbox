@@ -3,3 +3,4 @@
   roles:
     - nvim
     - vim_plug
+    - vscode
