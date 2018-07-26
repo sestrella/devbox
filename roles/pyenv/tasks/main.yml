@@ -19,3 +19,8 @@
     dest: "{{ pyenv_dest }}/plugins/{{ item.key }}"
     version: "{{ item.value.version }}"
   with_dict: "{{ pyenv_plugins }}"
+
+- name: Set default version
+  copy:
+    content: "{{ pyenv_default_version }}"
+    dest: "{{ pyenv_dest }}/version"
