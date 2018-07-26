@@ -4,3 +4,8 @@
     repo: "{{ nvm_repo }}"
     dest: "{{ nvm_dest }}"
     version: "{{ nvm_version }}"
+
+- name: Set default version
+  copy:
+    content: "{{ nvm_default_version }}"
+    dest: ~/.nvmrc

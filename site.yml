@@ -1,4 +1,2 @@
 ---
-- hosts: all
-  roles:
-    - pyenv
+- import_playbook: playbooks/version_managers.yml
