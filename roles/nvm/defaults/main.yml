@@ -2,4 +2,3 @@
 nvm_repo: https://github.com/creationix/nvm.git
 nvm_dest: ~/.nvm
 nvm_version: v0.33.11
-nvm_default_version: v8.11.3
