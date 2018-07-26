@@ -2,6 +2,5 @@
 - name: Install zsh
   apt:
     name: zsh
-    state: present
     update_cache: yes
   become: yes
