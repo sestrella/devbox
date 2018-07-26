@@ -1,6 +1,5 @@
 ---
 - hosts: all
   roles:
-    - nvim
+    - neovim
     - vim_plug
-    - vscode
