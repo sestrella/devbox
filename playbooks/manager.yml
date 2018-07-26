@@ -1,0 +1,8 @@
+---
+- hosts: all
+  roles:
+    - nvm
+    - pyenv
+    - rbenv
+    - tpm
+    - vim_plug

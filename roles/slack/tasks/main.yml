@@ -1,4 +1,5 @@
 ---
 - name: Install package
-  command: snap install slack --classic
+  apt:
+    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.2.1-amd64.deb
   become: yes

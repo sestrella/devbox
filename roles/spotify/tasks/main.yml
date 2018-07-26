@@ -1,4 +1,18 @@
 ---
+- name: Add repository key
+  apt_key:
+    keyserver: hkp://keyserver.ubuntu.com:80
+    id: 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
+  become: yes
+
+- name: Add repository
+  apt_repository:
+    repo: deb http://repository.spotify.com stable non-free
+    filename: spotify
+  become: yes
+
 - name: Install package
-  command: snap install spotify
+  apt:
+    name: spotify-client
+    update_cache: yes
   become: yes
