@@ -1,19 +1,4 @@
 ---
 - hosts: all
   roles:
-    - role: antigen
-      tags: shell
-    - role: google-chrome
-      tags: browser
-    - role: nvm
-      tags: version_manager
-    - role: postgres
-      tags: database
-    - role: pyenv
-      tags: version_manager
-    - role: rbenv
-      tags: version_manager
-    - role: tpm
-      tags: plugin_manager
-    - role: vim_plug
-      tags: plugin_manager
+    - pyenv

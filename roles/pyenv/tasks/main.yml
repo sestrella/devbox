@@ -1,16 +1,17 @@
 ---
+- name: Install dependencies
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items: "{{ pyenv_deps }}"
+  become: yes
+
 - name: Clone repository
   git:
     repo: "{{ pyenv_repo }}"
     dest: "{{ pyenv_dest }}"
     version: "{{ pyenv_version }}"
-
-- name: Install dependencies
-  apt:
-    name: "{{ pyenv_deps }}"
-    state: present
-    update_cache: yes
-  become: yes
 
 - name: Clone plugins
   git:
