@@ -3,3 +3,5 @@
   tags: editors
 - import_playbook: playbooks/version_managers.yml
   tags: version_managers
+- import_playbook: playbooks/others.yml
+  tags: others
