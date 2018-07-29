@@ -2,7 +2,8 @@
 - hosts: all
   roles:
     - nvm
-    - pyenv
+    - role: pyenv
+      tags: python
     - rbenv
     - tpm
     - vim_plug

@@ -20,6 +20,10 @@ pyenv_deps:
   - xz-utils
   - zlib1g-dev
 
+pyenv_versions:
+  - 2.7.15
+  - 3.7.0
+
 pyenv_plugins:
   pyenv-virtualenv:
     repo: https://github.com/pyenv/pyenv-virtualenv.git

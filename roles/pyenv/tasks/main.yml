@@ -1,4 +1,10 @@
 ---
+- name: Clone repository
+  git:
+    repo: "{{ pyenv_repo }}"
+    dest: "{{ pyenv_dest }}"
+    version: "{{ pyenv_version }}"
+
 - name: Install dependencies
   apt:
     name: "{{ item }}"
@@ -7,11 +13,11 @@
   with_items: "{{ pyenv_deps }}"
   become: yes
 
-- name: Clone repository
-  git:
-    repo: "{{ pyenv_repo }}"
-    dest: "{{ pyenv_dest }}"
-    version: "{{ pyenv_version }}"
+- name: Install versions
+  command: "pyenv install {{ item }}"
+  args:
+    creates:  "{{ pyenv_dest }}/versions/{{ item }}"
+  with_items: "{{ pyenv_versions }}"
 
 - name: Clone plugins
   git:
