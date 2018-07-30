@@ -16,7 +16,7 @@
 - name: Install versions
   command: "pyenv install {{ item }}"
   args:
-    creates:  "{{ pyenv_dest }}/versions/{{ item }}"
+    creates: "{{ pyenv_dest }}/versions/{{ item }}"
   with_items: "{{ pyenv_versions }}"
 
 - name: Clone plugins

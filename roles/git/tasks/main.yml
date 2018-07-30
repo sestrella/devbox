@@ -1,0 +1,6 @@
+---
+- name: Install dependency
+  apt:
+    name: git
+    update_cache: yes
+  become: yes
