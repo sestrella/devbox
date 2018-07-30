@@ -15,6 +15,9 @@ rbenv_deps:
   - libyaml-dev
   - zlib1g-dev
 
+rbenv_versions:
+  - 2.5.1
+
 rbenv_plugins:
   ruby-build:
     repo: https://github.com/rbenv/ruby-build.git

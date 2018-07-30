@@ -1,4 +1,10 @@
 ---
+- name: Clone repository
+  git:
+    repo: "{{ rbenv_repo }}"
+    dest: "{{ rbenv_dest }}"
+    version: "{{ rbenv_version }}"
+
 - name: Install dependencies
   apt:
     name: "{{ item }}"
@@ -6,11 +12,11 @@
   with_items: "{{ rbenv_deps }}"
   become: yes
 
-- name: Clone repository
-  git:
-    repo: "{{ rbenv_repo }}"
-    dest: "{{ rbenv_dest }}"
-    version: "{{ rbenv_version }}"
+- name: Install versions
+  command: "rbenv install {{ item }}"
+  args:
+    creates: "{{ rbenv_dest }}/versions/{{ item }}"
+  with_items: "{{ rbenv_versions }}"
 
 - name: Clone plugins
   git:

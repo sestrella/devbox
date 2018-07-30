@@ -4,3 +4,9 @@
     repo: "{{ nvm_repo }}"
     dest: "{{ nvm_dest }}"
     version: "{{ nvm_version }}"
+
+- name: Install versions
+  command: "nvm install {{ item }}"
+  args:
+    creates: "{{ nvm_dest }}/versions/node/{{ item }}"
+  with_items: "{{ nvm_versions }}"

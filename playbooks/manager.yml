@@ -1,9 +1,11 @@
 ---
 - hosts: all
   roles:
-    - nvm
+    - role: nvm
+      tags: node
     - role: pyenv
       tags: python
-    - rbenv
+    - role: rbenv
+      tags: ruby
     - tpm
     - vim_plug
