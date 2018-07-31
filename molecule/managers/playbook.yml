@@ -1,0 +1,10 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - role: common
+      vars:
+        common_deps:
+          - curl
+          - git
+    - nvm

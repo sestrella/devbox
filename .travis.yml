@@ -6,4 +6,4 @@ services:
   - docker
 
 script:
-  - molecule test
+  - molecule test --all

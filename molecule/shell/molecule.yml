@@ -1,0 +1,29 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+lint:
+  name: yamllint
+
+platforms:
+  - name: instance
+    image: debian:9
+
+provisioner:
+  name: ansible
+  env:
+    ANSIBLE_ROLES_PATH: ../../roles
+
+  lint:
+    name: ansible-lint
+
+scenario:
+  name: shell
+
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

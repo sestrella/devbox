@@ -1,4 +1,10 @@
 ---
+- name: Install dependencies
+  apt:
+    name: git
+    update_cache: yes
+  become: yes
+
 - name: Clone repository
   git:
     repo: "{{ antigen_repo }}"
