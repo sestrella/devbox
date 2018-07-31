@@ -17,5 +17,6 @@
     . {{ nvm_dest }}/nvm.sh
     nvm install {{ item }}
   args:
-    creates: "{{ nvm_dest }}/versions/node/{{ item }}"
+    executable: /bin/bash
+    creates: "{{ nvm_dest }}/versions/node/{{ item }}/bin/node"
   with_items: "{{ nvm_versions }}"
