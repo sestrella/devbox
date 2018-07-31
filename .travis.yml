@@ -1,0 +1,9 @@
+---
+language: python
+sudo: required
+
+services:
+  - docker
+
+script:
+  - molecule test
