@@ -1,5 +1,7 @@
 # devbox
 
+[![Build Status](https://travis-ci.org/sestrella/devbox.svg?branch=master)](https://travis-ci.org/sestrella/devbox)
+
 A set of playbooks and roles used to spin up my local development machine.
 
 ## Requirements
