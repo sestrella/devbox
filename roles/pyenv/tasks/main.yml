@@ -25,3 +25,10 @@
     dest: "{{ pyenv_dest }}/plugins/{{ item.key }}"
     version: "{{ item.value.version }}"
   with_dict: "{{ pyenv_plugins }}"
+
+- name: Install updater
+  import_role:
+    name: updater
+  vars:
+    updater_name: pyenv
+    updater_dest: "{{ pyenv_dest }}"

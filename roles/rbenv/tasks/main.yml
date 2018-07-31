@@ -24,3 +24,10 @@
     dest: "{{ item.value.dest }}"
     version: "{{ item.value.version }}"
   with_dict: "{{ rbenv_plugins }}"
+
+- name: Install updater
+  import_role:
+    name: updater
+  vars:
+    updater_name: rbenv
+    updater_dest: "{{ rbenv_dest }}"
