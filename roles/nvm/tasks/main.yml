@@ -10,3 +10,10 @@
   args:
     creates: "{{ nvm_dest }}/versions/node/{{ item }}"
   with_items: "{{ nvm_versions }}"
+
+- name: Install updater
+  import_role:
+    name: updater
+  vars:
+    updater_name: nvm
+    updater_dest: "{{ nvm_dest }}"
