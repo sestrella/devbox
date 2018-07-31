@@ -1,0 +1,7 @@
+---
+common_deps:
+  - curl
+  - git
+  - silversearcher-ag
+  - tree
+  - wget
