@@ -1,4 +1,11 @@
 ---
+- name: Install dependencies
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items: "{{ nvm_deps }}"
+  become: yes
+
 - name: Clone repository
   git:
     repo: "{{ nvm_repo }}"
@@ -6,14 +13,9 @@
     version: "{{ nvm_version }}"
 
 - name: Install versions
-  command: "nvm install {{ item }}"
+  shell: |
+    . {{ nvm_dest }}/nvm.sh
+    nvm install {{ item }}
   args:
     creates: "{{ nvm_dest }}/versions/node/{{ item }}"
   with_items: "{{ nvm_versions }}"
-
-- name: Install updater
-  import_role:
-    name: updater
-  vars:
-    updater_name: nvm
-    updater_dest: "{{ nvm_dest }}"

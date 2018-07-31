@@ -4,7 +4,7 @@
     update_cache: yes
   become: yes
 
-- name: Install dependency
+- name: Install dependencies
   apt:
     name: git
   with_items: "{{ common_deps }}"
