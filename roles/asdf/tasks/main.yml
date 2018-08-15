@@ -1,0 +1,20 @@
+---
+- name: Install plugins
+  shell: "asdf plugin-add {{ item.key }} {{ item.value }}"
+  args:
+    executable: /usr/bin/fish
+    creates: "~/.asdf/plugins/{{ item.key }}"
+  with_dict:
+    nodejs: https://github.com/asdf-vm/asdf-nodejs.git
+    python: https://github.com/tuvistavie/asdf-python.git
+    ruby: https://github.com/asdf-vm/asdf-ruby.git
+
+- name: Install versions
+  shell: "asdf install {{ item.key }} {{ item.value }}"
+  args:
+    executable: /usr/bin/fish
+    creates: "~/.asdf/installs/{{ item.key }}/{{ item.value }}"
+  with_dict:
+    nodejs: 8.11.3
+    python: 3.7.0
+    ruby: 2.5.1
