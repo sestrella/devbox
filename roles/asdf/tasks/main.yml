@@ -1,9 +1,8 @@
 ---
 - name: Install plugins
-  shell: "asdf plugin-add {{ item.key }} {{ item.value }}"
-  args:
-    executable: /usr/bin/fish
-    creates: "~/.asdf/plugins/{{ item.key }}"
+  asdf_plugin:
+    name: "{{ item.key }}"
+    git_url: "{{ item.value }}"
   with_dict:
     nodejs: https://github.com/asdf-vm/asdf-nodejs.git
     python: https://github.com/tuvistavie/asdf-python.git
