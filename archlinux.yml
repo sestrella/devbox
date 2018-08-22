@@ -2,3 +2,4 @@
 - hosts: all
   roles:
     - ssh-agent
+    - text-editors
