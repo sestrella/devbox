@@ -1,24 +1,24 @@
 ---
-#- name: Install package
-#  pacman:
-#    name: neovim
-#  become: yes
-#
+- name: Install package
+  pacman:
+    name: neovim
+  become: yes
+
 - name: Install Node.js provider
   npm:
     name: neovim
-    executable: ~/.asdf/installs/nodejs/8.11.4/bin/npm
+    executable: "{{ item }}"
     global: yes
+  with_items: "{{ neovim_nodejs_executables }}"
 
 - name: Install Python provider
   pip:
     name: neovim
     executable: "{{ item }}"
-  with_items:
-    - ~/.asdf/installs/python/2.7.15/bin/pip
-    - ~/.asdf/installs/python/3.7.0/bin/pip
+  with_items: "{{ neovim_python_executables }}"
 
 - name: Install Ruby provider
   gem:
     name: neovim
-    executable: ~/.asdf/installs/ruby/2.5.1/bin/gem
+    executable: "{{ item }}"
+  with_items: "{{ neovim_ruby_executables }}"
