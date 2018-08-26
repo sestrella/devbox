@@ -1,6 +1,0 @@
----
-- name: Add repository
-  apt_repository:
-    repo: deb http://ftp.debian.org/debian stretch-backports main
-    filename: backports
-  become: yes
