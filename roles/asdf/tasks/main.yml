@@ -1,19 +1,20 @@
 ---
+- name: Clone repository
+  git:
+    repo: "{{ asdf_repo }}"
+    dest: "{{ asdf_dir }}"
+    version: "{{ asdf_version }}"
+
 - name: Install plugins
-  asdf_plugin:
-    name: "{{ item.key }}"
-    git_url: "{{ item.value }}"
-  with_dict:
-    nodejs: https://github.com/asdf-vm/asdf-nodejs.git
-    python: https://github.com/tuvistavie/asdf-python.git
-    ruby: https://github.com/asdf-vm/asdf-ruby.git
+  command: "asdf plugin-add {{ item.name }} {{ item.repo }}"
+  args:
+    creates: "~/.asdf/plugins/{{ item.name }}"
+  with_items: "{{ asdf_plugins }}"
 
 - name: Install versions
-  shell: "asdf install {{ item.key }} {{ item.value }}"
+  command: "asdf install {{ item.0.name }} {{ item.1 }}"
   args:
-    executable: /usr/bin/fish
-    creates: "~/.asdf/installs/{{ item.key }}/{{ item.value }}"
-  with_dict:
-    nodejs: 8.11.3
-    python: 3.7.0
-    ruby: 2.5.1
+    creates: "~/.asdf/installs/{{ item.0.name }}/{{ item.1 }}"
+  with_subelements:
+    - "{{ asdf_plugins }}"
+    - versions
