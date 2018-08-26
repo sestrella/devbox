@@ -1,10 +1,24 @@
 ---
-- import_role:
-    name: backports
-
-- name: Install package
-  apt:
+#- name: Install package
+#  pacman:
+#    name: neovim
+#  become: yes
+#
+- name: Install Node.js provider
+  npm:
     name: neovim
-    default_release: stretch-backports
-    update_cache: yes
-  become: yes
+    executable: ~/.asdf/installs/nodejs/8.11.4/bin/npm
+    global: yes
+
+- name: Install Python provider
+  pip:
+    name: neovim
+    executable: "{{ item }}"
+  with_items:
+    - ~/.asdf/installs/python/2.7.15/bin/pip
+    - ~/.asdf/installs/python/3.7.0/bin/pip
+
+- name: Install Ruby provider
+  gem:
+    name: neovim
+    executable: ~/.asdf/installs/ruby/2.5.1/bin/gem

@@ -8,13 +8,13 @@
 - name: Install plugins
   command: "asdf plugin-add {{ item.name }} {{ item.repo }}"
   args:
-    creates: "~/.asdf/plugins/{{ item.name }}"
+    creates: "{{ asdf_dir }}/plugins/{{ item.name }}"
   with_items: "{{ asdf_plugins }}"
 
 - name: Install versions
   command: "asdf install {{ item.0.name }} {{ item.1 }}"
   args:
-    creates: "~/.asdf/installs/{{ item.0.name }}/{{ item.1 }}"
+    creates: "{{ asdf_dir }}/installs/{{ item.0.name }}/{{ item.1 }}"
   with_subelements:
     - "{{ asdf_plugins }}"
     - versions

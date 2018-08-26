@@ -1,0 +1,4 @@
+---
+neovim_vim_plug_repo: https://github.com/junegunn/vim-plug
+neovim_vim_plug_dir: ~/.local/share/nvim/site/autoload
+neovim_vim_plug_version: 0.9.1
