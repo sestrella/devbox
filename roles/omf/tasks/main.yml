@@ -1,13 +1,13 @@
 ---
 - name: Clone repository
   git:
-    repo: https://github.com/oh-my-fish/oh-my-fish.git
-    dest: ~/.local/share/omf
-    version: v6
+    repo: "{{ omf_repo }}"
+    dest: "{{ omf_dir }}"
+    version: "{{ omf_version }}"
 
 - name: Install plugins
   shell: "omf install {{ item }}"
   args:
     executable: /usr/bin/fish
-    creates: "~/.local/share/omf/pkg/{{ item }}"
+    creates: "{{ omf_dir }}/pkg/{{ item }}"
   with_items: "{{ omf_plugins }}"
