@@ -1,0 +1,4 @@
+---
+omf_plugins:
+  - node-binpath
+  - ssh-config.d

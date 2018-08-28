@@ -4,3 +4,10 @@
     repo: https://github.com/oh-my-fish/oh-my-fish.git
     dest: ~/.local/share/omf
     version: v6
+
+- name: Install plugins
+  shell: "omf install {{ item }}"
+  args:
+    executable: /usr/bin/fish
+    creates: "~/.local/share/omf/pkg/{{ item }}"
+  with_items: "{{ omf_plugins }}"
