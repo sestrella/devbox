@@ -1,6 +1,0 @@
----
-postgresql_user: "{{ ansible_user_id }}"
-postgresql_db: "{{ postgresql_user }}"
-
-postgresql_roles:
-  - SUPERUSER

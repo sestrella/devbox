@@ -1,23 +1,20 @@
 ---
-- name: Install packages
-  apt:
-    name: "{{ item }}"
+- name: Install package
+  pacman:
+    name: postgresql
     update_cache: yes
-  with_items:
-    - postgresql
-    - python-psycopg2
   become: yes
 
-- name: Create user
-  postgresql_user:
-    name: "{{ postgresql_user }}"
-    role_attr_flags: "{{ postgresql_roles | join(',') }}"
+- name: Initialize database
+  command: /usr/bin/initdb -D '/var/lib/postgres/data'
+  args:
+    creates: /var/lib/postgres/data
   become: yes
   become_user: postgres
 
-- name: Create database
-  postgresql_db:
-    name: "{{ postgresql_db }}"
-    owner: "{{ postgresql_user }}"
+- name: Enable and start service
+  systemd:
+    name: postgresql
+    state: started
+    enabled: yes
   become: yes
-  become_user: postgres
