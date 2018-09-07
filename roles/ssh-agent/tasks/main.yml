@@ -13,6 +13,6 @@
   systemd:
     name: ssh-agent
     state: started
-    enabled: yes
-    daemon_reload: yes
-    user: yes
+    enabled: true
+    daemon_reload: true
+    user: true

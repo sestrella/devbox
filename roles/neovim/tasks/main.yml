@@ -2,13 +2,13 @@
 - name: Install package
   pacman:
     name: neovim
-  become: yes
+  become: true
 
 - name: Install Node.js provider
   npm:
     name: neovim
     executable: "{{ item }}"
-    global: yes
+    global: true
   with_items: "{{ neovim_nodejs_executables }}"
 
 - name: Install Python provider

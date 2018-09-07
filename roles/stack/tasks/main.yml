@@ -3,8 +3,8 @@
   apt:
     name: haskell-stack
     state: present
-    update_cache: yes
-  become: yes
+    update_cache: true
+  become: true
 
 - name: Update package
   command: stack upgrade

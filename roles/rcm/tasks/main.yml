@@ -2,16 +2,16 @@
 - name: Add repository key
   apt_key:
     url: https://apt.thoughtbot.com/thoughtbot.gpg.key
-  become: yes
+  become: true
 
 - name: Add repository
   apt_repository:
     repo: deb https://apt.thoughtbot.com/debian/ stable main
     filename: thoughtbot
-  become: yes
+  become: true
 
 - name: Install package
   apt:
     name: rcm
-    update_cache: yes
-  become: yes
+    update_cache: true
+  become: true

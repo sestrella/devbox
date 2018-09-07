@@ -2,19 +2,19 @@
 - name: Install package
   pacman:
     name: postgresql
-    update_cache: yes
-  become: yes
+    update_cache: true
+  become: true
 
 - name: Initialize database
   command: "/usr/bin/initdb -D {{ postgresql_data_dir }}"
   args:
     creates: "{{ postgresql_data_dir }}"
-  become: yes
+  become: true
   become_user: postgres
 
 - name: Enable and start service
   systemd:
     name: postgresql
     state: started
-    enabled: yes
-  become: yes
+    enabled: true
+  become: true
