@@ -6,9 +6,9 @@
   become: yes
 
 - name: Initialize database
-  command: /usr/bin/initdb -D '/var/lib/postgres/data'
+  command: "/usr/bin/initdb -D {{ postgresql_data_dir }}"
   args:
-    creates: /var/lib/postgres/data
+    creates: "{{ postgresql_data_dir }}"
   become: yes
   become_user: postgres
 
