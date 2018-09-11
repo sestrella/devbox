@@ -3,11 +3,11 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
-[dev-packages]
-
 [packages]
 ansible = "*"
+
+[dev-packages]
 molecule = "*"
 
 [requires]
-python_version = "2.7"
+python_version = "3.7"
