@@ -1,18 +1,5 @@
 ---
-- name: Add repository key
-  apt_key:
-    keyserver: hkp://keyserver.ubuntu.com:80
-    id: 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
-  become: true
-
-- name: Add repository
-  apt_repository:
-    repo: deb http://repository.spotify.com stable non-free
-    filename: spotify
-  become: true
-
 - name: Install package
-  apt:
-    name: spotify-client
+  aurman:
+    name: spotify
     update_cache: true
-  become: true
