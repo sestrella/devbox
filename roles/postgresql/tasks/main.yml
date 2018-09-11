@@ -8,7 +8,7 @@
 - name: Initialize database
   command: "/usr/bin/initdb -D {{ postgresql_data_dir }}"
   args:
-    creates: "{{ postgresql_data_dir }}"
+    creates: "{{ postgresql_data_dir }}/PG_VERSION"
   become: true
   become_user: postgres
 
@@ -18,3 +18,4 @@
     state: started
     enabled: true
   become: true
+  when: ansible_service_mgr == "systemd"

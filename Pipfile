@@ -8,6 +8,7 @@ ansible = "*"
 
 [dev-packages]
 molecule = "*"
+docker-py = "*"
 
 [requires]
 python_version = "3.7"
