@@ -9,5 +9,7 @@
     name: git
   with_items:
     - git
+    - neovim
     - silversearcher-ag
+    - tmux
   become: yes
