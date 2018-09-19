@@ -1,21 +1,16 @@
 ---
+- name: Add repository key
+  apt_key:
+    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+  become: yes
+
+- name: Add repository
+  apt_repository:
+    repo: deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+  become: yes
+
 - name: Install package
-  pacman:
-    name: postgresql
-    update_cache: true
-  become: true
-
-- name: Initialize database
-  command: "/usr/bin/initdb -D {{ postgresql_data_dir }}"
-  args:
-    creates: "{{ postgresql_data_dir }}/PG_VERSION"
-  become: true
-  become_user: postgres
-
-- name: Enable and start service
-  systemd:
-    name: postgresql
-    state: started
-    enabled: true
-  become: true
-  when: ansible_service_mgr == "systemd"
+  apt:
+    name: postgresql-10
+    update_cache: yes
+  become: yes
