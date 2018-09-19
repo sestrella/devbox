@@ -1,12 +1,8 @@
 ---
-- name: Update cache
-  apt:
-    update_cache: yes
-  become: yes
-
 - name: Install dependencies
   apt:
-    name: git
+    name: "{{ item }}"
+    update_cache: yes
   with_items:
     - git
     - neovim
