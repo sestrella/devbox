@@ -1,5 +1,1 @@
-[development]
-localhost ansible_connection=local
-
-[testing]
-localhost ansible_port=2222
+vagrant
