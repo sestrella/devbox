@@ -2,11 +2,4 @@
 - hosts: all
   roles:
     - common
-    - role: nvm
-      tags: node
-    - role: pyenv
-      tags: python
-    - role: rbenv
-      tags: ruby
-    - tpm
-    - vim_plug
+    - asdf

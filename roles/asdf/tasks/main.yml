@@ -1,20 +1,28 @@
 ---
 - name: Clone repository
   git:
-    repo: "{{ asdf_repo }}"
-    dest: "{{ asdf_dir }}"
-    version: "{{ asdf_version }}"
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: ~/.asdf
+    version: v0.5.1
+
+- name: Copy scripts
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    remote_src: "{{ item.remote_src }}"
+  with_items:
+    - src: asdf.fish
+      dest: ~/.config/fish/conf.d/asdf.fish
+      remote_src: no
+    - src: ~/.asdf/completions/asdf.fish
+      dest: ~/.config/fish/completions/asdf.fish
+      remote_src: yes
 
 - name: Install plugins
-  command: "asdf plugin-add {{ item.name }} {{ item.repo }}"
+  command: "asdf plugin-add {{ item }}"
   args:
-    creates: "{{ asdf_dir }}/plugins/{{ item.name }}"
-  with_items: "{{ asdf_plugins }}"
-
-- name: Install versions
-  command: "asdf install {{ item.0.name }} {{ item.1 }}"
-  args:
-    creates: "{{ asdf_dir }}/installs/{{ item.0.name }}/{{ item.1 }}"
-  with_subelements:
-    - "{{ asdf_plugins }}"
-    - versions
+    creates: "~/.asdf/plugins/{{ item }}"
+  with_items:
+    - nodejs
+    - python
+    - ruby

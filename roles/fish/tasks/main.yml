@@ -10,3 +10,11 @@
     name: "{{ ansible_user_id }}"
     shell: /usr/bin/fish
   become: yes
+
+- name: Create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - ~/.config/fish/completions
+    - ~/.config/fish/conf.d
