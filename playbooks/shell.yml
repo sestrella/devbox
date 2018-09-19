@@ -1,7 +1,4 @@
 ---
 - hosts: all
   roles:
-    - antigen
-    - rcm
-    - tpm
-    - zsh
+    - fish
