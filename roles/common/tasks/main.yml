@@ -1,11 +1,13 @@
 ---
 - name: Update cache
   apt:
-    update_cache: true
-  become: true
+    update_cache: yes
+  become: yes
 
 - name: Install dependencies
   apt:
     name: git
-  with_items: "{{ common_deps }}"
-  become: true
+  with_items:
+    - git
+    - silversearcher-ag
+  become: yes
