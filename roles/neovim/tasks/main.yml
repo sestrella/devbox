@@ -1,0 +1,25 @@
+---
+- name: Install package
+  apt:
+    name: neovim
+    state: present
+  become: yes
+
+- name: Create autoload directory
+  file:
+    path: ~/.local/share/nvim/site/autoload
+    state: directory
+
+- name: Download plugin manager
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.local/share/nvim/site/autoload/plug.vim
+
+- name: Link init file
+  file:
+    src: "{{ role_path }}/files/init.vim"
+    dest: ~/.config/nvim/init.vim
+    state: link
+
+- name: Install plugins
+  command: nvim +PlugInstall +qall

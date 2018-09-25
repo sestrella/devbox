@@ -15,7 +15,7 @@
     name: "{{ item }}"
   with_items:
     - postgresql-10
-    - python3-psycopg2
+    - python-psycopg2
   become: yes
 
 - name: Add user

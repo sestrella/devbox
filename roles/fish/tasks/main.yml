@@ -2,7 +2,7 @@
 - name: Install package
   apt:
     name: fish
-    update_cache: yes
+    state: present
   become: yes
 
 - name: Change shell
