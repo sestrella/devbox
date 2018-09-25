@@ -9,6 +9,7 @@
   template:
     src: asdf.fish.j2
     dest: ~/.config/fish/conf.d/asdf.fish
+  when: ansible_user_shell == "/usr/bin/fish"
 
 - name: Install plugins
   command: "asdf plugin-add {{ item }}"
