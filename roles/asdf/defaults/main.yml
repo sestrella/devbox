@@ -1,9 +1,0 @@
----
-asdf_repo: https://github.com/asdf-vm/asdf.git
-asdf_dir: ~/.asdf
-asdf_version: v0.5.1
-
-asdf_plugins:
-  - nodejs
-  - python
-  - ruby

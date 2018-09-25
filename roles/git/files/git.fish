@@ -1,3 +1,5 @@
-abbr -a gbr git branch
-abbr -a gco git checkout
-abbr -a gst git status
+abbr gaa git add --all
+abbr gbr git branch
+abbr gco git checkout
+abbr gd git diff
+abbr gst git status

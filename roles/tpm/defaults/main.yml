@@ -1,4 +1,0 @@
----
-tpm_repo: https://github.com/tmux-plugins/tpm
-tpm_dest: ~/.tmux/plugins/tpm
-tpm_version: v3.0.0

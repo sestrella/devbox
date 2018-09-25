@@ -1,18 +1,15 @@
 ---
 - name: Clone repository
   git:
-    repo: "{{ asdf_repo }}"
-    dest: "{{ asdf_dir }}"
-    version: "{{ asdf_version }}"
-
-- name: Copy init script
-  template:
-    src: asdf.fish.j2
-    dest: ~/.config/fish/conf.d/asdf.fish
-  when: ansible_user_shell == "/usr/bin/fish"
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: ~/.asdf
+    version: v0.5.1
 
 - name: Install plugins
   command: "asdf plugin-add {{ item }}"
   args:
-    creates: "{{ asdf_dir }}/plugins/{{ item }}"
-  with_items: "{{ asdf_plugins }}"
+    creates: "~/.asdf/plugins/{{ item }}"
+  with_items:
+    - nodejs
+    - python
+    - ruby
