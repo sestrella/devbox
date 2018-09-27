@@ -1,9 +1,9 @@
 ---
 - name: Clone repository
   git:
-    repo: "{{ rbenv_repo }}"
+    repo: https://github.com/rbenv/rbenv.git
     dest: "{{ rbenv_dir }}"
-    version: "{{ rbenv_version }}"
+    version: v1.1.1
 
 - include_tasks: plugin.yml
   with_dict: "{{ rbenv_plugins }}"

@@ -2,4 +2,6 @@
 - hosts: all
   roles:
     - common
-    - asdf
+    - nvm
+    - pyenv
+    - rbenv

@@ -1,10 +1,10 @@
 ---
-- name: "Clone {{ plugin.key }} plugin"
+- name: "{{ plugin.key }} - Clone plugin"
   git:
     repo: "{{ plugin.value.repo }}"
     dest: "{{ rbenv_dir }}/plugins/{{ plugin.key }}"
 
-- name: "Install {{ plugin.key }} dependencies"
+- name: "{{ plugin.key }} - Install dependencies"
   apt:
     name: "{{ item }}"
     update_cache: yes

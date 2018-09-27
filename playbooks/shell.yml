@@ -1,4 +1,6 @@
 ---
 - hosts: all
   roles:
-    - fish
+    - common
+    - antigen
+    - tpm

@@ -1,13 +1,7 @@
 ---
-- hosts: all
-  roles:
-    - neovim
-    - postgresql
-    - role: pyenv
-      tags: managers
-    - role: rbenv
-      tags: managers
-    - role: nvm
-      tags: managers
-    - rcm
-    - tmux
+- import_playbook: playbooks/databases.yml
+- import_playbook: playbooks/editors.yml
+- import_playbook: playbooks/managers.yml
+- import_playbook: playbooks/other.yml
+- import_playbook: playbooks/shell.yml
+- import_playbook: playbooks/virtualization.yml

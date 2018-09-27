@@ -3,9 +3,5 @@
   apt:
     name: "{{ item }}"
     update_cache: yes
-  with_items:
-    - git
-    - neovim
-    - silversearcher-ag
-    - tmux
+  with_items: "{{ common_packages }}"
   become: yes

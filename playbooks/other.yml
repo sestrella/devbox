@@ -1,4 +1,6 @@
 ---
 - hosts: all
   roles:
-    - docker
+    - google-chrome
+    - slack
+    - spotify

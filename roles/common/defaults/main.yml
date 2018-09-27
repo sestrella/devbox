@@ -1,0 +1,10 @@
+common_packages:
+  - git
+  - neovim
+  - redis
+  - silversearcher-ag
+  - tmux
+  - tree
+  - vagrant
+  - virtualbox
+  - zsh

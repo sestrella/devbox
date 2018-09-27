@@ -1,8 +1,4 @@
 ---
-pyenv_repo: https://github.com/pyenv/pyenv.git
-pyenv_dir: ~/.pyenv
-pyenv_version: v1.2.7
-
 pyenv_packages:
   - build-essential
   - curl
@@ -20,6 +16,3 @@ pyenv_packages:
   - wget
   - xz-utils
   - zlib1g-dev
-
-pyenv_plugins:
-  pyenv-doctor: https://github.com/pyenv/pyenv-doctor.git

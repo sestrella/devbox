@@ -1,7 +1,5 @@
 ---
-rbenv_repo: https://github.com/rbenv/rbenv.git
 rbenv_dir: ~/.rbenv
-rbenv_version: v1.1.1
 
 rbenv_plugins:
   ruby-build:
