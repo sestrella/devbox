@@ -1,0 +1,20 @@
+---
+- name: Clone repository
+  git:
+    repo: "{{ pyenv_repo }}"
+    dest: "{{ pyenv_dir }}"
+    version: "{{ pyenv_version }}"
+
+- name: Install dependencies
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items: "{{ pyenv_packages }}"
+  become: yes
+
+
+- name: Clone plugins
+  git:
+    repo: "{{ item.value }}"
+    dest: "{{ pyenv_dir }}/plugins/{{ item.key }}"
+  with_dict: "{{ pyenv_plugins }}"

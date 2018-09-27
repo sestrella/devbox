@@ -1,7 +1,13 @@
 ---
 - hosts: all
   roles:
-    - asdf
     - neovim
     - postgresql
+    - role: pyenv
+      tags: managers
+    - role: rbenv
+      tags: managers
+    - role: nvm
+      tags: managers
+    - rcm
     - tmux

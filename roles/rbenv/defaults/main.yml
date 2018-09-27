@@ -1,0 +1,20 @@
+---
+rbenv_repo: https://github.com/rbenv/rbenv.git
+rbenv_dir: ~/.rbenv
+rbenv_version: v1.1.1
+
+rbenv_plugins:
+  ruby-build:
+    repo: https://github.com/rbenv/ruby-build.git
+    packages:
+      - autoconf
+      - bison
+      - build-essential
+      - libffi-dev
+      - libgdbm-dev
+      - libgdbm5
+      - libncurses5-dev
+      - libreadline6-dev
+      - libssl-dev
+      - libyaml-dev
+      - zlib1g-dev
