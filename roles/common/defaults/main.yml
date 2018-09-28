@@ -1,4 +1,5 @@
 common_packages:
+  - fonts-powerline
   - git
   - neovim
   - redis
