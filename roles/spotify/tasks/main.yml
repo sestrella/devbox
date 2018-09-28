@@ -3,16 +3,16 @@
   apt_key:
     keyserver: keyserver.ubuntu.com
     id: 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
-  become: yes
+  become: true
 
 - name: Add repository
   apt_repository:
     repo: deb http://repository.spotify.com stable non-free
     filename: spotify
-  become: yes
+  become: true
 
 - name: Install package
   apt:
     name: spotify-client
     update_cache: true
-  become: yes
+  become: true

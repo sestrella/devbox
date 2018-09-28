@@ -7,6 +7,6 @@
 - name: "{{ plugin.key }} - Install dependencies"
   apt:
     name: "{{ item }}"
-    update_cache: yes
+    update_cache: true
   with_items: "{{ plugin.value.packages }}"
-  become: yes
+  become: true

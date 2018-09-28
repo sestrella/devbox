@@ -2,23 +2,23 @@
 - name: Add repository key
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
-  become: yes
+  become: true
 
 - name: Add repository
   apt_repository:
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
     filename: docker
-  become: yes
+  become: true
 
 - name: Install package
   apt:
     name: docker-ce
-    update_cache: yes
-  become: yes
+    update_cache: true
+  become: true
 
 - name: Add user to groups
   user:
     name: "{{ ansible_user_id }}"
     groups: docker
-    append: yes
-  become: yes
+    append: true
+  become: true

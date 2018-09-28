@@ -3,7 +3,7 @@
   apt:
     name: neovim
     state: present
-  become: yes
+  become: true
 
 - name: Create autoload directory
   file:
