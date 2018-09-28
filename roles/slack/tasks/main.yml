@@ -1,5 +1,5 @@
 ---
 - name: Install package
   apt:
-    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.2.1-amd64.deb
+    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.1-amd64.deb
   become: true
