@@ -3,5 +3,7 @@
   roles:
     - common
     - nvm
-    - pyenv
-    - rbenv
+    - role: pyenv
+      tags: python
+    - role: rbenv
+      tags: ruby

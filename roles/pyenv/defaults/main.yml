@@ -1,4 +1,6 @@
 ---
+pyenv_dir: ~/.pyenv
+
 pyenv_packages:
   - build-essential
   - curl
@@ -16,3 +18,7 @@ pyenv_packages:
   - wget
   - xz-utils
   - zlib1g-dev
+
+pyenv_versions:
+  - 2.7.15
+  - 3.7.0

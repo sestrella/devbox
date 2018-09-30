@@ -2,7 +2,7 @@
 - name: Clone repository
   git:
     repo: https://github.com/pyenv/pyenv.git
-    dest: ~/.pyenv
+    dest: "{{ pyenv_dir }}"
     version: v1.2.7
 
 - name: Install dependencies
@@ -11,3 +11,9 @@
     update_cache: true
   with_items: "{{ pyenv_packages }}"
   become: true
+
+- name: Install python
+  command: "pyenv install {{ item }}"
+  args:
+    creates: "{{ pyenv_dir }}/versions/{{ item }}"
+  with_items: "{{ pyenv_versions }}"
