@@ -2,5 +2,10 @@
 - name: Clone repository
   git:
     repo: https://github.com/creationix/nvm.git
-    dest: ~/.nvm
+    dest: "{{ nvm_dir }}"
     version: v0.33.11
+
+- include_tasks: version.yml
+  with_dict: "{{ nvm_versions }}"
+  loop_control:
+    loop_var: version
