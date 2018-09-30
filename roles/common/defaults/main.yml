@@ -1,5 +1,6 @@
 ---
 common_packages:
+  - chrome-gnome-shell
   - fonts-powerline
   - git
   - neovim

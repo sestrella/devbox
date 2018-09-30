@@ -1,6 +1,0 @@
----
-- name: Install package
-  apt:
-    name: chrome-gnome-shell
-    update_cache: true
-  become: true
