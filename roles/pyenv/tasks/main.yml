@@ -12,8 +12,7 @@
   with_items: "{{ pyenv_packages }}"
   become: true
 
-- name: Install versions
-  command: "pyenv install {{ item }}"
-  args:
-    creates: "{{ pyenv_dir }}/versions/{{ item }}"
-  with_items: "{{ pyenv_versions }}"
+- include_tasks: version.yml
+  with_dict: "{{ pyenv_versions }}"
+  loop_control:
+    loop_var: version

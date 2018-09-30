@@ -1,0 +1,11 @@
+---
+- name: "{{ version.key }} - Install version"
+  command: "pyenv install {{ version.key }}"
+  args:
+    creates: "{{ pyenv_dir }}/versions/{{ version.key }}"
+
+- name: "{{ version.key }} - Install packages"
+  pip:
+    name: "{{ item }}"
+    executable: "{{ pyenv_dir }}/versions/{{ version.key }}/bin/pip"
+  with_items: "{{ version.value }}"
