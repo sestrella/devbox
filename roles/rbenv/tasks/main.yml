@@ -9,3 +9,8 @@
   with_dict: "{{ rbenv_plugins }}"
   loop_control:
     loop_var: plugin
+
+- include_tasks: version.yml
+  with_dict: "{{ rbenv_versions }}"
+  loop_control:
+    loop_var: version

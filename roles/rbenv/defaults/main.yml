@@ -16,3 +16,7 @@ rbenv_plugins:
       - libssl-dev
       - libyaml-dev
       - zlib1g-dev
+
+rbenv_versions:
+  2.5.1:
+    - neovim

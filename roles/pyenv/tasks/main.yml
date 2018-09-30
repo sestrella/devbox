@@ -12,7 +12,7 @@
   with_items: "{{ pyenv_packages }}"
   become: true
 
-- name: Install python
+- name: Install versions
   command: "pyenv install {{ item }}"
   args:
     creates: "{{ pyenv_dir }}/versions/{{ item }}"

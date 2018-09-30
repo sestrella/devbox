@@ -1,0 +1,11 @@
+---
+- name: "{{ version.key }} - Install version"
+  command: "rbenv install {{ version.key }}"
+  args:
+    creates: "{{ rbenv_dir }}/versions/{{ version.key }}"
+
+- name: "{{ version.key }} - Install packages"
+  gem:
+    name: "{{ item }}"
+    executable: "{{ rbenv_dir }}/versions/{{ version.key }}/bin/gem"
+  with_items: "{{ version.value }}"
