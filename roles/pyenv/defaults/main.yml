@@ -19,10 +19,4 @@ pyenv_packages:
   - xz-utils
   - zlib1g-dev
 
-pyenv_versions:
-  2.7.15:
-    - neovim
-    - pipenv
-  3.7.0:
-    - neovim
-    - pipenv
+pyenv_versions: {}
