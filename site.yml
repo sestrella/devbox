@@ -1,7 +1,16 @@
 ---
-- import_playbook: playbooks/databases.yml
-- import_playbook: playbooks/editors.yml
-- import_playbook: playbooks/managers.yml
-- import_playbook: playbooks/other.yml
-- import_playbook: playbooks/shell.yml
-- import_playbook: playbooks/virtualization.yml
+- hosts: all
+  roles:
+    - antigen
+    - common
+    - docker
+    - google-chrome
+    - neovim
+    - nvm
+    - postgresql
+    - pyenv
+    - rbenv
+    - rcm
+    - slack
+    - spotify
+    - tpm

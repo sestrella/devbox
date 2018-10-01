@@ -1,6 +1,0 @@
----
-- hosts: all
-  roles:
-    - google-chrome
-    - slack
-    - spotify
