@@ -1,12 +1,12 @@
 ---
-- name: "{{ version.key }} - Install version"
-  command: "nvm install {{ version.key }}"
+- name: "{{ version.number }} - Install version"
+  shell: "nvm install {{ version.number }}"
   args:
-    creates: "{{ nvm_dir }}/versions/node/{{ version.key }}"
+    creates: "{{ nvm_dir }}/versions/node/{{ version.number }}"
 
-- name: "{{ version.key }} - Install packages"
+- name: "{{ version.number }} - Install packages"
   npm:
     name: "{{ item }}"
     global: true
-    executable: "{{ nvm_dir }}/versions/node/{{ version.key }}/bin/npm"
-  with_items: "{{ version.value }}"
+    executable: "{{ nvm_dir }}/versions/node/{{ version.number }}/bin/npm"
+  with_items: "{{ version.packages | default([]) }}"

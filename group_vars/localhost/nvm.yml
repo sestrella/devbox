@@ -1,4 +1,5 @@
 ---
 nvm_versions:
-  v8.12.0:
-    - neovim
+  - number: v8.12.0
+    packages:
+      - neovim

@@ -1,4 +1,4 @@
 ---
 nvm_dir: ~/.nvm
 
-nvm_versions: {}
+nvm_versions: []
