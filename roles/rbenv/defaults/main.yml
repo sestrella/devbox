@@ -17,4 +17,4 @@ rbenv_plugins:
       - libyaml-dev
       - zlib1g-dev
 
-rbenv_versions: {}
+rbenv_versions: []

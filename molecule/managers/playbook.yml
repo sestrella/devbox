@@ -5,6 +5,10 @@
     pyenv_versions:
       - number: 3.7.0
 
+    rbenv_versions:
+      - number: 2.5.1
+
   roles:
     - common
     - pyenv
+    - rbenv

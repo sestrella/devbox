@@ -1,11 +1,11 @@
 ---
-- name: "{{ version.key }} - Install version"
-  command: "rbenv install {{ version.key }}"
+- name: "{{ version.number }} - Install version"
+  command: "{{ rbenv_dir }}/bin/rbenv install {{ version.number }}"
   args:
-    creates: "{{ rbenv_dir }}/versions/{{ version.key }}"
+    creates: "{{ rbenv_dir }}/versions/{{ version.number }}"
 
-- name: "{{ version.key }} - Install packages"
+- name: "{{ version.number }} - Install packages"
   gem:
     name: "{{ item }}"
-    executable: "{{ rbenv_dir }}/versions/{{ version.key }}/bin/gem"
-  with_items: "{{ version.value }}"
+    executable: "{{ rbenv_dir }}/versions/{{ version.number }}/bin/gem"
+  with_items: "{{ version.packages | default([]) }}"
