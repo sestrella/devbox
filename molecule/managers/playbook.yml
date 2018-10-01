@@ -1,0 +1,10 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    pyenv_versions:
+      - number: 3.7.0
+
+  roles:
+    - common
+    - pyenv

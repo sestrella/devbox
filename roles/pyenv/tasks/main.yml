@@ -13,6 +13,6 @@
   become: true
 
 - include_tasks: version.yml
-  with_dict: "{{ pyenv_versions }}"
+  with_items: "{{ pyenv_versions }}"
   loop_control:
     loop_var: version
