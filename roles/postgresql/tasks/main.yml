@@ -13,7 +13,7 @@
 - name: Install packages
   apt:
     name: "{{ item }}"
-    update_cache: yes
+    update_cache: true
   with_items: "{{ postgresql_packages }}"
   become: true
 
