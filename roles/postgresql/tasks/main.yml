@@ -13,9 +13,8 @@
 - name: Install packages
   apt:
     name: "{{ item }}"
-  with_items:
-    - postgresql-10
-    - python-psycopg2
+    update_cache: yes
+  with_items: "{{ postgresql_packages }}"
   become: true
 
 - name: Add user
