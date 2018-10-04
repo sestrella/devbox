@@ -5,12 +5,15 @@
     - common
     - docker
     - google-chrome
-    - neovim
-    - nvm
+    - role: nvm
+      tags: nodejs
     - postgresql
-    - pyenv
-    - rbenv
+    - role: pyenv
+      tags: python
+    - role: rbenv
+      tags: ruby
     - rcm
     - slack
     - spotify
     - tpm
+    - vim-plug

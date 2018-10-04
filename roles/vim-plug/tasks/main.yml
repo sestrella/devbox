@@ -1,10 +1,4 @@
 ---
-- name: Install package
-  apt:
-    name: neovim
-    state: present
-  become: true
-
 - name: Create autoload directory
   file:
     path: ~/.local/share/nvim/site/autoload

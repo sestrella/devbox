@@ -2,7 +2,7 @@
 rbenv_dir: ~/.rbenv
 
 rbenv_plugins:
-  ruby-build:
+  - name: ruby-build
     repo: https://github.com/rbenv/ruby-build.git
     packages:
       - autoconf
