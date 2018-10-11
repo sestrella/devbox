@@ -4,16 +4,45 @@
   pre_tasks:
     - name: Install dependencies
       apt:
-        name: [curl, git]
+        name: git
         update_cache: true
 
   vars:
     asdf_plugins:
       - name: python
+        dependencies:
+          - build-essential
+          - curl
+          - libbz2-dev
+          - libffi-dev
+          - libncurses5-dev
+          - libreadline-dev
+          - libsqlite3-dev
+          - libssl-dev
+          - libxml2-dev
+          - libxmlsec1-dev
+          - llvm
+          - make
+          - tk-dev
+          - wget
+          - xz-utils
+          - zlib1g-dev
         versions:
           - number: 3.7.0
 
       - name: ruby
+        dependencies:
+          - autoconf
+          - bison
+          - build-essential
+          - libffi-dev
+          - libgdbm-dev
+          - libgdbm5
+          - libncurses5-dev
+          - libreadline6-dev
+          - libssl-dev
+          - libyaml-dev
+          - zlib1g-dev
         versions:
           - number: 2.5.1
 
