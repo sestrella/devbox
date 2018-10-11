@@ -2,7 +2,9 @@
 asdf_plugins:
   - name: nodejs
     versions:
-      - 8.12.0
+      - number: 8.12.0
+        packages:
+          - neovim
 
   - name: python
     dependencies:
@@ -23,8 +25,15 @@ asdf_plugins:
       - xz-utils
       - zlib1g-dev
     versions:
-      - 2.7.15
-      - 3.7.0
+      - number: 2.7.15
+        packages:
+          - neovim
+          - pipenv
+
+      - number: 3.7.0
+        packages:
+          - neovim
+          - pipenv
 
   - name: ruby
     dependencies:
@@ -40,4 +49,6 @@ asdf_plugins:
       - libyaml-dev
       - zlib1g-dev
     versions:
-      - 2.5.1
+      - number: 2.5.1
+        packages:
+          - neovim

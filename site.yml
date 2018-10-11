@@ -3,7 +3,7 @@
   roles:
     - antigen
     - role: asdf
-      tags: version-manager
+      tags: managers
     - common
     - docker
     - google-chrome
