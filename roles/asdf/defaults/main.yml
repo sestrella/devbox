@@ -1,0 +1,6 @@
+---
+asdf_repo: https://github.com/asdf-vm/asdf.git
+asdf_dir: ~/.asdf
+asdf_version: v0.6.0
+
+asdf_plugins: []

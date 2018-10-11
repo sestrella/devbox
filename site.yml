@@ -2,18 +2,14 @@
 - hosts: all
   roles:
     - antigen
+    - role: asdf
+      tags: version-manager
     - common
     - docker
     - google-chrome
-    - role: nvm
-      tags: nodejs
     - role: oh-my-tmux
       tags: shell
     - postgresql
-    - role: pyenv
-      tags: python
-    - role: rbenv
-      tags: ruby
     - rcm
     - slack
     - spotify

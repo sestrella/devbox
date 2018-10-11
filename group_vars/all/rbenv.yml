@@ -1,5 +1,0 @@
----
-rbenv_versions:
-  - number: 2.5.1
-    packages:
-      - neovim
