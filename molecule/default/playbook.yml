@@ -9,10 +9,6 @@
 
   vars:
     asdf_plugins:
-      - name: nodejs
-        versions:
-          - number: 8.12.0
-
       - name: python
         versions:
           - number: 3.7.0
