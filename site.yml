@@ -13,6 +13,8 @@
       tags: shell
     - postgresql
     - rcm
+    - role: stack
+      tags: haskell
     - slack
     - spotify
     - tpm

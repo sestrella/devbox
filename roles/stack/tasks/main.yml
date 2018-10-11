@@ -1,0 +1,32 @@
+---
+- name: Install dependencies
+  apt:
+    name: "{{ stack_dependencies }}"
+    state: present
+    update_cache: true
+  become: true
+
+- name: Create temp directory
+  tempfile:
+    suffix: stack
+    state: directory
+  register: temp
+
+- name: Download binary
+  unarchive:
+    src: "https://github.com/commercialhaskell/stack/releases/download/v{{ stack_version }}/{{ stack_name }}.tar.gz"
+    dest: "{{ temp.path }}"
+    remote_src: true
+
+- name: Copy binary
+  copy:
+    src: "{{ temp.path }}/{{ stack_name }}/stack"
+    dest: /usr/local/bin
+    mode: 0755A
+    remote_src: true
+  become: true
+
+- name: Remove temp directory
+  file:
+    path: "{{ temp.path }}"
+    state: absent
