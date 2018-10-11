@@ -1,5 +1,2 @@
-.vagrant/
-.venv/
 __pycache__/
-*.log
 *.retry
