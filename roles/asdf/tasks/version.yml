@@ -5,3 +5,5 @@
     creates: "{{ asdf_dir }}/installs/{{ plugin.name }}/{{ version.number }}"
 
 - include_tasks: "{{ plugin.name }}.yml"
+  vars:
+    version_packages: "{{ version.packages | default([]) }}"

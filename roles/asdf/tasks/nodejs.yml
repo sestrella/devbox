@@ -4,4 +4,4 @@
     name: "{{ item }}"
     executable: "{{ asdf_dir }}/installs/{{ plugin.name }}/{{ version.number }}/bin/npm"
     global: true
-  with_items: "{{ version.packages }}"
+  with_items: "{{ version_packages }}"

@@ -3,4 +3,4 @@
   gem:
     name: "{{ item }}"
     executable: "{{ asdf_dir }}/installs/{{ plugin.name }}/{{ version.number }}/bin/gem"
-  with_items: "{{ version.packages }}"
+  with_items: "{{ version_packages }}"
