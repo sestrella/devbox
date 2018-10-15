@@ -28,7 +28,7 @@
           - xz-utils
           - zlib1g-dev
         versions:
-          - number: 3.7.0
+          - 3.7.0
 
       - name: ruby
         dependencies:
@@ -44,7 +44,7 @@
           - libyaml-dev
           - zlib1g-dev
         versions:
-          - number: 2.5.1
+          - 2.5.1
 
   roles:
     - asdf
