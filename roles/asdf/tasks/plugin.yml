@@ -10,7 +10,8 @@
   args:
     creates: "{{ asdf_dir }}/plugins/{{ plugin.name }}"
 
-- include_tasks: version.yml
-  with_items: "{{ plugin.versions }}"
-  loop_control:
-    loop_var: version
+- name: "{{ plugin.name }} - Install versions"
+  command: "{{ asdf_dir }}/bin/asdf install {{ plugin.name }} {{ item }}"
+  args:
+    creates: "{{ asdf_dir }}/installs/{{ plugin.name }}/{{ item }}"
+  with_items: "{{ plugin.versions | default([]) }}"

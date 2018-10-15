@@ -1,6 +1,0 @@
----
-- name: "{{ plugin.name }}@{{ version.number }} - Install packages"
-  pip:
-    name: "{{ item }}"
-    executable: "{{ asdf_dir }}/installs/{{ plugin.name }}/{{ version.number }}/bin/pip"
-  with_items: "{{ version_packages }}"

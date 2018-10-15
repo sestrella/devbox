@@ -1,6 +1,0 @@
----
-- name: "{{ plugin.name }}@{{ version.number }} - Install packages"
-  gem:
-    name: "{{ item }}"
-    executable: "{{ asdf_dir }}/installs/{{ plugin.name }}/{{ version.number }}/bin/gem"
-  with_items: "{{ version_packages }}"

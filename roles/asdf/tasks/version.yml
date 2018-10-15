@@ -1,9 +1,0 @@
----
-- name: "{{ plugin.name }}@{{ version.number }} - Install version"
-  command: "{{ asdf_dir }}/bin/asdf install {{ plugin.name }} {{ version.number }}"
-  args:
-    creates: "{{ asdf_dir }}/installs/{{ plugin.name }}/{{ version.number }}"
-
-- include_tasks: "{{ plugin.name }}.yml"
-  vars:
-    version_packages: "{{ version.packages | default([]) }}"

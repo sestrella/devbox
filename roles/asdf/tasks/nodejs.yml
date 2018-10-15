@@ -1,7 +1,0 @@
----
-- name: "{{ plugin.name }}@{{ version.number }} - Install packages"
-  npm:
-    name: "{{ item }}"
-    executable: "{{ asdf_dir }}/installs/{{ plugin.name }}/{{ version.number }}/bin/npm"
-    global: true
-  with_items: "{{ version_packages }}"
