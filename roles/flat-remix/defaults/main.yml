@@ -1,0 +1,5 @@
+---
+flat_remix_packages:
+  - flat-remix
+  - flat-remix-gnome
+  - flat-remix-gtk

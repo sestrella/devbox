@@ -6,6 +6,8 @@
       tags: managers
     - common
     - docker
+    - role: flat-remix
+      tags: gnome
     - google-chrome
     - role: kubectl
       tags: k8s
