@@ -5,6 +5,6 @@ flat_remix_packages:
   - flat-remix-gtk
   - python-psutil
 
-flat_remix_gtk_theme: Flat-Remix-GTK-Darker
-flat_remix_icon_theme: Flat-Remix-Dark
-flat_remix_user_theme: Flat-Remix-dark
+flat_remix_gtk_theme: Flat-Remix-GTK
+flat_remix_icon_theme: Flat-Remix
+flat_remix_user_theme: Flat-Remix
