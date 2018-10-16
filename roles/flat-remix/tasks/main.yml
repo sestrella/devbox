@@ -17,3 +17,21 @@
     name: "{{ flat_remix_packages }}"
     state: present
   become: true
+
+- name: Set GTK theme
+  dconf:
+    key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "'{{ flat_remix_gtk_theme }}'"
+    state: present
+
+- name: Set icon theme
+  dconf:
+    key: "/org/gnome/desktop/interface/icon-theme"
+    value: "'{{ flat_remix_icon_theme }}'"
+    state: present
+
+- name: Set user theme
+  dconf:
+    key: "/org/gnome/shell/extensions/user-theme/name"
+    value: "'{{ flat_remix_user_theme }}'"
+    state: present
