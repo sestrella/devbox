@@ -7,7 +7,7 @@
 
 - name: Add repository
   apt_repository:
-    repo: "deb http://ppa.launchpad.net/daniruiz/flat-remix/ubuntu {{ ansible_distribution_release }} main"
+    repo: "deb [arch=amd64] http://ppa.launchpad.net/daniruiz/flat-remix/ubuntu {{ ansible_distribution_release }} main"
     state: present
     filename: flat-remix
   become: true
