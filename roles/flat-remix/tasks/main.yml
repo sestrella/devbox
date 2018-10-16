@@ -1,13 +1,7 @@
 ---
-- name: Add repository key
-  apt_key:
-    id: BA309D7C0CBE9A2DF584AC50A074F0583066C9C9
-    state: present
-  become: true
-
 - name: Add repository
   apt_repository:
-    repo: "deb [arch=amd64] http://ppa.launchpad.net/daniruiz/flat-remix/ubuntu {{ ansible_distribution_release }} main"
+    repo: ppa:daniruiz/flat-remix
     state: present
     filename: flat-remix
   become: true
@@ -16,6 +10,7 @@
   apt:
     name: "{{ flat_remix_packages }}"
     state: present
+    update_cache: true
   become: true
 
 - name: Set GTK theme
