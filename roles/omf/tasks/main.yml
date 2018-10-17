@@ -1,0 +1,11 @@
+---
+- name: Clone repository
+  git:
+    repo: https://github.com/oh-my-fish/oh-my-fish.git
+    dest: "{{ omf_dir }}"
+
+- name: Clone plugins
+  git:
+    repo: "{{ item.value }}"
+    dest: "{{ omf_dir }}/pkg/{{ item.key }}"
+  with_dict: "{{ omf_plugins }}"

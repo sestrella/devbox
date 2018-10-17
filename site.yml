@@ -13,6 +13,8 @@
       tags: k8s
     - role: oh-my-tmux
       tags: shell
+    - role: omf
+      tags: shell
     - postgresql
     - rcm
     - role: stack
