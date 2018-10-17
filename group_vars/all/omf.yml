@@ -1,3 +1,4 @@
 ---
 omf_plugins:
-  asdf: https://github.com/doughsay/omf-asdf.git
+  - name: asdf
+    repo: https://github.com/doughsay/omf-asdf.git

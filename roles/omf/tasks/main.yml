@@ -6,6 +6,6 @@
 
 - name: Clone plugins
   git:
-    repo: "{{ item.value }}"
-    dest: "{{ omf_dir }}/pkg/{{ item.key }}"
-  with_dict: "{{ omf_plugins }}"
+    repo: "{{ item.repo }}"
+    dest: "{{ omf_dir }}/pkg/{{ item.name }}"
+  with_items: "{{ omf_plugins }}"
