@@ -1,0 +1,12 @@
+---
+- name: Add repository
+  apt_repository:
+    repo: ppa:numix/ppa
+    filename: numix
+  become: true
+
+- name: Set icons theme
+  dconf:
+    key: "/org/gnome/desktop/interface/icon-theme"
+    value: "'{{ numix_icons_theme }}'"
+    state: present
