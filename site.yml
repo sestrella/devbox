@@ -2,8 +2,6 @@
 - hosts: all
   roles:
     - antigen
-    - role: arc-theme
-      tags: gnome
     - role: asdf
       tags: managers
     - common
@@ -11,8 +9,6 @@
     - google-chrome
     - role: kubectl
       tags: k8s
-    - role: numix
-      tags: gnome
     - role: oh-my-tmux
       tags: shell
     - role: omf
