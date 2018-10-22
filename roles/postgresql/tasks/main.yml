@@ -1,13 +1,13 @@
 ---
 - name: Add repository key
   apt_key:
-    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    url: "{{ postgresql_repo_key }}"
   become: true
 
 - name: Add repository
   apt_repository:
-    repo: "deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main"
-    filename: pgdg
+    repo: "{{ postgresql_repo }}"
+    filename: postgresql
   become: true
 
 - name: Install packages

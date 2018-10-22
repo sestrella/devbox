@@ -14,7 +14,8 @@
       tags: shell
     - role: oh-my-fish
       tags: shell
-    - postgresql
+    - role: postgresql
+      tags: database
     - rcm
     - role: stack
       tags: haskell
