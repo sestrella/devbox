@@ -1,4 +1,4 @@
 ---
-omf_plugins:
+oh_my_fish_plugins:
   - name: asdf
     repo: https://github.com/doughsay/omf-asdf.git

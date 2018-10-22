@@ -12,7 +12,7 @@
       tags: k8s
     - role: oh-my-tmux
       tags: shell
-    - role: omf
+    - role: oh-my-fish
       tags: shell
     - postgresql
     - rcm
