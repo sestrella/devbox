@@ -1,11 +1,11 @@
 ---
 - name: Clone repository
   git:
-    repo: https://github.com/gpakosz/.tmux.git
-    dest: ~/.tmux
+    repo: "{{ oh_my_tmux_repo }}"
+    dest: "{{ oh_my_tmux_dir }}"
 
-- name: Link configuration file
+- name: Link configuration
   file:
-    src: ~/.tmux/.tmux.conf
+    src: "{{ oh_my_tmux_dir }}/.tmux.conf"
     dest: ~/.tmux.conf
     state: link
