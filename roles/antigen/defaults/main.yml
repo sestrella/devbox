@@ -1,0 +1,4 @@
+---
+antigen_repo: https://github.com/zsh-users/antigen.git
+antigen_dir: ~/.antigen
+antigen_version: v2.2.3

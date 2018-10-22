@@ -1,6 +1,6 @@
 ---
 - name: Clone repository
   git:
-    repo: https://github.com/zsh-users/antigen.git
-    dest: ~/.antigen
-    version: v2.2.3
+    repo: "{{ antigen_repo }}"
+    dest: "{{ antigen_dir }}"
+    version: "{{ antigen_version }}"

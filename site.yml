@@ -1,7 +1,8 @@
 ---
 - hosts: all
   roles:
-    - antigen
+    - role: antigen
+      tags: shell
     - role: asdf
       tags: managers
     - common
