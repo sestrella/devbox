@@ -6,7 +6,8 @@
     - role: asdf
       tags: managers
     - common
-    - docker
+    - role: docker
+      tags: docker
     - google-chrome
     - role: kubectl
       tags: k8s

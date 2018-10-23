@@ -1,0 +1,4 @@
+---
+docker_repo_key: https://download.docker.com/linux/ubuntu/gpg
+docker_repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+docker_users: []

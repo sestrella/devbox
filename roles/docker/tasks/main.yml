@@ -1,12 +1,12 @@
 ---
 - name: Add repository key
   apt_key:
-    url: https://download.docker.com/linux/ubuntu/gpg
+    url: "{{ docker_repo_key }}"
   become: true
 
 - name: Add repository
   apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+    repo: "{{ docker_repo }}"
     filename: docker
   become: true
 
@@ -16,9 +16,10 @@
     update_cache: true
   become: true
 
-- name: Add user to groups
+- name: Add users to group
   user:
-    name: "{{ ansible_user_id }}"
+    name: "{{ item }}"
     groups: docker
     append: true
+  with_items: "{{ docker_users }}"
   become: true
