@@ -2,13 +2,13 @@
 - hosts: all
   roles:
     - role: antigen
-      tags: shell
+      tags: managers
     - role: asdf
       tags: managers
-    - common
+    - role: common
     - role: docker
       tags: docker
-    - google-chrome
+    - role: google-chrome
     - role: kubectl
       tags: k8s
     - role: oh-my-tmux
@@ -17,10 +17,10 @@
       tags: shell
     - role: postgresql
       tags: database
-    - rcm
+    - role: rcm
     - role: stack
       tags: haskell
-    - slack
-    - spotify
-    - tpm
-    - vim-plug
+    - role: slack
+    - role: spotify
+    - role: tpm
+    - role: vim-plug
