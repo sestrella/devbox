@@ -1,12 +1,12 @@
 ---
 - name: Add repository key
   apt_key:
-    url: "{{ postgresql_repo_key }}"
+    url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
   become: true
 
 - name: Add repository
   apt_repository:
-    repo: "{{ postgresql_repo }}"
+    repo: "deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main"
     filename: postgresql
   become: true
 
@@ -16,15 +16,17 @@
     update_cache: true
   become: true
 
-- name: Add user
+- name: Add users
   postgresql_user:
-    name: "{{ ansible_user_id }}"
-    role_attr_flags: SUPERUSER
+    name: "{{ item.name }}"
+    role_attr_flags: "{{ item.roles | join(',') }}"
+  with_items: "{{ postgresql_users }}"
   become: true
   become_user: postgres
 
-- name: Add database
+- name: Add databases
   postgresql_db:
-    name: "{{ ansible_user_id }}"
+    name: "{{ item.name }}"
+  with_items: "{{ postgresql_databases }}"
   become: true
   become_user: postgres
