@@ -11,4 +11,4 @@ stack_dependencies:
   - xz-utils
   - zlib1g-dev
 
-stack_version: 1.7.1
+stack_version: 1.9.1

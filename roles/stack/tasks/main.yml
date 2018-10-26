@@ -22,7 +22,7 @@
   copy:
     src: "{{ temp.path }}/{{ stack_name }}/stack"
     dest: /usr/local/bin
-    mode: 0755A
+    mode: 0755
     remote_src: true
   become: true
 
