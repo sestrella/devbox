@@ -10,9 +10,9 @@
     filename: docker
   become: true
 
-- name: Install package
+- name: Install packages
   apt:
-    name: docker-ce
+    name: "{{ docker_packages }}"
     update_cache: true
   become: true
 
@@ -23,3 +23,8 @@
     append: true
   with_items: "{{ docker_users }}"
   become: true
+
+- name: Pull images
+  docker_image:
+    name: "{{ item }}"
+  with_items: "{{ docker_images }}"
