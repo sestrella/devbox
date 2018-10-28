@@ -18,9 +18,8 @@
     - role: postgresql
       tags: database
     - role: rcm
-    - role: stack
-      tags: haskell
     - role: slack
     - role: spotify
-    - role: tpm
+    - role: stack
+      tags: haskell
     - role: vim-plug

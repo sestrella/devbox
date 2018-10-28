@@ -1,6 +1,0 @@
----
-- name: Clone repository
-  git:
-    repo: https://github.com/tmux-plugins/tpm
-    dest: ~/.tmux/plugins/tpm
-    version: v3.0.0
