@@ -3,6 +3,8 @@
   roles:
     - role: antigen
       tags: managers
+    - role: arc-theme
+      tags: gnome
     - role: asdf
       tags: managers
     - role: common
