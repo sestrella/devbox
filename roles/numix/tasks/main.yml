@@ -1,0 +1,17 @@
+---
+- name: Add repository
+  apt_repository:
+    repo: ppa:numix/ppa
+    filename: numix
+  become: true
+
+- name: Install package
+  apt:
+    name: numix-icon-theme-circle
+    update_cache: true
+  become: true
+
+- name: Set icon theme
+  dconf:
+    key: /org/gnome/desktop/interface/icon-theme
+    value: "'Numix-Circle'"
