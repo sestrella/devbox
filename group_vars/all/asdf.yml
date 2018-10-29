@@ -41,3 +41,5 @@ asdf_plugins:
       - zlib1g-dev
     versions:
       - 2.5.1
+
+  - name: rust

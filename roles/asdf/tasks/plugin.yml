@@ -1,8 +1,9 @@
 ---
 - name: "{{ plugin.name }} - Install dependencies"
   apt:
-    name: "{{ plugin.dependencies | default([]) }}"
+    name: "{{ plugin.dependencies }}"
     update_cache: true
+  when: plugin.dependencies is defined
   become: true
 
 - name: "{{ plugin.name }} - Install plugin"
@@ -14,4 +15,5 @@
   command: "{{ asdf_dir }}/bin/asdf install {{ plugin.name }} {{ item }}"
   args:
     creates: "{{ asdf_dir }}/installs/{{ plugin.name }}/{{ item }}"
-  with_items: "{{ plugin.versions | default([]) }}"
+  with_items: "{{ plugin.versions }}"
+  when: plugin.versions is defined
