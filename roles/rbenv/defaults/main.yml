@@ -1,0 +1,18 @@
+---
+rbenv_dest: ~/.rbenv
+
+rbenv_plugins:
+  - name: ruby-build
+    repo: https://github.com/rbenv/ruby-build.git
+    dependencies:
+      - autoconf
+      - bison
+      - build-essential
+      - libffi-dev
+      - libgdbm-dev
+      - libgdbm5
+      - libncurses5-dev
+      - libreadline6-dev
+      - libssl-dev
+      - libyaml-dev
+      - zlib1g-dev
