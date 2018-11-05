@@ -1,0 +1,13 @@
+---
+- name: Install dependencies
+  apt:
+    name: "{{ pyenv_dependencies }}"
+    state: present
+    update_cache: true
+  become: true
+
+- name: Clone repository
+  git:
+    repo: https://github.com/pyenv/pyenv.git
+    dest: ~/.pyenv
+    version: v1.2.8
