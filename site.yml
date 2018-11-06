@@ -11,6 +11,7 @@
     - role: docker
       tags: docker
     - role: google-chrome
+      tags: google-chrome
     - role: kubectl
       tags: k8s
     - role: numix
