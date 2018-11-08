@@ -5,8 +5,6 @@
       tags: managers
     - role: arc-theme
       tags: gnome
-    - role: asdf
-      tags: managers
     - role: common
     - role: docker
       tags: docker
