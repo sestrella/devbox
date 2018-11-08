@@ -16,8 +16,6 @@
       tags: k8s
     - role: numix
       tags: gnome
-    - role: oh-my-tmux
-      tags: shell
     - role: oh-my-fish
       tags: shell
     - role: postgresql
