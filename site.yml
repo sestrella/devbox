@@ -1,26 +1,4 @@
 ---
-- hosts: all
-  roles:
-    - role: antigen
-      tags: managers
-    - role: arc-theme
-      tags: gnome
-    - role: common
-    - role: docker
-      tags: docker
-    - role: google-chrome
-      tags: google-chrome
-    - role: kubectl
-      tags: k8s
-    - role: numix
-      tags: gnome
-    - role: oh-my-fish
-      tags: shell
-    - role: postgresql
-      tags: database
-    - role: rcm
-    - role: slack
-    - role: spotify
-    - role: stack
-      tags: haskell
-    - role: vim-plug
+- import_playbook: playbooks/editors.yml
+- import_playbook: playbooks/managers.yml
+- import_playbook: playbooks/shell.yml
