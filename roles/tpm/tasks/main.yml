@@ -1,0 +1,6 @@
+---
+- name: Clone repository
+  git:
+    repo: "{{ tpm_repo }}"
+    dest: "{{ tpm_dir }}"
+    version: "{{ tpm_version }}"
