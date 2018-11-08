@@ -3,9 +3,3 @@
   git:
     repo: "{{ oh_my_tmux_repo }}"
     dest: "{{ oh_my_tmux_dir }}"
-
-- name: Link configuration
-  file:
-    src: "{{ oh_my_tmux_dir }}/.tmux.conf"
-    dest: ~/.tmux.conf
-    state: link
