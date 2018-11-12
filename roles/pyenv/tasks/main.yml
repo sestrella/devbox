@@ -8,6 +8,13 @@
 
 - name: Clone repository
   git:
-    repo: https://github.com/pyenv/pyenv.git
-    dest: ~/.pyenv
-    version: v1.2.8
+    repo: "{{ pyenv_repo }}"
+    dest: "{{ pyenv_dir }}"
+    version: "{{ pyenv_version }}"
+
+- name: Install versions
+  command: "pyenv install {{ item }}"
+  args:
+    creates: "{{ pyenv_dir }}/versions/{{ item }}"
+  with_items: "{{ pyenv_versions }}"
+  when: pyenv_versions is defined
