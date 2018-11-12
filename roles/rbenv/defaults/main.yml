@@ -1,5 +1,5 @@
 ---
-rbenv_dest: ~/.rbenv
+rbenv_dir: ~/.rbenv
 
 rbenv_plugins:
   - name: ruby-build

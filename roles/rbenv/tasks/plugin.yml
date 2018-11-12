@@ -9,4 +9,4 @@
 - name: "{{ plugin.name }} - Clone repository"
   git:
     repo: "{{ plugin.repo }}"
-    dest: "{{ rbenv_dest }}/plugins/{{ plugin.name }}"
+    dest: "{{ rbenv_dir }}/plugins/{{ plugin.name }}"
