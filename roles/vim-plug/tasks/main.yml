@@ -1,10 +1,10 @@
 ---
 - name: Create autoload directory
   file:
-    path: ~/.local/share/nvim/site/autoload
+    path: "{{ vim_plug_dir }}"
     state: directory
 
 - name: Download plugin manager
   get_url:
-    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    dest: ~/.local/share/nvim/site/autoload/plug.vim
+    url: "{{ vim_plug_url }}"
+    dest: "{{ vim_plug_dir }}/plug.vim"
