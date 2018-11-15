@@ -1,0 +1,16 @@
+---
+- name: "{{ plugin.name }} - Install plugin"
+  command: "{{ asdf_dir }}/bin/asdf plugin-add {{ plugin.name }}"
+  args:
+    creates: "{{ asdf_dir }}/plugins/{{ plugin.name }}"
+
+- name: "{{ plugin.name }} - Run scripts"
+  command: "{{ asdf_dir }}/plugins/{{ plugin.name }}/{{ item }}"
+  with_items: "{{ plugin.scripts }}"
+  when: plugin.scripts is defined
+
+- name: "{{ plugin.name }} - Install versions"
+  command: "{{ asdf_dir }}/bin/asdf install {{ plugin.name }} {{ item }}"
+  args:
+    creates: "{{ asdf_dir }}/installs/{{ plugin.name }}/{{ item }}"
+  with_items: "{{ plugin.versions }}"
