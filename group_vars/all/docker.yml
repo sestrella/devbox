@@ -1,9 +1,2 @@
 ---
-docker_users:
-  - "{{ ansible_user_id }}"
-
-docker_images:
-  - debian:8
-  - debian:9
-  - ubuntu:16.04
-  - ubuntu:18.04
+docker_repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable

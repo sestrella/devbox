@@ -2,29 +2,26 @@
 - name: Add repository key
   apt_key:
     url: "{{ docker_repo_key }}"
+    state: present
   become: true
 
 - name: Add repository
   apt_repository:
     repo: "{{ docker_repo }}"
+    state: present
     filename: docker
   become: true
 
-- name: Install packages
+- name: Install package
   apt:
-    name: "{{ docker_packages }}"
+    name: docker-ce
+    state: present
     update_cache: true
   become: true
 
-- name: Add users to group
+- name: Add user to group
   user:
-    name: "{{ item }}"
+    name: "{{ ansible_user_id }}"
     groups: docker
     append: true
-  with_items: "{{ docker_users }}"
   become: true
-
-- name: Pull images
-  docker_image:
-    name: "{{ item }}"
-  with_items: "{{ docker_images }}"
