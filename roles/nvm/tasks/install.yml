@@ -1,0 +1,15 @@
+---
+- name: Clone repository
+  git:
+    repo: "{{ nvm_repo }}"
+    dest: "{{ nvm_dir }}"
+    version: "{{ nvm_version }}"
+
+- name: Install versions
+  shell: |
+    . {{ nvm_dir }}/nvm.sh &&
+    nvm install {{ item }}
+  args:
+    creates: "{{ nvm_dir }}/versions/node/v{{ item }}"
+  with_items: "{{ nvm_versions }}"
+  when: nvm_versions is defined

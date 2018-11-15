@@ -1,18 +1,6 @@
 ---
-- name: Clone repository
-  git:
-    repo: https://github.com/rbenv/rbenv.git
-    dest: "{{ rbenv_dir }}"
-    version: v1.1.1
+- import_tasks: install.yml
+  when: not rbenv_uninstall
 
-- include_tasks: plugin.yml
-  with_items: "{{ rbenv_plugins }}"
-  loop_control:
-    loop_var: plugin
-
-- name: Install versions
-  command: "rbenv install {{ item }}"
-  args:
-    creates: "{{ rbenv_dir }}/versions/{{ item }}"
-  with_items: "{{ rbenv_versions }}"
-  when: rbenv_versions is defined
+- import_tasks: uninstall.yml
+  when: rbenv_uninstall

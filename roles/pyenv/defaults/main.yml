@@ -20,3 +20,5 @@ pyenv_dependencies:
 pyenv_repo: https://github.com/pyenv/pyenv.git
 pyenv_dir: ~/.pyenv
 pyenv_version: v1.2.8
+
+pyenv_uninstall: false

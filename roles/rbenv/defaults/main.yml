@@ -16,3 +16,5 @@ rbenv_plugins:
       - libssl-dev
       - libyaml-dev
       - zlib1g-dev
+
+rbenv_uninstall: false

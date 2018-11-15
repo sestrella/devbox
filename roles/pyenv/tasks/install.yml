@@ -1,0 +1,20 @@
+---
+- name: Install dependencies
+  apt:
+    name: "{{ pyenv_dependencies }}"
+    state: present
+    update_cache: true
+  become: true
+
+- name: Clone repository
+  git:
+    repo: "{{ pyenv_repo }}"
+    dest: "{{ pyenv_dir }}"
+    version: "{{ pyenv_version }}"
+
+- name: Install versions
+  command: "pyenv install {{ item }}"
+  args:
+    creates: "{{ pyenv_dir }}/versions/{{ item }}"
+  with_items: "{{ pyenv_versions }}"
+  when: pyenv_versions is defined

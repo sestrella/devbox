@@ -1,0 +1,5 @@
+---
+- name: Remove directory
+  file:
+    path: "{{ nvm_dir }}"
+    state: absent

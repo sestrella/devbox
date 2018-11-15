@@ -2,3 +2,4 @@
 nvm_repo: https://github.com/creationix/nvm.git
 nvm_dir: ~/.nvm
 nvm_version: v0.33.11
+nvm_uninstall: false

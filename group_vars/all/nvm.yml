@@ -1,3 +1,2 @@
 ---
-nvm_versions:
-  - 10.13.0
+nvm_uninstall: true

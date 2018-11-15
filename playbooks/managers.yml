@@ -1,9 +1,7 @@
 ---
 - hosts: all
   roles:
-    - role: nvm
-      tags: node
-    - role: pyenv
-      tags: python
-    - role: rbenv
-      tags: ruby
+    - asdf
+    - nvm
+    - pyenv
+    - rbenv
