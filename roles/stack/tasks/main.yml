@@ -12,7 +12,7 @@
     state: directory
   register: temp
 
-- name: Download binary
+- name: Download tarball
   unarchive:
     src: "https://github.com/commercialhaskell/stack/releases/download/v{{ stack_version }}/{{ stack_name }}.tar.gz"
     dest: "{{ temp.path }}"
