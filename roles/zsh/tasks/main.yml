@@ -1,0 +1,12 @@
+---
+- name: Install package
+  apt:
+    name: zsh
+    state: present
+  become: true
+
+- name: Change login shell
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
+    state: present
