@@ -1,17 +1,20 @@
 ---
 - name: Add repository key
   apt_key:
-    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    url: "{{ google_chrome_repo_key }}"
+    state: present
   become: true
 
 - name: Add repository
   apt_repository:
-    repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
+    repo: "{{ google_chrome_repo }}"
+    state: present
     filename: google-chrome
   become: true
 
 - name: Install package
   apt:
-    name: google-chrome-stable
+    name: "{{ google_chrome_package }}"
+    state: present
     update_cache: true
   become: true
