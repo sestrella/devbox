@@ -4,3 +4,11 @@
     repo: "{{ omf_repo }}"
     dest: "{{ omf_dir }}"
     version: "{{ omf_version }}"
+
+- name: Install plugins
+  shell: "omf install {{ item }}"
+  args:
+    creates: "{{ omf_dir }}/pkg/{{ item }}"
+    executable: /usr/bin/fish
+  with_items: "{{ omf_plugins }}"
+  when: omf_plugins is defined
