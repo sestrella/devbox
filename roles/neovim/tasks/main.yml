@@ -1,0 +1,7 @@
+---
+- name: Install package
+  apt:
+    name: neovim
+    default_release: "{{ ansible_distribution_release }}-backports"
+    state: present
+  become: yes

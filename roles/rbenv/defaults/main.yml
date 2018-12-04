@@ -10,7 +10,7 @@ rbenv_plugins:
       - build-essential
       - libffi-dev
       - libgdbm-dev
-      - libgdbm5
+      - libgdbm3
       - libncurses5-dev
       - libreadline6-dev
       - libssl-dev

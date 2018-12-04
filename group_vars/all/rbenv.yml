@@ -1,2 +1,2 @@
 ---
-rbenv_uninstall: true
+rbenv_dir: ~/.local/share/rbenv

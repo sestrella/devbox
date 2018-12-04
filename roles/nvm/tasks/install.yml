@@ -10,6 +10,6 @@
     . {{ nvm_dir }}/nvm.sh &&
     nvm install {{ item }}
   args:
-    creates: "{{ nvm_dir }}/versions/node/v{{ item }}"
+    creates: "{{ nvm_dir }}/versions/node/{{ item }}"
   with_items: "{{ nvm_versions }}"
   when: nvm_versions is defined
