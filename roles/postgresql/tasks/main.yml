@@ -2,31 +2,19 @@
 - name: Add repository key
   apt_key:
     url: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+    state: present
   become: true
 
 - name: Add repository
   apt_repository:
     repo: "deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main"
     filename: postgresql
+    state: present
   become: true
 
 - name: Install packages
   apt:
     name: "{{ postgresql_packages }}"
     update_cache: true
+    state: present
   become: true
-
-- name: Add users
-  postgresql_user:
-    name: "{{ item.name }}"
-    role_attr_flags: "{{ item.roles | join(',') }}"
-  with_items: "{{ postgresql_users }}"
-  become: true
-  become_user: postgres
-
-- name: Add databases
-  postgresql_db:
-    name: "{{ item.name }}"
-  with_items: "{{ postgresql_databases }}"
-  become: true
-  become_user: postgres

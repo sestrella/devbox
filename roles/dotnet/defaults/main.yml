@@ -1,6 +1,6 @@
 ---
 dotnet_repo_key: https://packages.microsoft.com/keys/microsoft.asc
-dotnet_repo: deb [arch=amd64] https://packages.microsoft.com/ubuntu/18.04/prod bionic main
+dotnet_repo: deb [arch=amd64] https://packages.microsoft.com/debian/9/prod stretch main
 
 dotnet_packages:
-  - dotnet-sdk-2.1
+  - dotnet-sdk-2.2

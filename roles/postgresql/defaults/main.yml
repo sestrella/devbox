@@ -1,9 +1,3 @@
 ---
 postgresql_packages:
-  - libpq-dev
   - postgresql-10
-  - python-psycopg2
-
-postgresql_users: []
-
-postgresql_databases: []

@@ -1,6 +1,5 @@
 ---
-- import_playbook: playbooks/browsers.yml
+- import_playbook: playbooks/databases.yml
 - import_playbook: playbooks/editors.yml
 - import_playbook: playbooks/managers.yml
 - import_playbook: playbooks/shell.yml
-- import_playbook: playbooks/virtualization.yml
