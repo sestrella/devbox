@@ -1,4 +1,6 @@
 ---
 - hosts: all
   roles:
+    - antigen
     - rcm
+    - zsh
