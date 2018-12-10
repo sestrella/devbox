@@ -1,8 +1,0 @@
----
-- name: Add repository
-  apt_repository:
-    repo: "deb http://ftp.debian.org/debian {{ ansible_distribution_release }}-backports main"
-    filename: backports
-    state: present
-  become: yes
-

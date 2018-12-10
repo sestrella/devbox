@@ -1,8 +1,0 @@
----
-postgresql_users:
-  - name: "{{ ansible_user_id }}"
-    roles:
-      - CREATEDB
-
-postgresql_databases:
-  - name: "{{ ansible_user_id }}"

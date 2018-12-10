@@ -1,4 +1,0 @@
----
-omf_plugins:
-  - asdf
-  - ssh-config.d

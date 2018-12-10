@@ -1,7 +1,10 @@
 ---
 - hosts: all
   roles:
-    - dotnet
+    - antigen
     - nvm
     - pyenv
     - rbenv
+    - stack
+    - tpm
+    - vim-plug

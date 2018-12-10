@@ -1,5 +1,19 @@
 ---
-- name: Install package
+- name: Add repository key
+  apt_key:
+    url: "{{ slack_repo_key }}"
+    state: present
+  become: true
+
+- name: Add repository
+  apt_repository:
+    repo: "{{ slack_repo }}"
+    filename: slack
+    state: present
+  become: true
+
+- name: Install packages
   apt:
-    deb: https://downloads.slack-edge.com/linux_releases/slack-desktop-3.3.1-amd64.deb
+    name: "{{ slack_packages }}"
+    state: present
   become: true
