@@ -1,0 +1,4 @@
+---
+virtualbox_packages:
+  - vagrant
+  - virtualbox-5.2

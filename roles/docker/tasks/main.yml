@@ -8,15 +8,14 @@
 - name: Add repository
   apt_repository:
     repo: "{{ docker_repo }}"
-    state: present
     filename: docker
+    state: present
   become: true
 
-- name: Install package
+- name: Install packages
   apt:
-    name: docker-ce
+    name: "{{ docker_packages }}"
     state: present
-    update_cache: true
   become: true
 
 - name: Add user to group

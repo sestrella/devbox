@@ -1,13 +1,10 @@
 ---
 common_packages:
-  - chrome-gnome-shell
   - fonts-powerline
   - git
-  - neovim
-  - redis
   - silversearcher-ag
+  - strace
   - tmux
   - tree
   - vagrant
-  - virtualbox
-  - zsh
+  - vim
