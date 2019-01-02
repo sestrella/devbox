@@ -7,4 +7,5 @@
         name: git
 
   roles:
-    - role: rbenv
+    - pyenv
+    - rbenv
