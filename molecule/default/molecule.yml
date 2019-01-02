@@ -10,7 +10,7 @@ lint:
 
 platforms:
   - name: instance
-    image: ubuntu:18.04
+    image: debian:9
 
 provisioner:
   name: ansible

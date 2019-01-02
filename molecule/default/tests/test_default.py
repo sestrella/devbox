@@ -6,15 +6,8 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
 
-def test_python(host):
-    cmd = host.run('/root/.asdf/installs/python/3.7.0/bin/python --version')
+def test_rbenv_version(host):
+    cmd = host.run('/root/.rbenv/bin/rbenv --version')
 
     assert cmd.rc == 0
-    assert '3.7.0' in cmd.stdout
-
-
-def test_ruby(host):
-    cmd = host.run('/root/.asdf/installs/ruby/2.5.1/bin/ruby --version')
-
-    assert cmd.rc == 0
-    assert '2.5.1' in cmd.stdout
+    assert '1.1.1' in cmd.stdout
