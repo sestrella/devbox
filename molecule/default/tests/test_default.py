@@ -13,8 +13,22 @@ def test_pyenv_version(host):
     assert '1.2.8' in cmd.stdout
 
 
+def test_pyenv_versions(host):
+    cmd = host.run('/root/.pyenv/bin/pyenv versions')
+
+    assert cmd.rc == 0
+    assert '3.7.1' in cmd.stdout
+
+
 def test_rbenv_version(host):
     cmd = host.run('/root/.rbenv/bin/rbenv --version')
 
     assert cmd.rc == 0
     assert '1.1.1' in cmd.stdout
+
+
+def test_rbenv_versions(host):
+    cmd = host.run('/root/.rbenv/bin/rbenv versions')
+
+    assert cmd.rc == 0
+    assert '2.6.0' in cmd.stdout

@@ -13,7 +13,7 @@
     version: "{{ pyenv_version }}"
 
 - name: Install versions
-  command: "pyenv install {{ item }}"
+  command: "{{ pyenv_dir }}/bin/pyenv install {{ item }}"
   args:
     creates: "{{ pyenv_dir }}/versions/{{ item }}"
   with_items: "{{ pyenv_versions }}"

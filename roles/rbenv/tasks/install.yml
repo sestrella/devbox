@@ -9,3 +9,10 @@
   with_items: "{{ rbenv_plugins }}"
   loop_control:
     loop_var: plugin
+
+- name: Install versions
+  command: "{{ rbenv_dir }}/bin/rbenv install {{ item }}"
+  args:
+    creates: "{{ rbenv_dir }}/versions/{{ item }}"
+  with_items: "{{ rbenv_versions }}"
+  when: rbenv_versions is defined
