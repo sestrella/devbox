@@ -5,7 +5,14 @@
     - name: Install dependencies
       apt:
         name: git
+        state: present
+        update_cache: true
 
   roles:
-    - pyenv
-    - rbenv
+    - role: pyenv
+      vars:
+        pyenv_version: v1.2.8
+
+    - role: rbenv
+      vars:
+        rbenv_version: v1.1.1
