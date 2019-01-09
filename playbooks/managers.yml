@@ -2,7 +2,8 @@
 - hosts: all
   roles:
     - antigen
-    - nvm
+    - role: nvm
+      tags: nodejs
     - pyenv
     - rbenv
     - stack
