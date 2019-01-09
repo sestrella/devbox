@@ -1,0 +1,10 @@
+[Unit]
+Description=rbenv updater
+
+[Service]
+WorkingDirectory={{ rbenv_dir }}
+ExectStartPre=/usr/bin/git fetch --tags
+ExecStart=/bin/sh -c "git checkout `git rev-list --tags --max-count=1`"
+
+[Install]
+WantedBy=default.target

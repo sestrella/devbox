@@ -1,5 +1,5 @@
 ---
-rbenv_dir: ~/.local/share/rbenv
+rbenv_dir: "{{ ansible_user_dir }}/.local/share/rbenv"
 
 rbenv_versions:
   - 2.6.0

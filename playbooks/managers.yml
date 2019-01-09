@@ -5,7 +5,8 @@
     - role: nvm
       tags: nodejs
     - pyenv
-    - rbenv
+    - role: rbenv
+      tags: ruby
     - stack
     - tpm
     - vim-plug
