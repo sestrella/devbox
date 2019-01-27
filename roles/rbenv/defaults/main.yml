@@ -19,4 +19,5 @@ rbenv_plugins:
       - libyaml-dev
       - zlib1g-dev
 
+rbenv_autoupdate: false
 rbenv_uninstall: false
