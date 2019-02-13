@@ -4,11 +4,11 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [packages]
-ansible = "~=2.7.0"
+ansible = "~=2.7.7"
 
 [dev-packages]
-docker = "~=3.6"
-molecule = "~=2.19"
+docker = "~=3.7.0"
+molecule = "~=2.19.0"
 
 [requires]
 python_version = "3.7"
