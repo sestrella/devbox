@@ -1,3 +1,2 @@
 ---
-neovim_packages:
-  - neovim
+neovim_package: neovim

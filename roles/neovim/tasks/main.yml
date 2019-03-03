@@ -1,7 +1,6 @@
 ---
-- name: Install packages
+- name: Install package
   apt:
-    name: "{{ neovim_packages }}"
-    default_release: "{{ ansible_distribution_release }}-backports"
+    name: "{{ neovim_package }}"
     state: present
   become: true
