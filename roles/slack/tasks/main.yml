@@ -14,6 +14,6 @@
 
 - name: Install packages
   apt:
-    name: "{{ slack_package }}"
+    name: "{{ slack_packages }}"
     state: present
   become: true
