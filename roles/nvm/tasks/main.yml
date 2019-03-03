@@ -1,6 +1,0 @@
----
-- import_tasks: install.yml
-  when: not nvm_uninstall
-
-- import_tasks: uninstall.yml
-  when: nvm_uninstall

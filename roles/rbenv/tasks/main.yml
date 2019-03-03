@@ -1,6 +1,0 @@
----
-- import_tasks: install.yml
-  when: not rbenv_uninstall
-
-- import_tasks: uninstall.yml
-  when: rbenv_uninstall

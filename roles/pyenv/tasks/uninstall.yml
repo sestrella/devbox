@@ -1,5 +1,0 @@
----
-- name: Remove directory
-  file:
-    path: "{{ pyenv_dir }}"
-    state: absent

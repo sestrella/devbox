@@ -1,5 +1,0 @@
----
-nvm_repo: https://github.com/creationix/nvm.git
-nvm_dir: "{{ ansible_user_dir }}/.nvm"
-nvm_version: v0.34.0
-nvm_uninstall: false
