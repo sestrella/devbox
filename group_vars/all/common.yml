@@ -2,9 +2,6 @@
 common_packages:
   - fonts-powerline
   - git
-  - silversearcher-ag
-  - strace
+  - ripgrep
   - tmux
   - tree
-  - vagrant
-  - vim
