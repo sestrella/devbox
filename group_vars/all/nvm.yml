@@ -1,5 +1,0 @@
----
-nvm_dir: "{{ ansible_user_dir }}/.local/share/nvm"
-
-nvm_versions:
-  - v10.14.1

@@ -1,6 +1,0 @@
----
-pyenv_dir: ~/.local/share/pyenv
-
-pyenv_versions:
-  - 2.7.15
-  - 3.7.1
