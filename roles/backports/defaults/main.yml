@@ -1,2 +1,0 @@
----
-backports_repo: "deb http://ftp.debian.org/debian {{ ansible_distribution_release }}-backports main"
