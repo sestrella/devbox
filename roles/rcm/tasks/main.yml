@@ -1,19 +1,19 @@
 ---
 - name: Add repository key
   apt_key:
-    url: https://apt.thoughtbot.com/thoughtbot.gpg.key
+    url: "{{ rcm_repo_key }}"
     state: present
   become: true
 
 - name: Add repository
   apt_repository:
-    repo: deb https://apt.thoughtbot.com/debian/ stable main
+    repo: "{{ rcm_repo }}"
     filename: thoughtbot
     state: present
   become: true
 
 - name: Install package
   apt:
-    name: rcm
+    name: "{{ rcm_package }}"
     state: present
   become: true

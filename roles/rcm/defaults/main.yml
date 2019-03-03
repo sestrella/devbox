@@ -1,0 +1,4 @@
+---
+rcm_repo_key: https://apt.thoughtbot.com/thoughtbot.gpg.key
+rcm_repo: deb https://apt.thoughtbot.com/debian/ stable main
+rcm_package: rcm
