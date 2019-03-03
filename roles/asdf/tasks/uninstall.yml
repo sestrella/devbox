@@ -1,5 +1,0 @@
----
-- name: Remove directory
-  file:
-    path: "{{ asdf_dir }}"
-    state: absent

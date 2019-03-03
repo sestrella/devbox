@@ -1,9 +1,0 @@
-[Unit]
-Description=Update asdf
-
-[Service]
-ExecStartPre={{ asdf_dir }}/bin/asdf update
-ExecStart={{ asdf_dir }}/bin/asdf plugin-update --all
-
-[Install]
-WantedBy=default.target

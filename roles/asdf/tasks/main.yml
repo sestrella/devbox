@@ -1,6 +1,11 @@
 ---
-- import_tasks: install.yml
-  when: not asdf_uninstall
+- name: Clone repository
+  git:
+    repo: "{{ asdf_repo }}"
+    dest: "{{ asdf_dir }}"
+    version: "{{ asdf_version }}"
 
-- import_tasks: uninstall.yml
-  when: asdf_uninstall
+- include_tasks: plugin.yml
+  with_items: "{{ asdf_plugins }}"
+  loop_control:
+    loop_var: plugin
