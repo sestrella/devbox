@@ -1,0 +1,5 @@
+---
+asdf_plugins:
+  - name: nodejs
+  - name: python
+  - name: ruby

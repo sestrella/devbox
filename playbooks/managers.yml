@@ -1,12 +1,4 @@
 ---
 - hosts: all
   roles:
-    - antigen
-    - role: nvm
-      tags: nodejs
-    - pyenv
-    - role: rbenv
-      tags: ruby
-    - stack
-    - tpm
-    - vim-plug
+    - asdf
