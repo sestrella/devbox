@@ -1,18 +1,18 @@
 ---
 - name: Add repository key
   apt_key:
-    keyserver: keyserver.ubuntu.com
-    id: 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
+    id: "{{ spotify_repo_key_id }}"
+    keyserver: "{{ spotify_repo_key_server }}"
   become: true
 
 - name: Add repository
   apt_repository:
-    repo: deb http://repository.spotify.com stable non-free
+    repo: "{{ spotify_repo }}"
     filename: spotify
   become: true
 
-- name: Install package
+- name: Install packages
   apt:
-    name: spotify-client
-    update_cache: true
+    name: "{{ spotify_packages }}"
+    state: present
   become: true
