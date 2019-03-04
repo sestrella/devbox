@@ -8,7 +8,7 @@
 - name: Add repository
   apt_repository:
     repo: "{{ postgresql_repo }}"
-    filename: postgresql
+    filename: pgdg
     state: present
   become: true
 
