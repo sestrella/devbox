@@ -1,0 +1,3 @@
+---
+- name: geerlingguy.postgresql
+  version: 1.4.5
