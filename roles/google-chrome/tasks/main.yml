@@ -12,9 +12,8 @@
     filename: google-chrome
   become: true
 
-- name: Install package
+- name: Install packages
   apt:
-    name: "{{ google_chrome_package }}"
+    name: "{{ google_chrome_packages }}"
     state: present
-    update_cache: true
   become: true
