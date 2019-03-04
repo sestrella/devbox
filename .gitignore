@@ -1,4 +1,4 @@
+.roles/
 .venv/
 __pycache__/
-galaxies/
 *.retry
