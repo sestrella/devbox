@@ -1,2 +1,9 @@
 ---
-postgresql_repo: deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+postgresql_databases:
+  - name: "{{ ansible_user_id }}"
+    state: present
+
+postgresql_users:
+  - name: "{{ ansible_user_id }}"
+    role_attr_flags: CREATEDB
+    state: present
