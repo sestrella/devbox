@@ -1,4 +1,4 @@
 ---
-virtualbox_repo: "deb http://download.virtualbox.org/virtualbox/debian cosmic contrib"
 virtualbox_packages:
+  - vagrant
   - virtualbox-6.0
