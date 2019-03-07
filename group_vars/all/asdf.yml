@@ -25,4 +25,19 @@ asdf_plugins:
       - 3.7.2
 
   - name: ruby
+    dependencies:
+      - autoconf
+      - bison
+      - build-essential
+      - libffi-dev
+      - libgdbm-dev
+      - libgdbm5
+      - libncurses5-dev
+      - libreadline6-dev
+      - libssl-dev
+      - libyaml-dev
+      - zlib1g-dev
+    versions:
+      - 2.6.1
+
   - name: rust
