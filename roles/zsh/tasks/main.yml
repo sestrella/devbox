@@ -10,3 +10,4 @@
     name: "{{ ansible_user_id }}"
     shell: /bin/zsh
     state: present
+  become: true
