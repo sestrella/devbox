@@ -4,6 +4,13 @@
   args:
     creates: "{{ asdf_dir }}/plugins/{{ plugin.name }}"
 
+- name: "{{ plugin.name }} - Install dependencies"
+  apt:
+    name: "{{ plugin.dependencies }}"
+    state: present
+  when: plugin.dependencies is defined
+  become: true
+
 - name: "{{ plugin.name }} - Install versions"
   command: "{{ asdf_dir }}/bin/asdf install {{ plugin.name }} {{ item }}"
   args:
