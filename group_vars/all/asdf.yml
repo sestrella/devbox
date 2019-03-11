@@ -1,6 +1,9 @@
 ---
 asdf_plugins:
   - name: nodejs
+    versions:
+      - 10.15.3
+
   - name: python
     dependencies:
       - build-essential
