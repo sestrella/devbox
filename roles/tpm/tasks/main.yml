@@ -1,4 +1,9 @@
 ---
+- name: Create directory
+  file:
+    path: "{{ tpm_dir }}"
+    state: directory
+
 - name: Clone repository
   git:
     repo: "{{ tpm_repo }}"
