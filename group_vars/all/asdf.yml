@@ -2,7 +2,7 @@
 asdf_plugins:
   - name: nodejs
     versions:
-      - 10.15.3
+      - 10.16.0
 
   - name: python
     dependencies:
@@ -25,7 +25,7 @@ asdf_plugins:
       - zlib1g-dev
     versions:
       - 2.7.16
-      - 3.7.2
+      - 3.7.3
 
   - name: ruby
     dependencies:
@@ -34,13 +34,10 @@ asdf_plugins:
       - build-essential
       - libffi-dev
       - libgdbm-dev
-      - libgdbm5
       - libncurses5-dev
       - libreadline6-dev
       - libssl-dev
       - libyaml-dev
       - zlib1g-dev
     versions:
-      - 2.6.1
-
-  - name: rust
+      - 2.6.3
