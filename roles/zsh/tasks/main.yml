@@ -5,9 +5,9 @@
     state: present
   become: true
 
-- name: Change login shell
+- name: Change shell
   user:
     name: "{{ ansible_user_id }}"
-    shell: /bin/zsh
+    shell: /usr/bin/zsh
     state: present
   become: true

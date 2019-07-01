@@ -1,1 +1,1 @@
-xps-l421x ansible_connection=local
+localhost ansible_connection=local
