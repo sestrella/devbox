@@ -1,0 +1,11 @@
+source {{ antigen_dir }}/antigen.zsh
+
+antigen use {{ antigen_framework }}
+
+{% for plugin in antigen_plugins %}
+antigen bundle {{ plugin }}
+{% endfor %}
+
+antigen theme {{ antigen_theme }}
+
+antigen apply
