@@ -3,4 +3,5 @@
   roles:
     - antigen
     - asdf
+    - docker
     - zsh

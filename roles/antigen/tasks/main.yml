@@ -4,8 +4,3 @@
     repo: "{{ antigen_repo }}"
     dest: "{{ antigen_dir }}"
     version: "{{ antigen_version }}"
-
-- name: Generate zshrc
-  template:
-    src: zshrc.j2
-    dest: "{{ ansible_user_dir }}/.zshrc"
