@@ -5,4 +5,5 @@
     - asdf
     - docker
     - docker-compose
+    - stack
     - zsh
