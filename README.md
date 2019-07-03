@@ -30,7 +30,7 @@ pipenv install
 Run the main playbook:
 
 ```sh
-pipenv run ansible-playbook site.yml
+pipenv run ansible-playbook site.yml -K
 ```
 
 [asdf]: https://github.com/asdf-vm/asdf
