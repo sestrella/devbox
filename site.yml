@@ -1,9 +1,15 @@
 ---
 - hosts: all
   roles:
-    - antigen
+    - role: antigen
+      tags: shell
     - asdf
-    - docker
-    - docker-compose
+    - role: docker
+      tags: docker
+    - role: docker-compose
+      tags: docker
     - stack
-    - zsh
+    - role: vscode
+      tags: editor
+    - role: zsh
+      tags: shell
