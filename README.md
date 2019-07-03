@@ -1,16 +1,27 @@
 # devbox
 
-[![Build Status](https://travis-ci.org/sestrella/devbox.svg?branch=master)](https://travis-ci.org/sestrella/devbox)
-
-Ansible roles used to provision my local environment.
+Ansible roles used to provision my local environment
 
 ## Requirements
 
-Install [ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
+- Install [asdf][asdf]
+- Install [asdf-python][asdf-python]
 
 ## Getting Started
 
-Install the dependencies:
+Install python:
+
+```sh
+asdf install
+```
+
+Install package manager:
+
+```sh
+pip install --upgrade pipenv
+```
+
+Install dependencies:
 
 ```sh
 pipenv install
@@ -19,6 +30,8 @@ pipenv install
 Run the main playbook:
 
 ```sh
-pipenv shell
-ansible-playbook site.yml
+pipenv run ansible-playbook site.yml
 ```
+
+[asdf]: https://github.com/asdf-vm/asdf
+[asdf-python]: https://github.com/danhper/asdf-python

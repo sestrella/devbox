@@ -1,6 +1,0 @@
----
-- name: geerlingguy.git
-  version: 2.0.4
-
-- name: geerlingguy.postgresql
-  version: 1.4.5
