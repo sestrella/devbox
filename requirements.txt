@@ -1,0 +1,10 @@
+-i https://pypi.org/simple
+ansible==2.8.1
+asn1crypto==0.24.0
+cffi==1.12.3
+cryptography==2.7
+jinja2==2.10.1
+markupsafe==1.1.1
+pycparser==2.19
+pyyaml==5.1.1
+six==1.12.0
