@@ -1,5 +1,9 @@
 ---
 asdf_plugins:
+  - name: java
+
+  - name: maven
+
   - name: nodejs
     versions:
       - 10.16.0

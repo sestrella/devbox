@@ -3,7 +3,8 @@
   roles:
     - role: antigen
       tags: shell
-    - asdf
+    - role: asdf
+      tags: version-manager
     - role: docker
       tags: docker
     - role: docker-compose
