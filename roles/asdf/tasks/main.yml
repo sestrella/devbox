@@ -1,4 +1,10 @@
 ---
+- name: Install dependencies
+  apt:
+    name: curl
+    state: present
+  become: yes
+
 - name: Clone repository
   git:
     repo: "{{ asdf_repo }}"
