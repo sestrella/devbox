@@ -8,7 +8,13 @@
       tags: docker
     - role: docker-compose
       tags: docker
+    - role: neovim
+      tags: editor
+    - role: spotify
+      tags: media
     - stack
+    - role: rcm
+      tags: shell
     - role: vscode
       tags: editor
     - role: zsh
