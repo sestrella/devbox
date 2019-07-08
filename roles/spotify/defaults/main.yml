@@ -4,5 +4,5 @@ spotify_repo_key_server: keyserver.ubuntu.com
 
 spotify_repo: deb http://repository.spotify.com stable non-free
 
-spotify_packages: 
+spotify_packages:
   - spotify-client
