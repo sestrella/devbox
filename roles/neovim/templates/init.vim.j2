@@ -1,9 +1,0 @@
-call plug#begin('~/.local/share/nvim/plugged')
-
-{% for plugin in neovim_plugins %}
-Plug '{{ plugin }}'
-{% endfor %}
-
-call plug#end()
-
-{{ neovim_configa }}

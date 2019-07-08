@@ -4,13 +4,3 @@
     name: neovim
     state: present
   become: true
-
-- name: Create config directory
-  file:
-    path: "{{ neovim_config_dir }}"
-    state: directory
-
-- name: Generate init.vim
-  templates:
-    src: init.vim.j2
-    dest: "{{ neovim_config_dir }}"
