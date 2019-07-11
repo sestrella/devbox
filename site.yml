@@ -9,6 +9,8 @@
       tags: docker
     - role: docker-compose
       tags: docker
+    - role: elasticsearch
+      tags: database
     - role: neovim
       tags: editor
     - role: spotify
