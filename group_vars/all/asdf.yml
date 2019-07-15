@@ -3,6 +3,7 @@ asdf_plugins:
   - name: java
 
   - name: maven
+    repo: https://github.com/jvassev/asdf-maven.git
 
   - name: nodejs
     versions:

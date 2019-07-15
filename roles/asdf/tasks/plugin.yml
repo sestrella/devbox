@@ -1,8 +1,10 @@
 ---
 - name: "{{ plugin.name }} - Install plugin"
-  command: "{{ asdf_dir }}/bin/asdf plugin-add {{ plugin.name }}"
+  command: "{{ asdf_dir }}/bin/asdf plugin-add {{ plugin.name }} {{ plugin_repo }}"
   args:
     creates: "{{ asdf_dir }}/plugins/{{ plugin.name }}"
+  vars:
+    plugin_repo: "{{ plugin.repo | default() }}"
 
 - name: "{{ plugin.name }} - Install dependencies"
   apt:
