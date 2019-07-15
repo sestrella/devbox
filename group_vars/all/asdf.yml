@@ -1,9 +1,13 @@
 ---
 asdf_plugins:
   - name: java
+    versions:
+      - oracle-8.141
 
   - name: maven
     repo: https://github.com/jvassev/asdf-maven.git
+    versions:
+      - 3.6.1
 
   - name: nodejs
     versions:
@@ -12,7 +16,7 @@ asdf_plugins:
   - name: python
     versions:
       - 2.7.16
-      - 3.7.3
+      - 3.7.4
 
   - name: ruby
     versions:
