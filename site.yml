@@ -11,13 +11,13 @@
       tags: docker
     - role: elasticsearch
       tags: database
-    - role: neovim
-      tags: editor
     - role: spotify
       tags: media
     - stack
     - role: rcm
       tags: shell
+    - role: vim-plug
+      tags: editor
     - role: vscode
       tags: editor
     - role: zsh
