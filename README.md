@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sestrella/devbox.svg?branch=master)](https://travis-ci.org/sestrella/devbox)
+
 # devbox
 
 Ansible roles used to provision my local environment
