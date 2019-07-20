@@ -1,0 +1,23 @@
+---
+- name: Create ~/.config/systemd/user directory
+  file:
+    path: ~/.config/systemd/user
+    state: directory
+
+- name: Copy asdf-updater.service
+  template:
+    src: asdf-updater.service.j2
+    dest: ~/.config/systemd/user/asdf-updater.service
+
+- name: Copy asdf-updater.timer
+  copy:
+    src: asdf-updater.timer
+    dest: ~/.config/systemd/user/asdf-updater.timer
+
+- name: Start asdf-updater.timer
+  systemd:
+    name: asdf-updater.timer
+    state: started
+    enabled: true
+    daemon_reload: true
+    scope: user

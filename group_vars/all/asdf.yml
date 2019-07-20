@@ -1,4 +1,6 @@
 ---
+asdf_updater: true
+
 asdf_plugins:
   - name: java
     versions:
