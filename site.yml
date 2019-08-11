@@ -11,6 +11,8 @@
       tags: docker
     - role: elasticsearch
       tags: database
+    - role: slack
+      tags: collaborative
     - role: spotify
       tags: media
     - stack
