@@ -1,0 +1,19 @@
+---
+- name: Add repository key
+  apt_key:
+    id: 063DAB2BDC0B3F9FCEBC378BFF3AEACEF6F88286
+    state: present
+  become: true
+
+- name: Add repository
+  apt_repository:
+    repo: ppa:hvr/ghc
+    state: present
+  become: true
+
+- name: Install packages
+  apt:
+    name: "{{ ghc_packages }}"
+    state: present
+  become: true
+  when: ghc_packages is defined
