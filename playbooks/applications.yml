@@ -1,6 +1,7 @@
 ---
 - hosts: all
   roles:
-    - google-chrome
+    - role: google-chrome
+      tags: chrome
     - slack
     - spotify
