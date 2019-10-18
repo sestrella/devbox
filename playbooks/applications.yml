@@ -3,5 +3,6 @@
   roles:
     - role: google-chrome
       tags: chrome
-    - slack
+    - role: slack
+      tags: slack
     - spotify
