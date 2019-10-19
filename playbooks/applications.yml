@@ -5,4 +5,5 @@
       tags: chrome
     - role: slack
       tags: slack
-    - spotify
+    - role: spotify
+      tags: spotify
