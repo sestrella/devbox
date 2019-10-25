@@ -17,5 +17,10 @@
 - name: Copy binary
   copy:
     src: /tmp/starship/starship
-    dest: ~/.local/bin/
+    dest: "{{ starship_dir }}/"
     mode: "0755"
+
+- name: Copy starship.fish
+  template:
+    src: starship.fish.j2
+    dest: ~/.config/fish/conf.d/starship.fish

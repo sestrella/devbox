@@ -9,3 +9,8 @@
     shell: /usr/bin/fish
     state: present
   become: yes
+
+- name: Create configuration directory
+  file:
+    path: ~/.config/fish/conf.d
+    state: directory
