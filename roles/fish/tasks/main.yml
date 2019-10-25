@@ -1,0 +1,11 @@
+---
+- apt:
+    name: fish
+    state: present
+  become: yes
+
+- user:
+    name: "{{ ansible_user_id }}"
+    shell: /usr/bin/fish
+    state: present
+  become: yes

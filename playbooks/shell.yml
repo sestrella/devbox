@@ -4,5 +4,7 @@
     - antigen
     - role: gnome-terminal
       tags: gnome
+    - role: fish
+      tags: fish
     - rcm
     - zsh
