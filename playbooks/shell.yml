@@ -7,4 +7,6 @@
     - role: fish
       tags: fish
     - rcm
+    - role: starship
+      tags: fish
     - zsh
