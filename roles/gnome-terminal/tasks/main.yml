@@ -1,0 +1,9 @@
+---
+- name: Install packages
+  apt:
+    name: python-psutil
+    state: present
+  become: yes
+
+- include_tasks: profile.yml
+  with_dict: "{{ gnome_terminal_profiles }}"

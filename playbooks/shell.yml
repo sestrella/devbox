@@ -2,5 +2,7 @@
 - hosts: all
   roles:
     - antigen
+    - role: gnome-terminal
+      tags: gnome
     - rcm
     - zsh
