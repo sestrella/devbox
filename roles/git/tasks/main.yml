@@ -4,3 +4,11 @@
     name: git
     state: present
   become: true
+
+- name: Add fish abbreviations
+  lineinfile:
+    path: ~/.config/fish/conf.d/git.fish
+    line: "abbr {{ item.key }} {{ item.value }}"
+    create: yes
+  with_dict: "{{ git_fish_abbrs }}"
+  when: git_fish_abbrs is defined

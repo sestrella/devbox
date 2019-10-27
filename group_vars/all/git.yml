@@ -1,0 +1,12 @@
+---
+git_fish_abbrs:
+  ga: "git add"
+  gaa: "git add --all"
+  gbr: "git branch --remote"
+  gc!: "git commit -v --amend"
+  gc: "git commit -v"
+  gco: "git checkout"
+  gd: "git diff"
+  gl: "git pull"
+  gp: "git push"
+  gst: "git status"

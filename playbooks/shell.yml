@@ -2,6 +2,8 @@
 - hosts: all
   roles:
     - antigen
+    - role: git
+      tags: git
     - role: gnome-desktop
       tags: gnome
     - role: gnome-terminal
