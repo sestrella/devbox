@@ -19,3 +19,10 @@
     creates: "{{ asdf_dir }}/installs/{{ plugin.name }}/{{ item }}"
   with_items: "{{ plugin.versions }}"
   when: plugin.versions is defined
+
+- name: "{{ plugin.name }} - Set global version"
+  lineinfile:
+    path: ~/.tool-versions
+    line: "{{ plugin.name }} {{ plugin.global }}"
+    create: yes
+  when: plugin.global is defined

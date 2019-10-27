@@ -3,5 +3,7 @@ asdf_plugins:
   - name: nodejs
   - name: python
     versions: ["2.7.17", "3.8.0"]
+    global: "3.8.0"
   - name: ruby
     versions: ["2.6.5"]
+    global: "2.6.5"
