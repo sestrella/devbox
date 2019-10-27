@@ -1,0 +1,7 @@
+---
+- name: Configure input-sources
+  dconf:
+    key: "/org/gnome/desktop/input-sources/sources"
+    value: "{{ gnome_desktop_input_sources | string }}"
+    state: present
+  when: gnome_desktop_input_sources is defined

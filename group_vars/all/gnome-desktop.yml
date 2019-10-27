@@ -1,0 +1,2 @@
+---
+gnome_desktop_input_sources: "[('xkb', 'us'), ('xkb', 'latam')]"

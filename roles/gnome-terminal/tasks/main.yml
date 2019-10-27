@@ -5,11 +5,5 @@
     state: present
   become: yes
 
-- name: Configure desktop input-sources
-  dconf:
-    key: "/org/gnome/desktop/input-sources/sources"
-    value: "[('xkb', 'us'), ('xkb', 'latam')]"
-    state: present
-
 - include_tasks: profile.yml
   with_dict: "{{ gnome_terminal_profiles }}"
