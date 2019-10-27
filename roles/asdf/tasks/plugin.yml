@@ -1,4 +1,11 @@
 ---
+- name: "{{ plugin.name }} - Install dependencies"
+  apt:
+    name: "{{ asdf_dependencies[plugin.name] }}"
+    state: present
+  become: yes
+  when: asdf_dependencies[plugin.name] is defined
+
 - name: "{{ plugin.name }} - Install plugin"
   command: "{{ asdf_dir }}/bin/asdf plugin-add {{ plugin.name }} {{ plugin_repo }}"
   args:
