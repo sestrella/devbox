@@ -4,19 +4,7 @@
   args:
     creates: "{{ asdf_dir }}/plugins/{{ plugin.name }}"
   vars:
-    plugin_repo: "{{ plugin.repo | default() }}"
-
-- name: "{{ plugin.name }} - Install dependencies"
-  apt:
-    name: "{{ plugin_dependencies }}"
-    state: present
-  become: true
-  when: plugin_dependencies != []
-  vars:
-    plugin_dependencies: "{{
-      plugin.dependencies |
-      default(lookup('vars', 'asdf_' + plugin.name + '_dependencies', default=[]))
-    }}"
+    plugin_repo: "{{ plugin.repo | default }}"
 
 - name: "{{ plugin.name }} - Install versions"
   command: "{{ asdf_dir }}/bin/asdf install {{ plugin.name }} {{ item }}"

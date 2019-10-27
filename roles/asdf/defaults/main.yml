@@ -1,5 +1,5 @@
 ---
 asdf_repo: https://github.com/asdf-vm/asdf.git
 asdf_dir: "{{ ansible_user_dir }}/.asdf"
-asdf_version: v0.7.2
+asdf_version: v0.7.4
 asdf_updater: false
