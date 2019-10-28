@@ -1,4 +1,9 @@
 ---
+git_config:
+  user:
+    email: "sestrella.me@gmail.com"
+    name: "Sebastián Estrella"
+
 git_fish_abbrs:
   ga: "git add"
   gaa: "git add --all"
