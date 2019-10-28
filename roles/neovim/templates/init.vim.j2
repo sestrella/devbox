@@ -5,9 +5,3 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug '{{ plug }}'
 {% endfor %}
 call plug#end()
-
-if has#colorscheme('solarized')
-  syntax enable
-  set background={{ neovim_background }}
-  colorscheme solarized
-endif

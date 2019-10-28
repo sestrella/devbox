@@ -5,3 +5,6 @@ neovim_plugins:
   - scrooloose/nerdtree
 
 neovim_background: light
+
+neovim_mappings:
+  - map <C-n> :NERDTreeToggle<CR>
