@@ -13,6 +13,20 @@
   vars:
     plugin_repo: "{{ plugin.repo | default }}"
 
+- name: "{{ plugin.name }} - Create keyring directory"
+  file:
+    path: "{{ asdf_dir }}/keyrings/nodejs"
+    state: directory
+  when: plugin.name == "nodejs"
+
+- name: "{{ plugin.name }} - Install keyring"
+  command: "bash {{ asdf_dir }}/plugins/nodejs/bin/import-release-team-keyring"
+  args:
+    creates: "{{ asdf_dir }}/keyrings/nodejs/pubring.kbx"
+  environment:
+    GNUPGHOME: "{{ asdf_dir }}/keyrings/nodejs"
+  when: plugin.name == "nodejs"
+
 - name: "{{ plugin.name }} - Install versions"
   command: "{{ asdf_dir }}/bin/asdf install {{ plugin.name }} {{ item }}"
   args:
