@@ -7,3 +7,8 @@ asdf_plugins:
   - name: ruby
     versions: ["2.6.5"]
     global: "2.6.5"
+
+asdf_fish_abbrs:
+  ai: "asdf install"
+  al: "asdf list"
+  ala: "asdf list-all"

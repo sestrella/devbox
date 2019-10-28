@@ -5,7 +5,7 @@
     state: present
   become: true
 
-- name: Foo
+- name: Copy configuration file
   template:
     src: gitconfig.j2
     dest: ~/.gitconfig
