@@ -1,0 +1,13 @@
+" {{ ansible_managed }}
+
+call plug#begin('~/.local/share/nvim/plugged')
+{% for plug in neovim_plugins %}
+Plug '{{ plug }}'
+{% endfor %}
+call plug#end()
+
+if has#colorscheme('solarized')
+  syntax enable
+  set background={{ neovim_background }}
+  colorscheme solarized
+endif

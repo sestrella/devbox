@@ -1,0 +1,32 @@
+---
+- name: Install packages
+  apt:
+    name: neovim
+    state: present
+  become: yes
+
+- name: Create autoload directory
+  file:
+    path: ~/.local/share/nvim/site/autoload
+    state: directory
+
+- name: Download plugin manager
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.local/share/nvim/site/autoload/plug.vim
+
+- name: Create autoload directory
+  file:
+    path: ~/.config/nvim/autoload
+    state: directory
+
+- name: Copy has.vim
+  copy:
+    src: has.vim
+    dest: ~/.config/nvim/autoload/has.vim
+
+- name: Copy init.vim
+  template:
+    src: init.vim.j2
+    dest: ~/.config/nvim/init.vim
+  notify: "install plugins"
