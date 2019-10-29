@@ -1,3 +1,0 @@
----
-vim_plug_dir: ~/.vim/autoload
-vim_plug_url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
