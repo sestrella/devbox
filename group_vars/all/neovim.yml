@@ -7,3 +7,8 @@ neovim_plugins:
 neovim_line_numbers: yes
 neovim_invert_split: yes
 neovim_tab_spaces: 2
+
+neovim_extra_config: |
+  syntax enable
+  set background=light
+  colorscheme solarized
