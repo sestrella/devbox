@@ -5,3 +5,22 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug '{{ plug }}'
 {% endfor %}
 call plug#end()
+
+{% if neovim_line_numbers %}
+set number
+{% endif %}
+
+{% if neovim_tab_spaces is defined %}
+set expandtab
+set shiftwidth={{ neovim_tab_spaces }}
+set tabstop={{ neovim_tab_spaces }}
+{% endif %}
+
+{% if neovim_invert_split %}
+set splitbelow
+set splitright
+{% endif %}
+
+{% if neovim_extra_config is defined %}
+{{ neovim_extra_config }}
+{% endif %}

@@ -4,7 +4,6 @@ neovim_plugins:
   - ctrlpvim/ctrlp.vim
   - scrooloose/nerdtree
 
-neovim_background: light
-
-neovim_mappings:
-  - map <C-n> :NERDTreeToggle<CR>
+neovim_line_numbers: yes
+neovim_invert_split: yes
+neovim_tab_spaces: 2
