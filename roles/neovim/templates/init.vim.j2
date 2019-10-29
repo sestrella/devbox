@@ -1,5 +1,11 @@
 " {{ ansible_managed }}
 
+{% for name, provider in neovim_providers.items() %}
+{% if neovim_provider_names[name] is defined %}
+let g:{{ neovim_provider_names[name] }}=expand('{{ provider }}')
+{% endif %}
+{% endfor %}
+
 call plug#begin('~/.local/share/nvim/plugged')
 {% for plug in neovim_plugins %}
 Plug '{{ plug }}'

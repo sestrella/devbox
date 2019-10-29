@@ -5,6 +5,29 @@
     state: present
   become: yes
 
+- name: Install python2 provider
+  pip:
+    name: pynvim
+    executable: "{{ neovim_providers.python2 | dirname }}/pip"
+    state: present
+  when: neovim_providers.python2 is defined
+
+- name: Install python3 provider
+  pip:
+    name: pynvim
+    executable: "{{ neovim_providers.python3 | dirname }}/pip"
+    state: present
+  when: neovim_providers.python3 is defined
+
+- name: Install ruby provider
+  gem:
+    name: neovim
+    executable: "{{ neovim_providers.ruby | dirname }}/gem"
+    state: present
+    build_flags:
+      - "--bindir {{ neovim_providers.ruby | dirname }}"
+  when: neovim_providers.ruby is defined
+
 - name: Create autoload directory
   file:
     path: ~/.local/share/nvim/site/autoload

@@ -1,0 +1,5 @@
+---
+neovim_provider_names:
+  python2: python_host_prog
+  python3: python3_host_prog
+  ruby: ruby_host_prog
