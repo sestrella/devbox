@@ -1,26 +1,7 @@
 ---
-- hosts: all
-  roles:
-    - role: antigen
-      tags: shell
-    - role: asdf
-      tags: version-manager
-    - role: docker
-      tags: docker
-    - role: docker-compose
-      tags: docker
-    - role: elasticsearch
-      tags: database
-    - role: slack
-      tags: collaborative
-    - role: spotify
-      tags: media
-    - stack
-    - role: rcm
-      tags: shell
-    - role: vim-plug
-      tags: editor
-    - role: vscode
-      tags: editor
-    - role: zsh
-      tags: shell
+- import_playbook: playbooks/shell.yml
+  tags: shell
+- import_playbook: playbooks/editors.yml
+  tags: editors
+- import_playbook: playbooks/applications.yml
+  tags: applications

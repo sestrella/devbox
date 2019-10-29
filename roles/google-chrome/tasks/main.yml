@@ -9,7 +9,7 @@
   apt_repository:
     repo: "{{ google_chrome_repo }}"
     state: present
-    filename: google
+    filename: google-chrome
   become: true
 
 - name: Install packages

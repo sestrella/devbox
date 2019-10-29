@@ -1,16 +1,16 @@
 ---
 - hosts: all
   roles:
-    - antigen
     - role: git
       tags: git
+
+    # TODO: move these two roles to a different playbook
     - role: gnome-desktop
       tags: gnome
     - role: gnome-terminal
       tags: gnome
+
     - role: fish
       tags: fish
-    - rcm
     - role: starship
       tags: fish
-    - zsh
