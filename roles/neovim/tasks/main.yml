@@ -15,25 +15,13 @@
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     dest: ~/.local/share/nvim/site/autoload/plug.vim
 
-- name: Copy init.vim
+- name: Create configuration directory
+  file:
+    path: ~/.config/nvim
+    state: directory
+
+- name: Create configuration file
   template:
     src: init.vim.j2
     dest: ~/.config/nvim/init.vim
   notify: "install plugins"
-
-- name: Create directories
-  file:
-    path: "~/.config/nvim/{{ item }}"
-    state: directory
-  with_items:
-    - autoload
-    - plugin
-
-- name: Copy files
-  template:
-    src: "{{ item }}.j2"
-    dest: "~/.config/nvim/{{ item }}"
-  with_items:
-    - autoload/has.vim
-    - plugin/colorscheme.vim
-    - plugin/mappings.vim
