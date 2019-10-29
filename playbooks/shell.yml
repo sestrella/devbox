@@ -14,3 +14,5 @@
       tags: fish
     - role: starship
       tags: fish
+    - role: tmux
+      tags: tmux

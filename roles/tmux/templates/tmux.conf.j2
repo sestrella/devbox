@@ -1,0 +1,9 @@
+{{ ansible_managed | comment }}
+
+{% if tmux_plugins is defined %}
+{% for plugin in tmux_plugins %}
+set -g @plugin '{{ plugin }}'
+{% endfor %}
+
+run -b '{{ tmux_tpm_dir }}/tpm'
+{% endif %}
