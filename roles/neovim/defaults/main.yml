@@ -1,4 +1,8 @@
 ---
+neovim_packages:
+  - neovim
+  - python-setuptools
+
 neovim_providers: {}
 neovim_line_numbers: no
 neovim_invert_split: no
