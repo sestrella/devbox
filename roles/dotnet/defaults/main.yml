@@ -1,6 +1,0 @@
----
-dotnet_repo_key: https://packages.microsoft.com/keys/microsoft.asc
-dotnet_repo: "deb [arch=amd64] https://packages.microsoft.com/debian/{{ ansible_distribution_major_version }}/prod stretch main"
-
-dotnet_packages:
-  - dotnet-sdk-2.2
