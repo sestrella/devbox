@@ -5,8 +5,9 @@ neovim_plugins:
   - scrooloose/nerdtree
 
 neovim_providers:
-  python2: "~/.asdf/installs/python/2.7.17/bin/python"
-  python3: "~/.asdf/installs/python/3.8.0/bin/python"
+  python2: ~/.asdf/installs/python/2.7.17/bin/python
+  python3: ~/.asdf/installs/python/3.8.0/bin/python
+  ruby: ~/.asdf/installs/ruby/2.6.5/bin/neovim-ruby-host
 
 neovim_line_numbers: yes
 neovim_invert_split: yes
