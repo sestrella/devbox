@@ -9,6 +9,10 @@ set -g base-index {{ tmux_base_index }}
 setw -g pane-base-index {{ tmux_base_index }}
 {% endif %}
 
+{% if tmux_mode_keys is defined %}
+setw -g mode-keys {{ tmux_mode_keys }}
+{% endif %}
+
 {% if not tmux_confirmation_prompt_enabled %}
 bind-key & kill-window
 bind-key x kill-pane
