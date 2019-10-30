@@ -1,6 +1,8 @@
 ---
 - hosts: all
   roles:
+    - role: fish
+      tags: fish
     - role: git
       tags: git
 
@@ -12,8 +14,6 @@
 
     - role: asdf
       tags: asdf
-    - role: fish
-      tags: fish
     - role: starship
       tags: fish
     - role: tmux

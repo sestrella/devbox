@@ -10,7 +10,11 @@
     state: present
   become: yes
 
-- name: Create configuration directory
+- name: Create directories
   file:
-    path: ~/.config/fish/conf.d
+    path: "{{ item }}"
     state: directory
+  with_items:
+    - ~/.config/fish/completions
+    - ~/.config/fish/conf.d
+  tags: dotfiles
