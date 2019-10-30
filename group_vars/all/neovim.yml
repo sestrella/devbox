@@ -13,8 +13,12 @@ neovim_invert_split: yes
 neovim_tab_spaces: 2
 
 neovim_extra_config: |
-  syntax enable
-  set background=light
-  colorscheme solarized
+  if has#colorscheme('solarized')
+    syntax enable
+    set background=light
+    colorscheme solarized
+  endif
 
-  map <C-n> :NERDTreeToggle<CR>
+  if exists(':NERDTree')
+    map <C-n> :NERDTreeToggle<CR>
+  endif
