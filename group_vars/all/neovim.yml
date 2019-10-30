@@ -34,3 +34,6 @@ neovim_extra_config: |
   endif
 
   map <C-n> :NERDTreeToggle<CR>
+
+  noremap <Leader>pi :source $MYVIMRC<CR>:PlugInstall<CR>
+  noremap <Leader>pu :PlugUpdate<CR>
