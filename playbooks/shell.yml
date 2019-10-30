@@ -10,6 +10,8 @@
     - role: gnome-terminal
       tags: gnome
 
+    - role: asdf
+      tags: asdf
     - role: fish
       tags: fish
     - role: starship
