@@ -1,6 +1,0 @@
----
-- name: Clone repository
-  git:
-    repo: "{{ antigen_repo }}"
-    dest: "{{ antigen_dir }}"
-    version: "{{ antigen_version }}"
