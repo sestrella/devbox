@@ -1,7 +1,0 @@
----
-- hosts: all
-  roles:
-    - role: common
-    - role: firmware
-    - role: tools
-      tags: tools

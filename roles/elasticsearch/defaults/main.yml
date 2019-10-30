@@ -1,7 +1,0 @@
----
-elasticsearch_dependencies:
-  - apt-transport-https
-  - openjdk-8-jre-headless
-
-elasticsearch_repo_key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
-elasticsearch_repo: deb https://artifacts.elastic.co/packages/6.x/apt stable main

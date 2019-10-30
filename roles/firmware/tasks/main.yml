@@ -1,6 +1,0 @@
----
-- name: Install packages
-  apt:
-    name: "{{ firmware_packages }}"
-    state: present
-  become: true
