@@ -1,5 +1,7 @@
 ---
 - hosts: all
   roles:
-    - neovim
-    - vscode
+    - role: neovim
+      tags: neovim
+    - role: vscode
+      tags: vscode

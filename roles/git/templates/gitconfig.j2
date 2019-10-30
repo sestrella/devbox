@@ -2,7 +2,7 @@
 
 {% for section, config in git_config.items() %}
 [{{ section }}]
-  {% for key, value in config.items() %}
-  {{ key }} = {{ value }}
-  {% endfor %}
+{% for key, value in config.items() %}
+{{ key }} = {{ value }}
+{% endfor %}
 {% endfor %}

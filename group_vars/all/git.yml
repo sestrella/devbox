@@ -1,8 +1,11 @@
 ---
 git_config:
   user:
-    email: "sestrella.me@gmail.com"
     name: "Sebastián Estrella"
+    email: "sestrella.me@gmail.com"
+
+  core:
+    editor: nvim
 
 git_fish_abbrs:
   ga: "git add"

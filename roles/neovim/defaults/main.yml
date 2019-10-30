@@ -6,3 +6,4 @@ neovim_packages:
 neovim_providers: {}
 neovim_line_numbers: no
 neovim_invert_split: no
+neovim_editor: false

@@ -3,7 +3,7 @@
   apt:
     name: "{{ neovim_packages }}"
     state: present
-  become: yes
+  become: true
 
 - import_tasks: providers.yml
 
@@ -26,4 +26,4 @@
   template:
     src: init.vim.j2
     dest: ~/.config/nvim/init.vim
-  notify: "install plugins"
+  notify: install_plugins
