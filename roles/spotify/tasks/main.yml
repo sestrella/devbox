@@ -1,18 +1,18 @@
 ---
 - name: Add repository key
   apt_key:
-    id: "{{ spotify_repo_key_id }}"
-    keyserver: "{{ spotify_repo_key_server }}"
+    url: https://download.spotify.com/debian/pubkey.gpg
+    state: present
   become: true
 
 - name: Add repository
   apt_repository:
-    repo: "{{ spotify_repo }}"
-    filename: spotify
+    repo: deb http://repository.spotify.com stable non-free
+    filename: spotify-client
   become: true
 
-- name: Install packages
+- name: Install package
   apt:
-    name: "{{ spotify_packages }}"
+    name: spotify-client
     state: present
   become: true
