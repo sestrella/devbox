@@ -24,8 +24,10 @@
   template:
     src: starship.fish.j2
     dest: ~/.config/fish/conf.d/starship.fish
+  tags: dotfiles
 
 - name: Copy configuration file
   copy:
     src: starship.toml
     dest: ~/.config/starship.toml
+  tags: dotfiles

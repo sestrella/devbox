@@ -24,6 +24,7 @@
   with_items:
     - ~/.config/nvim
     - ~/.config/nvim/autoload
+  tags: dotfiles
 
 - name: Create files
   template:
@@ -32,3 +33,4 @@
   with_items:
     - init.vim
     - autoload/has.vim
+  tags: dotfiles

@@ -16,8 +16,10 @@
   template:
     src: tmux.conf.j2
     dest: ~/.tmux.conf
+  tags: dotfiles
 
 - name: Add fish abbreviations
   template:
     src: tmux.fish.j2
     dest: ~/.config/fish/conf.d/tmux.fish
+  tags: dotfiles
