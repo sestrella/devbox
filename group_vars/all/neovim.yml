@@ -19,6 +19,4 @@ neovim_extra_config: |
     colorscheme solarized
   endif
 
-  if exists(':NERDTree')
-    map <C-n> :NERDTreeToggle<CR>
-  endif
+  map <C-n> :NERDTreeToggle<CR>
