@@ -1,0 +1,14 @@
+---
+tmux_prefix: C-a
+tmux_base_index: 1
+
+tmux_plugins:
+  - tmux-plugins/tmux-sensible
+  - tmux-plugins/tpm
+
+tmux_fish_abbrs:
+  ta: tmux attach -t
+  tkss: tmux kill-session -t
+  tksv: tmux kill-server
+  tl: tmux list-sessions
+  ts: tmux new-session -s
