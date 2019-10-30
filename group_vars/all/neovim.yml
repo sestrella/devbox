@@ -16,3 +16,5 @@ neovim_extra_config: |
   syntax enable
   set background=light
   colorscheme solarized
+
+  map <C-n> :NERDTreeToggle<CR>
