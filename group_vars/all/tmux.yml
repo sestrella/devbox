@@ -1,6 +1,7 @@
 ---
 tmux_prefix: C-a
 tmux_base_index: 1
+tmux_confirmation_prompt_enabled: false
 
 tmux_plugins:
   - tmux-plugins/tmux-sensible
