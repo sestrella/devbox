@@ -1,9 +1,0 @@
----
-antigen_framework: oh-my-zsh
-
-antigen_plugins:
-  - asdf
-  - git
-  - ssh-agent
-
-antigen_theme: denysdovhan/spaceship-prompt
