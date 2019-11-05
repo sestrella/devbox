@@ -4,3 +4,4 @@
     src: source.list.j2
     dest: /etc/apt/sources.list
   become: yes
+  when: ansible_distribution == 'Debian'
