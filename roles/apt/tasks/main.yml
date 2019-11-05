@@ -1,0 +1,6 @@
+---
+- name: Generate source.list
+  template:
+    src: source.list.j2
+    dest: /etc/apt/sources.list
+  become: yes

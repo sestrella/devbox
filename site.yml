@@ -1,4 +1,6 @@
 ---
+- import_playbook: playbooks/system.yml
+  tags: system
 - import_playbook: playbooks/shell.yml
   tags: shell
 - import_playbook: playbooks/editors.yml
