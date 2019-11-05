@@ -3,3 +3,6 @@
   roles:
     - apt
     - timezone
+    - role: geerlingguy.docker
+      become: true
+      tags: docker

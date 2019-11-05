@@ -29,6 +29,12 @@ Install dependencies:
 pipenv install
 ```
 
+Install Ansible galaxies:
+
+```sh
+pipenv run ansible-galaxy install -r requirements.yml
+```
+
 Adjust all [group_vars/all](group_vars/all) variables accordingly, and run the
 main playbook:
 
