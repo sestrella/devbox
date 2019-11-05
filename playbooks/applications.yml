@@ -1,6 +1,8 @@
 ---
 - hosts: all
   roles:
+    - role: firefox
+      tags: firefox
     - role: google-chrome
       tags: chrome
     - role: slack
