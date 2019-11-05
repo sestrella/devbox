@@ -29,7 +29,8 @@ Install dependencies:
 pipenv install
 ```
 
-Adjust all [group_vars/all](group_vars/all) variables accordingly, and run the main playbook:
+Adjust all [group_vars/all](group_vars/all) variables accordingly, and run the
+main playbook:
 
 ```sh
 pipenv run ansible-playbook site.yml -K
