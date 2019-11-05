@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/sestrella/devbox.svg?branch=master)](https://travis-ci.org/sestrella/devbox)
-
 # devbox
+
+[![Build Status](https://travis-ci.org/sestrella/devbox.svg?branch=master)](https://travis-ci.org/sestrella/devbox)
 
 Ansible roles used to provision my local environment
 
@@ -29,7 +29,7 @@ Install dependencies:
 pipenv install
 ```
 
-Run the main playbook:
+Adjust all [group_vars/all](group_vars/all) variables accordingly, and run the main playbook:
 
 ```sh
 pipenv run ansible-playbook site.yml -K
