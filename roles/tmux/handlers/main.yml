@@ -1,0 +1,3 @@
+---
+- name: install plugins
+  command: "{{ tmux_tpm_dir }}/bin/install_plugins"

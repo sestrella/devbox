@@ -5,6 +5,7 @@ tmux_mode_keys: vi
 tmux_confirmation_prompt_enabled: false
 
 tmux_plugins:
+  - tmux-plugins/tmux-continuum
   - tmux-plugins/tmux-resurrect
   - tmux-plugins/tmux-sensible
   - tmux-plugins/tpm
