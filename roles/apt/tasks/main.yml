@@ -5,3 +5,9 @@
     dest: /etc/apt/sources.list
   become: yes
   when: ansible_distribution == 'Debian'
+
+- name: Install packages
+  apt:
+    name: "{{ apt_packages }}"
+    state: present
+  become: yes

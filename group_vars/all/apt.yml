@@ -1,2 +1,6 @@
 ---
 apt_source_components: contrib non-free
+
+apt_packages:
+  - htop
+  - ripgrep
