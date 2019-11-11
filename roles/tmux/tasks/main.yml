@@ -16,7 +16,6 @@
   template:
     src: tmux.conf.j2
     dest: ~/.tmux.conf
-  notify: install plugins
   tags: dotfiles
 
 - name: Add fish abbreviations
