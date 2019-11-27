@@ -16,6 +16,8 @@ neovim_invert_split: true
 neovim_tab_spaces: 2
 
 neovim_extra_config: |
+  set colorcolumn=80
+
   let mapleader = "\<Space>"
   let maplocalleader = ','
 
