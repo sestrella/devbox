@@ -12,8 +12,6 @@
     - role: gnome-terminal
       tags: gnome
 
-    - role: asdf
-      tags: asdf
     - role: starship
       tags: fish
     - role: tmux
