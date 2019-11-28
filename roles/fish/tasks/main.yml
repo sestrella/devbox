@@ -3,14 +3,14 @@
   apt:
     name: fish
     state: present
-  become: yes
+  become: true
 
 - name: Change user shell
   user:
     name: "{{ ansible_user_id }}"
     shell: /usr/bin/fish
     state: present
-  become: yes
+  become: true
 
 - name: Create directories
   file:
@@ -19,4 +19,8 @@
   with_items:
     - ~/.config/fish/completions
     - ~/.config/fish/conf.d
-  tags: dotfiles
+
+- name: Generate fish.fish
+  template:
+    src: fish.fish.j2
+    dest: ~/.config/fish/conf.d/fish.fish
