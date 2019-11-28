@@ -1,8 +1,9 @@
 ---
-- name: Add repository key
+- name: Add repository keys
   apt_key:
-    url: "{{ virtualbox_repo_key }}"
+    url: "{{ item }}"
     state: present
+  with_items: "{{ virtualbox_repo_keys }}"
   become: true
 
 - name: Add repository
