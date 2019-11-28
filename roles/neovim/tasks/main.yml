@@ -33,4 +33,5 @@
   with_items:
     - init.vim
     - autoload/has.vim
+  notify: install plugins
   tags: dotfiles

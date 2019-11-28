@@ -1,6 +1,7 @@
 ---
 neovim_plugins:
   - altercation/vim-colors-solarized
+  - bronson/vim-trailing-whitespace
   - ctrlpvim/ctrlp.vim
   - scrooloose/nerdcommenter
   - scrooloose/nerdtree

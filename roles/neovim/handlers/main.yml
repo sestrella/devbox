@@ -1,0 +1,3 @@
+---
+- name: install plugins
+  command: /usr/bin/nvim +PlugInstall +qall
