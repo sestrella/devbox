@@ -1,11 +1,12 @@
 ---
 neovim_plugins:
-  - altercation/vim-colors-solarized
-  - bronson/vim-trailing-whitespace
-  - ctrlpvim/ctrlp.vim
-  - scrooloose/nerdcommenter
-  - scrooloose/nerdtree
-  - tpope/vim-surround
+  - "'altercation/vim-colors-solarized'"
+  - "'bronson/vim-trailing-whitespace'"
+  - "'ctrlpvim/ctrlp.vim'"
+  - "'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }"
+  - "'scrooloose/nerdcommenter'"
+  - "'scrooloose/nerdtree'"
+  - "'tpope/vim-surround'"
 
 neovim_providers:
   python2: ~/.asdf/installs/python/2.7.17/bin/python

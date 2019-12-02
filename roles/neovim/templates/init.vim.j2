@@ -8,7 +8,7 @@ let g:{{ neovim_provider_names[name] }}=expand('{{ provider }}')
 
 call plug#begin('~/.local/share/nvim/plugged')
 {% for plug in neovim_plugins %}
-Plug '{{ plug }}'
+Plug {{ plug }}
 {% endfor %}
 call plug#end()
 
