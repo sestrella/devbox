@@ -42,3 +42,11 @@ neovim_extra_config: |
   noremap <Leader><space> :nohlsearch<CR>
   noremap <Leader>pi :source $MYVIMRC<CR>:PlugInstall<CR>
   noremap <Leader>pu :PlugUpdate<CR>
+
+neovim_ftplugins:
+  php: |
+    setlocal shiftwidth=4
+    setlocal tabstop=4
+  python: |
+    setlocal shiftwidth=4
+    setlocal tabstop=4

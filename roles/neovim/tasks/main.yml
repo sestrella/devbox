@@ -35,3 +35,6 @@
     - autoload/has.vim
   notify: install plugins
   tags: dotfiles
+
+- import_tasks: ftplugin.yml
+  when: neovim_ftplugins is defined

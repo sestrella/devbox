@@ -1,0 +1,11 @@
+---
+- name: Create ftplugin directory
+  file:
+    path: ~/.config/nvim/ftplugin
+    state: directory
+
+- name: Create ftplugin files
+  copy:
+    content: "{{ item.value }}"
+    dest: "~/.config/nvim/ftplugin/{{ item.key }}.vim"
+  with_dict: "{{ neovim_ftplugins }}"
