@@ -3,6 +3,7 @@ neovim_plugins:
   - "'altercation/vim-colors-solarized'"
   - "'bronson/vim-trailing-whitespace'"
   - "'ctrlpvim/ctrlp.vim'"
+  - "'godlygeek/tabular'"
   - "'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }"
   - "'scrooloose/nerdcommenter'"
   - "'scrooloose/nerdtree'"
