@@ -44,6 +44,8 @@ neovim_extra_config: |
   noremap <Leader>pi :source $MYVIMRC<CR>:PlugInstall<CR>
   noremap <Leader>pu :PlugUpdate<CR>
 
+  tnoremap <Esc> <C-\><C-n>
+
 neovim_ftplugins:
   php: |
     setlocal shiftwidth=4
