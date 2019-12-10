@@ -1,0 +1,11 @@
+---
+- name: Create plugin directory
+  file:
+    path: ~/.config/nvim/plugin
+    state: directory
+
+- name: Create plugin files
+  copy:
+    content: "{{ item.value }}"
+    dest: "~/.config/nvim/plugin/{{ item.key }}.vim"
+  with_dict: "{{ neovim_plugins }}"

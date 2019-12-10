@@ -36,5 +36,8 @@
   notify: install plugins
   tags: dotfiles
 
-- import_tasks: ftplugin.yml
+- import_tasks: ftplugins.yml
   when: neovim_ftplugins is defined
+
+- import_tasks: plugins.yml
+  when: neovim_plugins is defined
