@@ -37,7 +37,7 @@
   tags: dotfiles
 
 - import_tasks: ftplugins.yml
-  when: neovim_ftplugins is defined
+  when: neovim_ftplugin_files is defined
 
 - import_tasks: plugins.yml
-  when: neovim_plugins is defined
+  when: neovim_plugin_files is defined

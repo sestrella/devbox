@@ -46,10 +46,8 @@ neovim_extra_config: |
 
   tnoremap <Esc> <C-\><C-n>
 
-neovim_ftplugins:
-  php: |
-    setlocal shiftwidth=4
-    setlocal tabstop=4
-  python: |
-    setlocal shiftwidth=4
-    setlocal tabstop=4
+neovim_ftplugin_files:
+  php:
+    tab_spaces: 4
+  python:
+    tab_spaces: 4

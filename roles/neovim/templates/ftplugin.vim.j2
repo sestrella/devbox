@@ -1,0 +1,8 @@
+{% if item.value.tab_spaces is defined %}
+setlocal shiftwidth={{ item.value.tab_spaces }}
+setlocal tabstop={{ item.value.tab_spaces }}
+{% endif %}
+
+{% if item.value.extra_config is defined %}
+{{ item.value.extra_config }}
+{% endif %}
