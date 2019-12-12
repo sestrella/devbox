@@ -26,4 +26,5 @@
   template:
     src: tmux.fish.j2
     dest: ~/.config/fish/conf.d/tmux.fish
+  when: ansible_user_shell == '/usr/bin/fish'
   tags: dotfiles
