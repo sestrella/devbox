@@ -1,4 +1,7 @@
 ---
+- name: clean plugins
+  command: "{{ tmux_tpm_dir }}/bin/clean_plugins"
+
 - name: install plugins
   command: "{{ tmux_tpm_dir }}/bin/install_plugins"
 

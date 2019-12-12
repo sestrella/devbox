@@ -13,6 +13,7 @@ tmux_plugins:
   - tmux-plugins/tmux-pain-control
   - tmux-plugins/tmux-resurrect
   - tmux-plugins/tmux-sensible
+  - tmux-plugins/tmux-yank
   - tmux-plugins/tpm
 
 tmux_extra_config: |

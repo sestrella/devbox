@@ -18,6 +18,7 @@
     dest: ~/.tmux.conf
   tags: dotfiles
   notify:
+    - clean plugins
     - install plugins
     - reload config
 
