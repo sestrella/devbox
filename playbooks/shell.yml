@@ -5,14 +5,5 @@
       tags: fish
     - role: git
       tags: git
-
-    # TODO: move these two roles to a different playbook
-    - role: gnome-desktop
-      tags: gnome
-    - role: gnome-terminal
-      tags: gnome
-
     - role: starship
       tags: fish
-    - role: tmux
-      tags: tmux
