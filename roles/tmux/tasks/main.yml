@@ -17,10 +17,6 @@
     src: tmux.conf.j2
     dest: ~/.tmux.conf
   tags: dotfiles
-  notify:
-    - clean plugins
-    - install plugins
-    - reload config
 
 - name: Add fish abbreviations
   template:
