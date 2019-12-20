@@ -11,3 +11,5 @@
       tags: fish
     - role: tmux
       tags: tmux
+    - role: ripgrep
+      tags: ripgrep
