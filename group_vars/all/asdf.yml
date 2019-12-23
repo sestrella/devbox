@@ -4,8 +4,8 @@ asdf_plugins:
     versions: ["12.13.0"]
     global: "12.13.0"
   - name: python
-    versions: ["2.7.17", "3.8.0"]
-    global: "3.8.0"
+    versions: ["2.7.17", "3.8.1"]
+    global: "3.8.1"
   - name: ruby
     versions: ["2.6.5"]
     global: "2.6.5"
