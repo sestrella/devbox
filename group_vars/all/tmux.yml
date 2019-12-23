@@ -9,15 +9,11 @@ tmux_mode_keys: vi
 tmux_confirmation_prompt_enabled: false
 
 tmux_plugins:
-  - jimeh/tmux-themepack
   - tmux-plugins/tmux-pain-control
   - tmux-plugins/tmux-resurrect
   - tmux-plugins/tmux-sensible
   - tmux-plugins/tmux-yank
   - tmux-plugins/tpm
-
-tmux_extra_config: |
-  set -g @themepack 'powerline/double/cyan'
 
 tmux_fish_abbrs:
   ta: tmux attach -t
