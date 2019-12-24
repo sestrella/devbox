@@ -1,0 +1,4 @@
+---
+google_chrome_packages:
+  - google-chrome-stable
+  - chrome-gnome-shell
