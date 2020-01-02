@@ -1,0 +1,17 @@
+---
+- name: Create directory
+  file:
+    path: "{{ fish_conf_dir }}"
+    state: directory
+
+- name: Generate fish.fish
+  template:
+    src: fish.fish.j2
+    dest: "{{ fish_conf_dir }}/fish.fish"
+
+- name: Create conf.d files
+  copy:
+    content: "{{ item.value }}"
+    dest: "{{ fish_conf_dir }}/{{ item.key }}.fish"
+  with_dict: "{{ fish_confs }}"
+  when: fish_confs is defined

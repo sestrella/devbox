@@ -1,2 +1,6 @@
 ---
 fish_greeting: ""
+
+fish_confs:
+  local: |
+    set -gx PATH ~/.local/bin $PATH

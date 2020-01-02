@@ -18,9 +18,5 @@
     state: directory
   with_items:
     - ~/.config/fish/completions
-    - ~/.config/fish/conf.d
 
-- name: Generate fish.fish
-  template:
-    src: fish.fish.j2
-    dest: ~/.config/fish/conf.d/fish.fish
+- import_tasks: conf.yml
