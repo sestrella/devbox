@@ -1,6 +1,6 @@
 ---
 fish_greeting: ""
 
-fish_confs:
+fish_conf_files:
   local: |
     set -gx PATH ~/.local/bin $PATH
