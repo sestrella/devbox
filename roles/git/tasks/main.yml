@@ -11,10 +11,3 @@
     dest: ~/.gitconfig
   when: git_config is defined
   tags: dotfiles
-
-- name: Add fish abbreviations
-  template:
-    src: git.fish.j2
-    dest: ~/.config/fish/conf.d/git.fish
-  when: git_fish_abbrs is defined
-  tags: dotfiles
