@@ -1,6 +1,18 @@
 ---
 fish_greeting: ""
 
-fish_confs:
+fish_conf_files:
+  git: |
+    abbr ga git add
+    abbr gaa git add --all
+    abbr gbr git branch --remote
+    abbr gc git commit -v
+    abbr gc! git commit -v --amend
+    abbr gco git checkout
+    abbr gd git diff
+    abbr gl git pull
+    abbr gp git push
+    abbr gst git status
+
   local: |
     set -gx PATH ~/.local/bin $PATH

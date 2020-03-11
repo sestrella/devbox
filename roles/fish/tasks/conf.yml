@@ -13,5 +13,5 @@
   copy:
     content: "{{ item.value }}"
     dest: "{{ fish_conf_dir }}/{{ item.key }}.fish"
-  with_dict: "{{ fish_confs }}"
-  when: fish_confs is defined
+  with_dict: "{{ fish_conf_files }}"
+  when: fish_conf_files is defined
