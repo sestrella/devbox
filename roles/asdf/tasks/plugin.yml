@@ -3,7 +3,7 @@
   apt:
     name: "{{ asdf_dependencies[plugin.name] }}"
     state: present
-  become: yes
+  become: true
   when: asdf_dependencies[plugin.name] is defined
 
 - name: "{{ plugin.name }} - Install plugin"
@@ -17,6 +17,22 @@
   command: "bash {{ asdf_dir }}/plugins/nodejs/bin/import-release-team-keyring"
   when: plugin.name == "nodejs"
 
+- name: "{{ plugin.name }} - Default packages"
+  template:
+    src: default-packages.j2
+    dest: "{{ ansible_user_dir }}/.default-gems"
+  when:
+    - plugin.name == "ruby"
+    - plugin.default_packages is defined
+
+- name: "{{ plugin.name }} - Default packages"
+  template:
+    src: default-packages.j2
+    dest: "{{ ansible_user_dir }}/.default-python-packages"
+  when:
+    - plugin.name == "python"
+    - plugin.default_packages is defined
+
 - name: "{{ plugin.name }} - Install versions"
   command: "{{ asdf_dir }}/bin/asdf install {{ plugin.name }} {{ item }}"
   args:
@@ -28,5 +44,5 @@
   lineinfile:
     path: ~/.tool-versions
     line: "{{ plugin.name }} {{ plugin.global }}"
-    create: yes
+    create: true
   when: plugin.global is defined
