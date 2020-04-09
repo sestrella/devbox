@@ -13,25 +13,9 @@
   vars:
     plugin_repo: "{{ plugin.repo | default }}"
 
-- name: "{{ plugin.name }} - Install keyring"
-  command: "bash {{ asdf_dir }}/plugins/nodejs/bin/import-release-team-keyring"
-  when: plugin.name == "nodejs"
-
-- name: "{{ plugin.name }} - Default packages"
-  template:
-    src: default-packages.j2
-    dest: "{{ ansible_user_dir }}/.default-gems"
-  when:
-    - plugin.name == "ruby"
-    - plugin.default_packages is defined
-
-- name: "{{ plugin.name }} - Default packages"
-  template:
-    src: default-packages.j2
-    dest: "{{ ansible_user_dir }}/.default-python-packages"
-  when:
-    - plugin.name == "python"
-    - plugin.default_packages is defined
+- name: "{{ plugin.name }} - Include custom tasks"
+  include_tasks: "plugin/{{ plugin.name }}.yml"
+  when: plugin.name in asdf_custom_tasks
 
 - name: "{{ plugin.name }} - Install versions"
   command: "{{ asdf_dir }}/bin/asdf install {{ plugin.name }} {{ item }}"

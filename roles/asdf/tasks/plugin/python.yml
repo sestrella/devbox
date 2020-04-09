@@ -1,0 +1,6 @@
+---
+- name: "{{ plugin.name }} - Default packages"
+  template:
+    src: default-packages.j2
+    dest: "{{ ansible_user_dir }}/.default-python-packages"
+  when: plugin.default_packages is defined

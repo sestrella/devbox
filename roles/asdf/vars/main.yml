@@ -30,3 +30,8 @@ asdf_dependencies:
     - libssl-dev
     - libyaml-dev
     - zlib1g-dev
+
+asdf_custom_tasks:
+  - nodejs
+  - python
+  - ruby

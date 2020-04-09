@@ -1,0 +1,3 @@
+---
+- name: "{{ plugin.name }} - Install keyring"
+  command: "bash {{ asdf_dir }}/plugins/nodejs/bin/import-release-team-keyring"
