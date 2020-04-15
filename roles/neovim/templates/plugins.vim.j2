@@ -1,0 +1,5 @@
+call plug#begin('~/.local/share/nvim/plugged')
+{% for plug in neovim_plugins %}
+Plug {{ plug }}
+{% endfor %}
+call plug#end()

@@ -6,11 +6,7 @@ let g:{{ neovim_provider_names[name] }}=expand('{{ provider }}')
 {% endif %}
 {% endfor %}
 
-call plug#begin('~/.local/share/nvim/plugged')
-{% for plug in neovim_plugins %}
-Plug {{ plug }}
-{% endfor %}
-call plug#end()
+source ~/.config/nvim/plugins.vim
 
 {% if neovim_line_numbers %}
 set number
