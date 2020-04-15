@@ -32,8 +32,13 @@
     dest: "~/.config/nvim/{{ item }}"
   with_items:
     - init.vim
-    - plugins.vim
     - autoload/has.vim
+  tags: dotfiles
+
+- name: Create plugins file
+  template:
+    src: plugins.vim.j2
+    dest: ~/.config/nvim/plugins.vim
   notify: install plugins
   tags: dotfiles
 

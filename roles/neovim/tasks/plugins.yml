@@ -1,4 +1,10 @@
 ---
+- name: Create plugins file
+  template:
+    src: plugins.vim.j2
+    dest: ~/.config/nvim/plugins.vim
+  notify: install plugins
+
 - name: Create plugin directory
   file:
     path: ~/.config/nvim/plugin
