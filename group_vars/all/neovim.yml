@@ -4,12 +4,11 @@ neovim_plugins:
   - "'bronson/vim-trailing-whitespace'"
   - "'ctrlpvim/ctrlp.vim'"
   - "'godlygeek/tabular'"
+  - "'itchyny/lightline.vim'"
   - "'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }"
   - "'scrooloose/nerdcommenter'"
   - "'scrooloose/nerdtree'"
   - "'tpope/vim-surround'"
-  - "'vim-airline/vim-airline'"
-  - "'vim-airline/vim-airline-themes'"
 
 neovim_providers:
   python2: ~/.asdf/installs/python/2.7.17/bin/python
@@ -27,15 +26,14 @@ neovim_extra_config: |
   let maplocalleader = ','
 
   let g:NERDTreeShowHidden = 1
-  let g:airline_powerline_fonts = 1
+
+  let g:lightline = { 'colorscheme': 'solarized' }
 
   if has#colorscheme('solarized')
     syntax enable
     set background=light
     colorscheme solarized
   endif
-
-  let g:airline_theme='dark'
 
   if executable('rg')
     set grepprg=rg\ --color=never
