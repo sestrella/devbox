@@ -1,7 +1,17 @@
 ---
-fish_greeting: ""
+fish_completions_files:
+  asdf: |
+    source ~/.asdf/completions/asdf.fish
 
-fish_conf_files:
+fish_confd_files:
+  editor: |
+    set -gx EDITOR vim
+
+  bundle: |
+    abbr be bundle exec
+    abbr ber bundle exec rails
+    abbr bes bundle exec rspec
+
   git: |
     abbr ga git add
     abbr gaa git add --all
@@ -14,5 +24,12 @@ fish_conf_files:
     abbr gp git push
     abbr gst git status
 
-  local: |
-    set -gx PATH ~/.local/bin $PATH
+  starship: |
+    ~/.local/bin/starship init fish | source
+
+  tmux: |
+    abbr ta tmux attach -t
+    abbr tkss tmux kill-session -t
+    abbr tksv tmux kill-server
+    abbr tl tmux list-sessions
+    abbr ts tmux new-session -s

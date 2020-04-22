@@ -1,2 +1,3 @@
 ---
-fish_conf_dir: ~/.config/fish/conf.d
+fish_completions_dir: ~/.config/fish/completions
+fish_confd_dir: ~/.config/fish/conf.d

@@ -8,7 +8,6 @@
     - role: git
       tags: git
     - role: starship
-      tags: fish
     - role: tmux
       tags: tmux
     - role: ripgrep
