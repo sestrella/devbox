@@ -11,21 +11,8 @@
     dest: "{{ asdf_dir }}"
     version: "{{ asdf_version }}"
 
-- name: Copy initializer
-  template:
-    src: asdf.fish.j2
-    dest: ~/.config/fish/conf.d/asdf.fish
-  when: ansible_user_shell == "/usr/bin/fish"
-  tags: dotfiles
-
 - name: Create configuration script
   template:
     src: asdfrc.j2
     dest: ~/.asdfrc
-  tags: dotfiles
-
-- name: Create completion script
-  template:
-    src: completion.fish.j2
-    dest: ~/.config/fish/completions/asdf.fish
   tags: dotfiles

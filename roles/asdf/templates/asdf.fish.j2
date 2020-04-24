@@ -1,7 +1,0 @@
-{{ ansible_managed | comment }}
-
-source {{ asdf_dir }}/asdf.fish
-
-{% for key, value in asdf_fish_abbrs.items() %}
-abbr {{ key }} {{ value }}
-{% endfor %}
