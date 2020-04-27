@@ -19,6 +19,9 @@ neovim_init: |
   set softtabstop=2
   set tabstop=2
 
+  set splitbelow
+  set splitright
+
   syntax enable
   set background=light
   colorscheme solarized
