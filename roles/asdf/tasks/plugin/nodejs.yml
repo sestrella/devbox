@@ -1,9 +1,10 @@
 ---
 - name: "{{ plugin.name }} - Install keyring"
   command: "bash {{ asdf_dir }}/plugins/nodejs/bin/import-release-team-keyring"
+  changed_when: false
 
 - name: "{{ plugin.name }} - Default packages"
-  template:
-    src: default-packages.j2
+  copy:
+    content: "{{ plugin.default_packages | join('\n') }}"
     dest: "{{ ansible_user_dir }}/.default-npm-packages"
   when: plugin.default_packages is defined
