@@ -1,28 +1,5 @@
-" {{ ansible_managed }}
-
-{% for name, provider in neovim_providers.items() %}
-{% if neovim_provider_names[name] is defined %}
-let g:{{ neovim_provider_names[name] }}=expand('{{ provider }}')
-{% endif %}
-{% endfor %}
-
 source ~/.config/nvim/plugins.vim
 
-{% if neovim_line_numbers %}
-set number
-{% endif %}
-
-{% if neovim_tab_spaces is defined %}
-set expandtab
-set shiftwidth={{ neovim_tab_spaces }}
-set tabstop={{ neovim_tab_spaces }}
-{% endif %}
-
-{% if neovim_invert_split %}
-set splitbelow
-set splitright
-{% endif %}
-
-{% if neovim_extra_config is defined %}
-{{ neovim_extra_config }}
+{% if neovim_init is defined %}
+{{ neovim_init }}
 {% endif %}
