@@ -24,6 +24,9 @@ fish_confd_files:
     abbr gp git push
     abbr gst git status
 
+  pipenv: |
+    set -gx PIPENV_VENV_IN_PROJECT yes
+
   starship: |
     ~/.local/bin/starship init fish | source
 
