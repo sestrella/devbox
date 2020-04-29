@@ -1,0 +1,10 @@
+---
+# status left/right sections separators
+oh_my_tmux_theme_left_separator_main: ''
+oh_my_tmux_theme_left_separator_sub: '|'
+oh_my_tmux_theme_right_separator_main: ''
+oh_my_tmux_theme_right_separator_sub: '|'
+
+# symbols used to indicate whether battery is charging or discharging
+oh_my_tmux_battery_status_charging: '↑'
+oh_my_tmux_battery_status_discharging: '↓'

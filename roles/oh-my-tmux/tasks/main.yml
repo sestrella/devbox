@@ -1,0 +1,16 @@
+---
+- name: Clone repository
+  git:
+    repo: https://github.com/gpakosz/.tmux.git
+    dest: ~/.tmux
+
+- name: Symlink tmux.conf
+  file:
+    src: ~/.tmux/.tmux.conf
+    dest: ~/.tmux.conf
+    state: link
+
+- name: Create tmux.conf.local
+  template:
+    src: tmux.conf.local.j2
+    dest: ~/.tmux.conf.local
