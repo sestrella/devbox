@@ -6,9 +6,12 @@
   become: true
 
 - import_tasks: init.yml
+  tags: dotfiles
 
 - import_tasks: ftplugin.yml
   when: neovim_ftplugin_files is defined
+  tags: dotfiles
 
 - import_tasks: plugin.yml
   when: neovim_plugin_files is defined
+  tags: dotfiles
