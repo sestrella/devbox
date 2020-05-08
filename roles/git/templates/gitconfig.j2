@@ -3,6 +3,6 @@
 {% for section, config in git_config.items() %}
 [{{ section }}]
 {% for key, value in config.items() %}
-{{ key }} = {{ value }}
+	{{ key }} = {{ value }}
 {% endfor %}
 {% endfor %}

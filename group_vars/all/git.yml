@@ -1,20 +1,8 @@
 ---
 git_config:
   user:
-    name: "Sebastián Estrella"
-    email: "sestrella.me@gmail.com"
+    name: Sebastián Estrella
+    email: sestrella.me@gmail.com
 
-  core:
-    editor: nvim
-
-git_fish_abbrs:
-  ga: "git add"
-  gaa: "git add --all"
-  gbr: "git branch --remote"
-  gc!: "git commit -v --amend"
-  gc: "git commit -v"
-  gco: "git checkout"
-  gd: "git diff"
-  gl: "git pull"
-  gp: "git push"
-  gst: "git status"
+  push:
+    default: current

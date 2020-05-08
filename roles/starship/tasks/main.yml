@@ -20,12 +20,6 @@
     dest: "{{ starship_dir }}/"
     mode: "0755"
 
-- name: Copy initialize script
-  template:
-    src: starship.fish.j2
-    dest: ~/.config/fish/conf.d/starship.fish
-  tags: dotfiles
-
 - name: Copy configuration file
   copy:
     src: starship.toml
