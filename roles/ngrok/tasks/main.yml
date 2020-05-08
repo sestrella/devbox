@@ -1,0 +1,28 @@
+---
+- name: Create temp directory
+  file:
+    path: /tmp/ngrok
+    state: directory
+
+- name: Download zip
+  unarchive:
+    src: https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+    dest: /tmp/ngrok
+    remote_src: true
+
+- name: Copy binary
+  copy:
+    src: /tmp/ngrok/ngrok
+    dest: ~/.local/bin
+    mode: "0755"
+
+- name: Create configuration directory
+  file:
+    path: ~/.ngrok2
+    state: directory
+
+- name: Configuration file
+  template:
+    src: ngrok.yml.j2
+    dest: ~/.ngrok2/ngrok.yml
+  tags: dotfiles
