@@ -20,6 +20,7 @@
   file:
     path: ~/.ngrok2
     state: directory
+  tags: dotfiles
 
 - name: Configuration file
   template:
