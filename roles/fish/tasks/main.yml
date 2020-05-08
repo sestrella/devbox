@@ -13,4 +13,7 @@
   become: true
 
 - import_tasks: completions.yml
+  tags: dotfiles
+
 - import_tasks: confd.yml
+  tags: dotfiles
