@@ -1,4 +1,10 @@
 ---
 tools_packages:
   - apt-file
+  - curl
+  - exuberant-ctags
+  - fzf
+  - graphviz
+  - ripgrep
+  - tmate
   - tree
