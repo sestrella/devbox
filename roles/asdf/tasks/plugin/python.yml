@@ -4,3 +4,4 @@
     content: "{{ plugin.default_packages | join('\n') }}"
     dest: "{{ ansible_user_dir }}/.default-python-packages"
   when: plugin.default_packages is defined
+  tags: dotfiles
