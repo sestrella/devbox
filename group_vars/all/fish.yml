@@ -12,6 +12,9 @@ fish_confd_files:
     abbr ber bundle exec rails
     abbr bes bundle exec rspec
 
+  ghc:
+    set -gx PATH /opt/ghc/bin $PATH
+
   git: |
     abbr ga git add
     abbr gaa git add --all
