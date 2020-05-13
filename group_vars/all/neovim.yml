@@ -23,6 +23,9 @@ neovim_init: |
   set splitbelow
   set splitright
 
+  let mapleader = "\<Space>"
+  let maplocalleader = ','
+
   syntax enable
   set background=light
   colorscheme solarized
