@@ -5,6 +5,7 @@ neovim_plugins:
   - "'editorconfig/editorconfig-vim'"
   - "'junegunn/fzf', { 'do': { -> fzf#install() } }"
   - "'junegunn/fzf.vim'"
+  - "'preservim/nerdcommenter'"
   - "'preservim/nerdtree'"
   - "'tpope/vim-projectionist'"
   - "'tpope/vim-rails'"
