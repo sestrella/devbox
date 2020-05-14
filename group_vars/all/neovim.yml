@@ -1,6 +1,7 @@
 ---
 neovim_plugins:
   - "'altercation/vim-colors-solarized'"
+  - "'ap/vim-css-color'"
   - "'bronson/vim-trailing-whitespace'"
   - "'editorconfig/editorconfig-vim'"
   - "'junegunn/fzf', { 'do': { -> fzf#install() } }"
