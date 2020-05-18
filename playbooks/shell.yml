@@ -7,6 +7,8 @@
       tags: fish
     - role: git
       tags: git
+    - role: github
+      tags: git
     - role: starship
     - role: oh-my-tmux
       tags: tmux
