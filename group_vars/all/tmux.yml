@@ -1,13 +1,4 @@
 ---
-tmux_packages:
-  - fonts-powerline
-  - tmux
-
-tmux_prefix: C-a
-tmux_base_index: 1
-tmux_mode_keys: vi
-tmux_confirmation_prompt_enabled: false
-
 tmux_plugins:
   - tmux-plugins/tmux-pain-control
   - tmux-plugins/tmux-resurrect
@@ -15,9 +6,13 @@ tmux_plugins:
   - tmux-plugins/tmux-yank
   - tmux-plugins/tpm
 
-tmux_fish_abbrs:
-  ta: tmux attach -t
-  tkss: tmux kill-session -t
-  tksv: tmux kill-server
-  tl: tmux list-sessions
-  ts: tmux new-session -s
+tmux_conf_before_plugins: |
+  set-option -g prefix C-a
+
+  set -g base-index 1
+  setw -g pane-base-index 1
+
+  set-window-option -g mode-keys vi
+
+  bind-key & kill-window
+  bind-key x kill-pane

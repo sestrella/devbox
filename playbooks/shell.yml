@@ -10,7 +10,7 @@
     - role: github
       tags: git
     - role: starship
-    - role: oh-my-tmux
+    - role: tmux
       tags: tmux
     - role: ripgrep
       tags: ripgrep

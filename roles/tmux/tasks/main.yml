@@ -11,16 +11,10 @@
     dest: "{{ tmux_tpm_dir }}"
     version: "{{ tmux_tpm_version }}"
   when: tmux_plugins is defined
+  tags: dotfiles
 
 - name: Create configuration file
   template:
     src: tmux.conf.j2
     dest: ~/.tmux.conf
-  tags: dotfiles
-
-- name: Add fish abbreviations
-  template:
-    src: tmux.fish.j2
-    dest: ~/.config/fish/conf.d/tmux.fish
-  when: ansible_user_shell == '/usr/bin/fish'
   tags: dotfiles

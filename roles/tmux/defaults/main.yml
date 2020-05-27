@@ -2,4 +2,3 @@
 tmux_packages: tmux
 tmux_tpm_dir: ~/.tmux/plugins/tpm
 tmux_tpm_version: v3.0.0
-tmux_confirmation_prompt_enabled: true
