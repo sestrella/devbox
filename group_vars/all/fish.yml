@@ -4,13 +4,19 @@ fish_completions_files:
     source ~/.asdf/completions/asdf.fish
 
 fish_confd_files:
-  editor: |
-    set -gx EDITOR vim
+  asdf: |
+    source ~/.asdf/asdf.fish
 
   bundle: |
     abbr be bundle exec
     abbr ber bundle exec rails
     abbr bes bundle exec rspec
+
+  editor: |
+    set -gx EDITOR vim
+
+  fish: |
+    set fish_greeting
 
   ghc:
     set -gx PATH /opt/ghc/bin $PATH
