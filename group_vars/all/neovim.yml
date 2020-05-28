@@ -5,6 +5,8 @@ neovim_plugins:
   - "'bronson/vim-trailing-whitespace'"
   - "'ctrlpvim/ctrlp.vim'"
   - "'editorconfig/editorconfig-vim'"
+  - "'leafgarland/typescript-vim'"
+  - "'peitalin/vim-jsx-typescript'"
   - "'preservim/nerdcommenter'"
   - "'preservim/nerdtree'"
   - "'tpope/vim-projectionist'"
