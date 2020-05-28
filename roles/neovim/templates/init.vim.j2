@@ -1,5 +1,9 @@
+{% if neovim_init_before_plugins is defined %}
+{{ neovim_init_before_plugins }}
+{% endif %}
+
 source ~/.config/nvim/plugins.vim
 
-{% if neovim_init is defined %}
-{{ neovim_init }}
+{% if neovim_init_after_plugins is defined %}
+{{ neovim_init_after_plugins }}
 {% endif %}

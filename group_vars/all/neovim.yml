@@ -14,7 +14,7 @@ neovim_plugins:
   - "'tpope/vim-sensible'"
   - "'tpope/vim-surround'"
 
-neovim_init: |
+neovim_init_after_plugins: |
   set colorcolumn=80
   set number
 
