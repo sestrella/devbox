@@ -1,0 +1,17 @@
+---
+- name: Install package
+  apt:
+    name: vim
+    state: present
+  become: true
+
+- import_tasks: config.yml
+  tags: dotfiles
+
+- import_tasks: ftplugin.yml
+  when: vim_ftplugin_files is defined
+  tags: dotfiles
+
+- import_tasks: plugin.yml
+  when: vim_plugin_files is defined
+  tags: dotfiles

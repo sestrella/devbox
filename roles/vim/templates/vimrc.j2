@@ -1,0 +1,9 @@
+{% if vim_config_before_plugins is defined %}
+{{ vim_config_before_plugins }}
+{% endif %}
+
+source ~/.vim/plugins.vim
+
+{% if vim_config_after_plugins is defined %}
+{{ vim_config_after_plugins }}
+{% endif %}

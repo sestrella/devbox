@@ -1,4 +1,6 @@
 ---
+neovim_state: absent
+
 neovim_plugins:
   - "'altercation/vim-colors-solarized'"
   - "'ap/vim-css-color'"

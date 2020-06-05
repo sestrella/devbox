@@ -1,0 +1,11 @@
+---
+- name: Create ftplugin directory
+  file:
+    path: "{{ vim_ftplugin_dir }}"
+    state: directory
+
+- name: Create ftplugin files
+  copy:
+    content: "{{ item.value }}"
+    dest: "{{ vim_ftplugin_dir }}/{{ item.key }}.vim"
+  with_dict: "{{ vim_ftplugin_files }}"

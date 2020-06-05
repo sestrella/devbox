@@ -2,16 +2,21 @@
 - name: Install package
   apt:
     name: neovim
-    state: present
+    state: "{{ neovim_state }}"
   become: true
 
 - import_tasks: init.yml
+  when: neovim_state == 'present'
   tags: dotfiles
 
 - import_tasks: ftplugin.yml
-  when: neovim_ftplugin_files is defined
+  when:
+    - neovim_ftplugin_files is defined
+    - neovim_state == 'present'
   tags: dotfiles
 
 - import_tasks: plugin.yml
-  when: neovim_plugin_files is defined
+  when:
+    - neovim_plugin_files is defined
+    - neovim_state == 'present'
   tags: dotfiles

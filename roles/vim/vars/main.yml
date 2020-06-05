@@ -1,0 +1,3 @@
+---
+vim_ftplugin_dir: ~/.vim/ftplugin
+vim_plugin_dir: ~/.vim/plugin

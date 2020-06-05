@@ -1,0 +1,11 @@
+---
+- name: Create plugin directory
+  file:
+    path: "{{ vim_plugin_dir }}"
+    state: directory
+
+- name: Create plugin files
+  copy:
+    content: "{{ item.value }}"
+    dest: "{{ vim_plugin_dir }}/{{ item.key }}.vim"
+  with_dict: "{{ vim_plugin_files }}"
