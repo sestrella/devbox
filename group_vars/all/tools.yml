@@ -4,6 +4,7 @@ tools_packages:
   - curl
   - exuberant-ctags
   - graphviz
+  - redis-server
   - ripgrep
   - tmate
   - tree
