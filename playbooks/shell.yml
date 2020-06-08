@@ -12,5 +12,3 @@
     - role: starship
     - role: tmux
       tags: tmux
-    - role: ripgrep
-      tags: ripgrep
