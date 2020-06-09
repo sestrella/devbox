@@ -33,6 +33,8 @@ vim_config_after_plugins: |
   set noswapfile
   set noundofile
 
+  set hlsearch
+
 vim_plugin_files:
   ctrlp: |
     if executable('rg')
