@@ -29,6 +29,10 @@ vim_config_after_plugins: |
   let mapleader = "\<Space>"
   let maplocalleader = ','
 
+  set nobackup
+  set noswapfile
+  set noundofile
+
 vim_plugin_files:
   ctrlp: |
     if executable('rg')
