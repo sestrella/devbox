@@ -1,0 +1,4 @@
+---
+{% for key, value in bundler_config.items() %}
+BUNDLE_{{ key | upper }}: {{ value }}
+{% endfor %}
