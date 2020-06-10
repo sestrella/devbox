@@ -15,29 +15,30 @@ Install python:
 asdf install
 ```
 
-Install package manager:
+Create a virtual environment:
 
 ```sh
-pip install --upgrade pipenv
+python -m venv .venv
+source .venv/bin/activate
 ```
 
 Install dependencies:
 
 ```sh
-pipenv install
+pip install
 ```
 
 Install Ansible galaxies:
 
 ```sh
-pipenv run ansible-galaxy install -r requirements.yml
+ansible-galaxy install -r requirements.yml
 ```
 
 Adjust all [group_vars/all](group_vars/all) variables accordingly, and run the
 main playbook:
 
 ```sh
-pipenv run ansible-playbook site.yml -K
+ansible-playbook site.yml -K
 ```
 
 [asdf]: https://github.com/asdf-vm/asdf
