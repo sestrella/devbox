@@ -5,6 +5,7 @@ vim_plugins:
   - bronson/vim-trailing-whitespace
   - ctrlpvim/ctrlp.vim
   - editorconfig/editorconfig-vim
+  - ervandew/supertab
   - leafgarland/typescript-vim
   - peitalin/vim-jsx-typescript
   - preservim/nerdcommenter
