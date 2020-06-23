@@ -1,2 +1,2 @@
 #!/bin/bash
-pipenv run ansible-playbook site.yml -t dotfiles
+ansible-playbook site.yml -t dotfiles

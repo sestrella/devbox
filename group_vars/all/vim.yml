@@ -7,6 +7,7 @@ vim_plugins:
   - editorconfig/editorconfig-vim
   - ervandew/supertab
   - leafgarland/typescript-vim
+  - pbrisbin/vim-syntax-shakespeare
   - peitalin/vim-jsx-typescript
   - preservim/nerdcommenter
   - preservim/nerdtree
