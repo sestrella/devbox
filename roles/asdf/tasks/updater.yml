@@ -8,16 +8,19 @@
   template:
     src: asdf-updater.service.j2
     dest: ~/.config/systemd/user/asdf-updater.service
+  notify: daemon_reload
 
 - name: Copy asdf-updater.timer
   copy:
     src: asdf-updater.timer
     dest: ~/.config/systemd/user/asdf-updater.timer
+  notify:
+    - daemon_reload
+    - reload_timer
 
 - name: Start asdf-updater.timer
   systemd:
     name: asdf-updater.timer
     state: started
     enabled: true
-    daemon_reload: true
     scope: user

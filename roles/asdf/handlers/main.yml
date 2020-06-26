@@ -1,0 +1,11 @@
+---
+- name: daemon_reload
+  systemd:
+    daemon_reload: true
+    scope: user
+
+- name: restart_timer
+  systemd:
+    name: asdf-updater.timer
+    state: restarted
+    scope: user

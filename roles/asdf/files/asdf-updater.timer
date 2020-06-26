@@ -1,5 +1,5 @@
 [Unit]
-Description=Update asdf weekly
+Description=Run asdf-updater weekly
 
 [Timer]
 OnCalendar=weekly
