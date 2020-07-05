@@ -2,7 +2,7 @@
 git_config:
   user:
     name: Sebastián Estrella
-    email: sestrella.me@gmail.com
+    email: 2049686+sestrella@users.noreply.github.com
 
   push:
     default: current
