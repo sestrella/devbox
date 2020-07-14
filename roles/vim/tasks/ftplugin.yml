@@ -4,6 +4,18 @@
     path: "{{ vim_ftplugin_dir }}"
     state: directory
 
+- name: Find ftplugin files
+  shell: find {{ vim_ftplugin_dir }} -maxdepth 1 -type f -name '*.vim' -exec basename {} \;
+  register: ftplugin_files
+  changed_when: false
+
+- name: Remove unmanaged ftplugin files
+  file:
+    path: "{{ vim_ftplugin_dir }}/{{ item }}"
+    state: absent
+  with_items: "{{ ftplugin_files.stdout_lines | default([]) }}"
+  when: item[:-4] not in vim_ftplugin_files.keys()
+
 - name: Create ftplugin files
   copy:
     content: "{{ item.value }}"

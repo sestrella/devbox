@@ -4,6 +4,18 @@
     path: "{{ vim_plugin_dir }}"
     state: directory
 
+- name: Find plugin files
+  shell: find {{ vim_plugin_dir }} -maxdepth 1 -type f -name '*.vim' -exec basename {} \;
+  register: plugin_files
+  changed_when: false
+
+- name: Remove unmanaged plugin files
+  file:
+    path: "{{ vim_plugin_dir }}/{{ item }}"
+    state: absent
+  with_items: "{{ plugin_files.stdout_lines | default([]) }}"
+  when: item[:-4] not in vim_plugin_files.keys()
+
 - name: Create plugin files
   copy:
     content: "{{ item.value }}"
