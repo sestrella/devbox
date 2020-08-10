@@ -27,13 +27,7 @@ source .venv/bin/activate
 Install dependencies:
 
 ```sh
-pip install
-```
-
-Install Ansible galaxies:
-
-```sh
-ansible-galaxy install -r requirements.yml
+pip install -r requirements.txt
 ```
 
 Adjust all [group_vars/all](group_vars/all) variables accordingly, and run the
