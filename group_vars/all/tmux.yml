@@ -1,4 +1,8 @@
 ---
+tmux_packages:
+  - tmate
+  - tmux
+
 tmux_plugins:
   - tmux-plugins/tmux-pain-control
   - tmux-plugins/tmux-resurrect
