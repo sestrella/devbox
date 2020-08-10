@@ -1,8 +1,0 @@
----
-oh_my_tmux_theme_left_separator_main: '\uE0B0'
-oh_my_tmux_theme_left_separator_sub: '\uE0B1'
-oh_my_tmux_theme_right_separator_main: '\uE0B2'
-oh_my_tmux_theme_right_separator_sub: '\uE0B3'
-
-oh_my_tmux_battery_status_charging: '⚡ '
-oh_my_tmux_battery_status_discharging: '🔋 '
