@@ -1,7 +1,0 @@
-call plug#begin(stdpath('data') . '/plugged')
-
-{% for plug in neovim_plugins %}
-Plug {{ plug }}
-{% endfor %}
-
-call plug#end()
