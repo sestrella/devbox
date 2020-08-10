@@ -4,14 +4,7 @@ asdf_updater: true
 
 asdf_plugins:
   - name: nodejs
-
   - name: python
-    default_packages:
-      - pipenv
-
   - name: ruby
-    default_packages:
-      - bundler
-
   - name: stack
     repo: https://github.com/sestrella/asdf-stack.git
