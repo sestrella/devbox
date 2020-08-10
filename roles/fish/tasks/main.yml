@@ -12,7 +12,12 @@
     state: present
   become: true
 
-- import_tasks: completions.yml
+- import_role:
+    name: config-files
+  vars:
+    config_files: "{{ fish_completions_files }}"
+    config_files_dir: "{{ fish_completions_dir }}"
+    config_files_extension: fish
   tags: dotfiles
 
 - import_role:
