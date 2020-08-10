@@ -4,5 +4,6 @@
 - import_playbook: playbooks/editors.yml
 - import_playbook: playbooks/managers.yml
 - import_playbook: playbooks/shell.yml
+  tags: shell
 #- import_playbook: playbooks/system.yml
 #- import_playbook: playbooks/virtualization.yml

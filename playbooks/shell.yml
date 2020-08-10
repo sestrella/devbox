@@ -1,14 +1,7 @@
 ---
 - hosts: localhost
   roles:
-    - role: asdf
-      tags: asdf
-    - role: fish
-      tags: fish
-    - role: git
-      tags: git
-    #- role: github
-      #tags: git
-    - role: starship
-    - role: tmux
-      tags: tmux
+    - fish
+    - git
+    - starship
+    - tmux
