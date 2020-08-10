@@ -1,6 +1,0 @@
----
-- name: Generate pipenv.fish
-  template:
-    src: pipenv.fish.j2
-    dest: ~/.config/fish/conf.d/pipenv.fish
-  when: ansible_user_shell == "/usr/bin/fish"

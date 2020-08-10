@@ -15,5 +15,10 @@
 - import_tasks: completions.yml
   tags: dotfiles
 
-- import_tasks: confd.yml
+- import_role:
+    name: config-files
+  vars:
+    config_files: "{{ fish_confd_files }}"
+    config_files_dir: "{{ fish_confd_dir }}"
+    config_files_extension: fish
   tags: dotfiles
