@@ -1,5 +1,7 @@
 # devbox
 
+![build](https://github.com/sestrella/devbox/workflows/build/badge.svg?branch=master)
+
 Ansible roles used to provision my local environment
 
 ## Requirements
