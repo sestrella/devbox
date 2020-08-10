@@ -3,7 +3,5 @@
   roles:
     - role: vim
       tags: vim
-    - role: neovim
-      tags: vim, neovim
     - role: vscode
       tags: vscode

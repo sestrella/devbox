@@ -2,6 +2,3 @@
 - hosts: all
   roles:
     - virtualbox
-    - role: geerlingguy.docker
-      become: true
-      tags: docker
