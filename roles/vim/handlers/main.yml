@@ -1,0 +1,6 @@
+---
+- name: clean_plugins
+  command: vim +PlugClean! +qa
+
+- name: install_plugins
+  command: vim +PlugInstall +qa

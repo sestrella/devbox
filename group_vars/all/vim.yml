@@ -1,6 +1,5 @@
 ---
 vim_plugins:
-  - aliou/bats.vim
   - altercation/vim-colors-solarized
   - ap/vim-css-color
   - bronson/vim-trailing-whitespace
@@ -53,5 +52,5 @@ vim_plugin_files:
 
   solarized: |
     syntax enable
-    set background=light
+    set background=dark
     colorscheme solarized

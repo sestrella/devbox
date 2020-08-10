@@ -13,6 +13,9 @@
   template:
     src: plugins.vim.j2
     dest: ~/.vim/plugins.vim
+  notify:
+    - clean_plugins
+    - install_plugins
 
 - name: Create configuration file
   template:
