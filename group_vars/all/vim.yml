@@ -52,5 +52,5 @@ vim_plugin_files:
 
   solarized: |
     syntax enable
-    set background=dark
+    set background=light
     colorscheme solarized
