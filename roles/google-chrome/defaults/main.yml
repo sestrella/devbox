@@ -2,5 +2,4 @@
 google_chrome_repo_key: https://dl-ssl.google.com/linux/linux_signing_key.pub
 google_chrome_repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
 
-google_chrome_packages:
-  - google-chrome-stable
+google_chrome_packages: google-chrome-stable

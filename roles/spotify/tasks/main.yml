@@ -8,7 +8,7 @@
 - name: Add repository
   apt_repository:
     repo: deb http://repository.spotify.com stable non-free
-    filename: spotify-client
+    filename: spotify
   become: true
 
 - name: Install package

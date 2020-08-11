@@ -1,11 +1,6 @@
 ---
 - hosts: localhost
   roles:
-    - role: firefox
-      tags: firefox
-    - role: google-chrome
-      tags: chrome
-    - role: slack
-      tags: slack
-    - role: spotify
-      tags: spotify
+    - google-chrome
+    - slack
+    - spotify

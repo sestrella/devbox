@@ -1,5 +1,5 @@
 ---
-#- import_playbook: playbooks/applications.yml
+- import_playbook: playbooks/applications.yml
 #- import_playbook: playbooks/databases.yml
 - import_playbook: playbooks/editors.yml
 - import_playbook: playbooks/managers.yml
