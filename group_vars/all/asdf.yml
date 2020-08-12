@@ -5,6 +5,12 @@ asdf_updater: true
 asdf_plugins:
   - name: nodejs
   - name: python
+    versions: [3.8.3]
+    global: 3.8.3
   - name: ruby
+    versions: [2.6.5]
+    global: 2.6.5
   - name: stack
     repo: https://github.com/sestrella/asdf-stack.git
+    versions: [2.3.3]
+    global: 2.3.3
