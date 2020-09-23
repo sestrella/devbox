@@ -1,0 +1,20 @@
+---
+- name: Add repository key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: C99B11DEB97541F0
+  become: true
+
+- name: Add repository
+  apt_repository:
+    repo: "deb https://cli.github.com/packages {{ ansible_distribution_release }} main"
+    state: present
+    filename: github-cli
+  become: true
+
+- name: Install package
+  apt:
+    name: gh
+    state: present
+    update_cache: true
+  become: true
