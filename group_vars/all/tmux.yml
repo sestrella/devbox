@@ -4,6 +4,7 @@ tmux_packages:
   - tmux
 
 tmux_plugins:
+  - arcticicestudio/nord-tmux
   - tmux-plugins/tmux-pain-control
   - tmux-plugins/tmux-resurrect
   - tmux-plugins/tmux-sensible
