@@ -15,6 +15,7 @@ vim_plugins:
   - tpope/vim-rails
   - tpope/vim-sensible
   - tpope/vim-surround
+  - vim-airline/vim-airline
 
 vim_config_after_plugins: |
   set colorcolumn=80
@@ -38,6 +39,9 @@ vim_config_after_plugins: |
   set hlsearch
 
 vim_plugin_files:
+  airline: |
+    let g:airline_powerline_fonts = 1
+
   ctrlp: |
     if executable('rg')
       set grepprg=rg\ --color=never
@@ -52,5 +56,5 @@ vim_plugin_files:
 
   solarized: |
     syntax enable
-    set background=light
+    set background=dark
     colorscheme solarized
