@@ -6,7 +6,6 @@ vim_plugins:
   - ctrlpvim/ctrlp.vim
   - editorconfig/editorconfig-vim
   - ervandew/supertab
-  - honza/vim-snippets
   - leafgarland/typescript-vim
   - pbrisbin/vim-syntax-shakespeare
   - peitalin/vim-jsx-typescript
