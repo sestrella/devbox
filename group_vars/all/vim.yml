@@ -1,5 +1,6 @@
 ---
 vim_plugins:
+  - aliou/bats.vim
   - altercation/vim-colors-solarized
   - ap/vim-css-color
   - bronson/vim-trailing-whitespace
