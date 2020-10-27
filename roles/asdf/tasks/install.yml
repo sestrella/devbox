@@ -15,4 +15,5 @@
   template:
     src: asdfrc.j2
     dest: ~/.asdfrc
+    mode: 0644
   tags: dotfiles

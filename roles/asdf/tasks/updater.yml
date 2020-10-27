@@ -3,17 +3,20 @@
   file:
     path: ~/.config/systemd/user
     state: directory
+    mode: 0755
 
 - name: Copy asdf-updater.service
   template:
     src: asdf-updater.service.j2
     dest: ~/.config/systemd/user/asdf-updater.service
+    mode: 0644
   notify: daemon_reload
 
 - name: Copy asdf-updater.timer
   copy:
     src: asdf-updater.timer
     dest: ~/.config/systemd/user/asdf-updater.timer
+    mode: 0644
   notify:
     - daemon_reload
     - reload_timer

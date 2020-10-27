@@ -3,6 +3,7 @@
   file:
     path: ~/.vim/autoload
     state: directory
+    mode: 0755
 
 - name: Download plugin manager
   get_url:
@@ -13,6 +14,7 @@
   template:
     src: plugins.vim.j2
     dest: ~/.vim/plugins.vim
+    mode: 0644
   notify:
     - clean_plugins
     - install_plugins
@@ -21,3 +23,4 @@
   template:
     src: vimrc.j2
     dest: ~/.vimrc
+    mode: 0644
