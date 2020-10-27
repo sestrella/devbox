@@ -8,20 +8,23 @@
   file:
     path: /tmp/starship
     state: directory
+    mode: 0755
 
 - name: Extract tarball
   unarchive:
     src: /tmp/starship-x86_64-unknown-linux-gnu.tar.gz
     dest: /tmp/starship
+    mode: 0644
 
 - name: Copy binary
   copy:
     src: /tmp/starship/starship
     dest: "{{ starship_dir }}/"
-    mode: "0755"
+    mode: 0755
 
 - name: Copy configuration file
   copy:
     src: starship.toml
     dest: ~/.config/starship.toml
+    mode: 0644
   tags: dotfiles

@@ -23,4 +23,5 @@
   copy:
     src: github-cli.fish
     dest: ~/.config/fish/conf.d/github-cli.fish
+    mode: 0644
   when: ansible_user_shell == '/usr/bin/fish'

@@ -5,5 +5,5 @@
     - git
     - starship
     - tmux
-    - role: github-cli
+    - role: github_cli
       tags: github
