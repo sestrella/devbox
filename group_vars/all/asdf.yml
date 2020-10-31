@@ -1,5 +1,5 @@
 ---
-asdf_version: v0.7.8
+asdf_version: v0.8.0
 asdf_updater: true
 
 asdf_plugins:
@@ -11,6 +11,5 @@ asdf_plugins:
     versions: [2.6.5]
     global: 2.6.5
   - name: stack
-    repo: https://github.com/sestrella/asdf-stack.git
-    versions: [2.3.3]
-    global: 2.3.3
+    versions: [2.5.1]
+    global: 2.5.1
