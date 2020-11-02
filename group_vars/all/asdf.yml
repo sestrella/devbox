@@ -2,6 +2,8 @@
 asdf_version: v0.8.0
 asdf_updater: true
 
+asdf_dir: "{{ ansible_user_dir }}/.asdf"
+
 asdf_plugins:
   - name: nodejs
   - name: python

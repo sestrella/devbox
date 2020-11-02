@@ -1,6 +1,11 @@
 ---
 vim_has_nvim: true
 
+vim_config_before_plugins: |
+  let g:python_host_prog = '{{ asdf_dir }}/installs/python/2.7.18/bin/python'
+  let g:python3_host_prog = '{{ asdf_dir }}/installs/python/3.9.0/bin/python'
+
+
 vim_plugins:
   - aliou/bats.vim
   - altercation/vim-colors-solarized
