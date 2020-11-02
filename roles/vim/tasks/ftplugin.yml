@@ -3,5 +3,5 @@
     name: config-files
   vars:
     config_files: "{{ vim_ftplugin_files }}"
-    config_files_dir: "{{ vim_ftplugin_dir }}"
+    config_files_dir: "{{ vim_params.root_dir }}/ftplugin"
     config_files_extension: vim

@@ -1,6 +1,7 @@
 ---
+vim_has_nvim: true
+
 vim_plugins:
-  #- ervandew/supertab
   - aliou/bats.vim
   - altercation/vim-colors-solarized
   - ap/vim-css-color

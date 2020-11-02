@@ -1,19 +1,19 @@
 ---
 - name: Create autoload directory
   file:
-    path: ~/.vim/autoload
+    path: "{{ vim_params.autoload_dir }}"
     state: directory
     mode: 0755
 
 - name: Download plugin manager
   get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    dest: ~/.vim/autoload/plug.vim
+    dest: "{{ vim_params.autoload_dir }}/plug.vim"
 
 - name: Create plugins file
   template:
     src: plugins.vim.j2
-    dest: ~/.vim/plugins.vim
+    dest: "{{ vim_params.root_dir }}/plugins.vim"
     mode: 0644
   notify:
     - clean_plugins
@@ -22,5 +22,5 @@
 - name: Create configuration file
   template:
     src: vimrc.j2
-    dest: ~/.vimrc
+    dest: "{{ vim_params.config_file }}"
     mode: 0644

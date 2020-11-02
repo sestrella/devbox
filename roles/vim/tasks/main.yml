@@ -1,7 +1,17 @@
 ---
+- name: Set params for vim
+  set_fact:
+    vim_params: "{{ _vim_params.vim }}"
+  when: not vim_has_nvim
+
+- name: Set params for nvim
+  set_fact:
+    vim_params: "{{ _vim_params.nvim }}"
+  when: vim_has_nvim
+
 - name: Install package
   apt:
-    name: vim
+    name: "{{ vim_params.package }}"
     state: present
   become: true
 
