@@ -7,8 +7,9 @@ asdf_dir: "{{ ansible_user_dir }}/.asdf"
 asdf_plugins:
   - name: nodejs
   - name: python
-    versions: [3.8.3]
-    global: 3.8.3
+    versions: [2.7.18, 3.9.0]
+    global: 3.9.0
+    default_packages: [pynvim]
   - name: ruby
     versions: [2.6.5]
     global: 2.6.5
