@@ -1,8 +1,0 @@
----
-- name: "{{ plugin.name }} - Default packages"
-  copy:
-    content: "{{ plugin.default_packages | join('\n') }}"
-    dest: "{{ ansible_user_dir }}/.default-gems"
-    mode: 0644
-  when: plugin.default_packages is defined
-  tags: dotfiles
