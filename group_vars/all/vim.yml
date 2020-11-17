@@ -13,6 +13,7 @@ vim_plugins:
   - bronson/vim-trailing-whitespace
   - ctrlpvim/ctrlp.vim
   - leafgarland/typescript-vim
+  - neoclide/coc.nvim
   - pbrisbin/vim-syntax-shakespeare
   - peitalin/vim-jsx-typescript
   - preservim/nerdcommenter

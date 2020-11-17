@@ -33,6 +33,9 @@ fish_confd_files:
     abbr gp git push
     abbr gst git status
 
+  neovim:
+    set -gx PATH $HOME/local/nvim/bin $PATH
+
   pipenv: |
     set -gx PIPENV_VENV_IN_PROJECT yes
 
