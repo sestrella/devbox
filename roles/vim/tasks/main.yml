@@ -9,11 +9,11 @@
     vim_params: "{{ _vim_params.nvim }}"
   when: vim_has_nvim
 
-- name: Install package
-  apt:
-    name: "{{ vim_params.package }}"
-    state: present
-  become: true
+#- name: Install package
+  #apt:
+    #name: "{{ vim_params.package }}"
+    #state: present
+  #become: true
 
 - import_tasks: config.yml
   tags: dotfiles
