@@ -1,0 +1,5 @@
+---
+roles:
+  - name: bonddim.snapd
+    version: 2.0.0
+
