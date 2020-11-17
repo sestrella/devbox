@@ -18,9 +18,6 @@ fish_confd_files:
   fish: |
     set fish_greeting
 
-  ghc:
-    set -gx PATH /opt/ghc/bin $PATH
-
   git: |
     abbr ga git add
     abbr gaa git add --all
@@ -35,9 +32,6 @@ fish_confd_files:
 
   neovim:
     set -gx PATH $HOME/local/nvim/bin $PATH
-
-  pipenv: |
-    set -gx PIPENV_VENV_IN_PROJECT yes
 
   starship: |
     ~/.local/bin/starship init fish | source
