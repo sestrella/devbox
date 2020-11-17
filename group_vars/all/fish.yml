@@ -30,9 +30,6 @@ fish_confd_files:
     abbr gp git push
     abbr gst git status
 
-  neovim:
-    set -gx PATH $HOME/local/nvim/bin $PATH
-
   starship: |
     ~/.local/bin/starship init fish | source
 
