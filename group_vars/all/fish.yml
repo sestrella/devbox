@@ -13,7 +13,7 @@ fish_confd_files:
     abbr bes bundle exec rspec
 
   editor: |
-    set -gx EDITOR nvim
+    set -gx EDITOR vi
 
   fish: |
     set fish_greeting
