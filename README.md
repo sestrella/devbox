@@ -21,13 +21,27 @@ Create a virtual environment:
 
 ```sh
 python -m venv .venv
-source .venv/bin/activate
 ```
 
-Install dependencies:
+Active the virtual environment:
+
+```sh
+# bash or zsh
+source .venv/bin/activate
+# fish
+source .venv/bin/activate.fish
+```
+
+Install Python dependencies:
 
 ```sh
 pip install -r requirements.txt
+```
+
+Install Ansible dependencies:
+
+```sh
+ansible-galaxy install -r requirements.yml
 ```
 
 Adjust all [group_vars/all](group_vars/all) variables accordingly, and run the

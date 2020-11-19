@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   roles:
-    - role: asdf
+    - role: sestrella.asdf
       tags: asdf
     - role: bonddim.snapd
       become: true
