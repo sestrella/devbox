@@ -1,7 +1,7 @@
 ansible==2.10.3
 ansible-base==2.10.3
 ansible-lint==4.3.7
-cffi==1.14.3
+cffi==1.14.4
 colorama==0.4.4
 commonmark==0.9.1
 cryptography==3.2.1
