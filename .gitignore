@@ -1,5 +1,4 @@
 .galaxy/
 .venv/
-group_vars/all/git.yml
 group_vars/all/ngrok.yml
 playbooks/*.retry
