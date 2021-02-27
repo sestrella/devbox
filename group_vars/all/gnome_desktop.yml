@@ -1,0 +1,4 @@
+---
+gnome_desktop_input_sources:
+  sources: "[('xkb', 'us'), ('xkb', 'latam')]"
+  xkb_options: "['caps:ctrl_modifier']"

@@ -1,0 +1,14 @@
+---
+- name: Configure input-sources.sources
+  dconf:
+    key: "/org/gnome/desktop/input-sources/sources"
+    value: "{{ gnome_desktop_input_sources.sources | string }}"
+    state: present
+  when: gnome_desktop_input_sources.sources is defined
+
+- name: Configure input-sources.xkb-options
+  dconf:
+    key: "/org/gnome/desktop/input-sources/xkb-options"
+    value: "{{ gnome_desktop_input_sources.xkb_options | string }}"
+    state: present
+  when: gnome_desktop_input_sources.xkb_options is defined

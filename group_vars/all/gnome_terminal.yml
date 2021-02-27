@@ -4,5 +4,5 @@ gnome_terminal_profiles:
     name: sestrella
     audible_bell: false
     use_theme_colors: false
-    color: solarized_light
+    color: solarized_dark
     palette: solarized
