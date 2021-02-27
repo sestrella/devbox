@@ -5,5 +5,9 @@
       tags: fish
     - role: git
       tags: git
+    - role: sestrella.asdf
+      tags: asdf
+    - role: direnv
+      tags: direnv
     - role: gnome_desktop
       tags: gnome

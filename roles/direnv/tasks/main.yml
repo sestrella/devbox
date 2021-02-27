@@ -1,0 +1,9 @@
+---
+- apt:
+    name: direnv
+    state: present
+  become: true
+
+- copy:
+    src: direnv.fish
+    dest: ~/.config/fish/conf.d/direnv.fish
