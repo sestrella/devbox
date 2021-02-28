@@ -27,3 +27,14 @@
     config_files_dir: "{{ fish_confd_dir }}"
     config_files_extension: fish
   tags: dotfiles
+
+- name: conf.d - Create directory
+  file:
+    path: "{{ fish_confd_dir }}"
+    state: directory
+
+- name: conf.d - Copy files
+  copy:
+    dest: "{{ fish_confd_dir }}/{{ item.key }}.fish"
+    content: "{{ item.value }}"
+  with_dict: "{{ fish_confd_files }}"

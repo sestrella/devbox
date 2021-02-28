@@ -1,6 +1,6 @@
 ---
 asdf_version: v0.8.0
-asdf_dir: "{{ ansible_user_dir }}/.asdf"
+asdf_direnv_enabled: true
 
 asdf_plugins:
   - name: direnv

@@ -5,7 +5,7 @@
       tags: fish
     - role: git
       tags: git
-    - role: sestrella.asdf
+    - role: asdf
       tags: asdf
     - role: direnv
       tags: direnv

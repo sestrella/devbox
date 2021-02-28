@@ -1,0 +1,16 @@
+---
+- name: Clone repo
+  git:
+    repo: "{{ asdf_repo }}"
+    dest: "{{ asdf_dir }}"
+    version: "{{ asdf_version }}"
+
+- name: Copy shell initializer
+  template:
+    src: asdf.fish.j2
+    dest: ~/.config/fish/conf.d/asdf.fish
+
+- include_tasks: plugin.yml
+  loop: "{{ asdf_plugins }}"
+  loop_control:
+    loop_var: plugin
