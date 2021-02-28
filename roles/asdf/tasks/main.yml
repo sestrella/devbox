@@ -5,9 +5,14 @@
     dest: "{{ asdf_dir }}"
     version: "{{ asdf_version }}"
 
-- name: Copy shell initializer
+- name: Copy shell completion
   template:
-    src: asdf.fish.j2
+    src: completion.fish.j2
+    dest: ~/.config/fish/completions/asdf.fish
+
+- name: Copy shell configuration
+  template:
+    src: config.fish.j2
     dest: ~/.config/fish/conf.d/asdf.fish
 
 - include_tasks: plugin.yml
