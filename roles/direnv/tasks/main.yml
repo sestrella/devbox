@@ -1,9 +1,17 @@
 ---
-- apt:
+- name: Install package
+  apt:
     name: direnv
     state: present
   become: true
+  when: not direnv_asdf_enabled
 
-- copy:
-    src: direnv.fish
-    dest: ~/.config/fish/conf.d/direnv.fish
+- name: Create config directory
+  file:
+    path: ~/.config/direnv
+    state: directory
+
+- name: Create config file
+  template:
+    src: direnvrc.j2
+    dest: ~/.config/direnv/direnvrc
