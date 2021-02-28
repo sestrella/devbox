@@ -9,5 +9,7 @@
       tags: asdf
     - role: direnv
       tags: direnv
+    - role: vim
+      tags: vim
     - role: gnome_desktop
       tags: gnome
