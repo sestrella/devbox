@@ -1,10 +1,12 @@
 ---
 asdf_version: v0.8.0
-asdf_updater: true
-
 asdf_dir: "{{ ansible_user_dir }}/.asdf"
 
 asdf_plugins:
+  - name: direnv
+    versions: [2.27.0]
+    global: 2.27.0
+
   - name: nodejs
   - name: python
   - name: ruby
