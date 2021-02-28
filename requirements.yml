@@ -1,9 +1,0 @@
----
-roles:
-  - name: bonddim.snapd
-    version: 2.0.0
-
-  - name: sestrella.asdf
-    src: https://github.com/sestrella/ansible-role-asdf.git
-    commit: 92784e42026e93328d826409afb4347bade106d6
-
