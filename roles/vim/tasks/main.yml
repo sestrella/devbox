@@ -19,6 +19,9 @@
   template:
     src: plugins.vim.j2
     dest: "{{ vim_dir }}/plugins.vim"
+  notify:
+    - clean_plugins
+    - install_plugins
 
 - name: Create vimrc file
   template:

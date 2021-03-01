@@ -1,6 +1,6 @@
 ---
 - name: clean_plugins
-  command: "{{ vim_params.executable }} +PlugClean! +qa"
+  command: /usr/bin/vim +PlugClean! +qa
 
 - name: install_plugins
-  command: "{{ vim_params.executable }} +PlugInstall +qa"
+  command: /usr/bin/vim +PlugInstall +qa
