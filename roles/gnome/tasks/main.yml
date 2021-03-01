@@ -1,0 +1,10 @@
+---
+- include_tasks: desktop.yml
+  with_dict: "{{ gnome_desktop_conf }}"
+  loop_control:
+    loop_var: parent
+
+- include_tasks: terminal.yml
+  with_dict: "{{ gnome_terminal_conf }}"
+  loop_control:
+    loop_var: parent

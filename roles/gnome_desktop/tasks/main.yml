@@ -1,5 +1,0 @@
----
-- include_tasks: conf.yml
-  with_dict: "{{ gnome_desktop_conf }}"
-  loop_control:
-    loop_var: conf

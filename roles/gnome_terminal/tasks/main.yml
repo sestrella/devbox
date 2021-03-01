@@ -1,9 +1,0 @@
----
-- name: Install package
-  apt:
-    name: python3-psutil
-    state: present
-  become: true
-
-- include_tasks: profile.yml
-  with_dict: "{{ gnome_terminal_profiles }}"

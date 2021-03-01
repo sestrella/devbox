@@ -11,5 +11,5 @@
       tags: direnv
     - role: vim
       tags: vim
-    - role: gnome_desktop
+    - role: gnome
       tags: gnome
