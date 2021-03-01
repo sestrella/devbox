@@ -1,5 +1,0 @@
----
-snap_packages:
-  - core
-  - name: nvim
-    classic: true

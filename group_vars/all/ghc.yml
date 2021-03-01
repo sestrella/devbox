@@ -1,4 +1,0 @@
----
-ghc_packages:
-  - cabal-install-3.0
-  - ghc-8.6.5
