@@ -8,6 +8,31 @@ asdf_plugins:
     global: 2.27.0
 
   - name: nodejs
+    dependencies:
+      - curl
+      - dirmngr
+      - gawk
+      - gpg
+
   - name: python
+    dependencies:
+      - build-essential
+      - curl
+      - libbz2-dev
+      - libffi-dev
+      - liblzma-dev
+      - libncurses5-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - libssl-dev
+      - libxml2-dev
+      - libxmlsec1-dev
+      - llvm
+      - make
+      - tk-dev
+      - wget
+      - xz-utils
+      - zlib1g-dev
+
   - name: ruby
   - name: stack
