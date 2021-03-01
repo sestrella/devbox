@@ -5,8 +5,10 @@ fish_completions_files:
 
 fish_confd_files:
   asdf: |
-    source ~/.asdf/asdf.fish
-    asdf exec direnv hook fish | source
+    if test -d ~/.asdf
+      source ~/.asdf/asdf.fish
+      asdf exec direnv hook fish | source
+    end
 
   bundle: |
     abbr be bundle exec
