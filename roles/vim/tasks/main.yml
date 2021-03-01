@@ -29,7 +29,7 @@
     dest: "{{ vim_dir }}/vimrc"
 
 - import_role:
-    name: config-files
+    name: config_files
   vars:
     config_files: "{{ vim_plugin_files }}"
     config_files_dir: "{{ vim_plugin_dir  }}"

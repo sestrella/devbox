@@ -13,14 +13,14 @@
   become: true
 
 - import_role:
-    name: config-files
+    name: config_files
   vars:
     config_files: "{{ fish_completions_files }}"
     config_files_dir: "{{ fish_completions_dir }}"
     config_files_extension: fish
 
 - import_role:
-    name: config-files
+    name: config_files
   vars:
     config_files: "{{ fish_confd_files }}"
     config_files_dir: "{{ fish_confd_dir }}"
