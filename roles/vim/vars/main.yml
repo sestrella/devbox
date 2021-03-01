@@ -1,4 +1,8 @@
 ---
+vim_dir: ~/.vim
+vim_autoload_dir: "{{ vim_dir }}/autoload"
+vim_plugin_dir: "{{ vim_dir }}/plugin"
+
 _vim_params:
   vim:
     package: vim

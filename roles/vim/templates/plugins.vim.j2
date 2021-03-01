@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('{{ vim_dir }}/plugged')
 
 {% for plugin in vim_plugins %}
 Plug '{{ plugin }}'

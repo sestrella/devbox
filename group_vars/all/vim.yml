@@ -1,11 +1,4 @@
 ---
-vim_has_nvim: true
-
-vim_config_before_plugins: |
-  let g:python_host_prog = '{{ asdf_dir }}/installs/python/2.7.18/bin/python'
-  let g:python3_host_prog = '{{ asdf_dir }}/installs/python/3.9.0/bin/python'
-
-
 vim_plugins:
   - aliou/bats.vim
   - altercation/vim-colors-solarized
@@ -13,7 +6,6 @@ vim_plugins:
   - bronson/vim-trailing-whitespace
   - ctrlpvim/ctrlp.vim
   - leafgarland/typescript-vim
-  - neoclide/coc.nvim
   - pbrisbin/vim-syntax-shakespeare
   - peitalin/vim-jsx-typescript
   - preservim/nerdcommenter
@@ -24,7 +16,7 @@ vim_plugins:
   - tpope/vim-surround
   - vim-airline/vim-airline
 
-vim_config_after_plugins: |
+vim_config: |
   set colorcolumn=80
   set number
 

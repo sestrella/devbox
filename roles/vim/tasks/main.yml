@@ -1,33 +1,33 @@
 ---
-#- name: Set params for vim
-  #set_fact:
-    #vim_params: "{{ _vim_params.vim }}"
-  #when: not vim_has_nvim
-
-#- name: Set params for nvim
-  #set_fact:
-    #vim_params: "{{ _vim_params.nvim }}"
-  #when: vim_has_nvim
-
-#- name: Install package
-  #apt:
-    #name: "{{ vim_params.package }}"
-    #state: present
-  #become: true
-
-#- import_tasks: config.yml
-  #tags: dotfiles
-
-#- import_tasks: ftplugin.yml
-  #when: vim_ftplugin_files is defined
-  #tags: dotfiles
-
-#- import_tasks: plugin.yml
-  #when: vim_plugin_files is defined
-  #tags: dotfiles
-
 - name: Install package
   apt:
     name: vim
     state: present
   become: true
+
+- name: Create autoload directory
+  file:
+    path: "{{ vim_autoload_dir }}"
+    state: directory
+
+- name: Download plugin manager
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: "{{ vim_dir }}/autoload/plug.vim"
+
+- name: Create plugin.vim file
+  template:
+    src: plugins.vim.j2
+    dest: "{{ vim_dir }}/plugins.vim"
+
+- name: Create vimrc file
+  template:
+    src: vimrc.j2
+    dest: "{{ vim_dir }}/vimrc"
+
+- import_role:
+    name: config-files
+  vars:
+    config_files: "{{ vim_plugin_files }}"
+    config_files_dir: "{{ vim_plugin_dir  }}"
+    config_files_extension: vim
