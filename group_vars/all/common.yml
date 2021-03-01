@@ -1,7 +1,0 @@
----
-common_packages:
-  - fonts-powerline
-  - git
-  - ripgrep
-  - tmux
-  - tree
