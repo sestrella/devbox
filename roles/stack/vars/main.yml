@@ -1,2 +1,0 @@
----
-stack_name: "stack-{{ stack_version }}-linux-{{ ansible_architecture }}"

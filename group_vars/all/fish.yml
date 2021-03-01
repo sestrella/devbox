@@ -1,4 +1,5 @@
 ---
+# TODO: Replace ~/.asdf with asdf_dir
 fish_completions_files:
   asdf: |
     source ~/.asdf/completions/asdf.fish
