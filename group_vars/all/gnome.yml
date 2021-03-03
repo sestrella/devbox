@@ -4,6 +4,9 @@ gnome_desktop_conf:
     sources: "[('xkb', 'us'), ('xkb', 'latam')]"
     xkb-options: "['caps:ctrl_modifier']"
 
+gnome_shell_conf:
+  favorite-apps: "['google-chrome.desktop','spotify.desktop','org.gnome.Terminal.desktop','org.gnome.Nautilus.desktop']"
+
 gnome_terminal_conf:
   b1dcc9dd-5262-4d8d-a863-c897e6d979b9:
     audible-bell: 'false'

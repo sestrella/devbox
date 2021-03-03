@@ -4,6 +4,9 @@
   loop_control:
     loop_var: parent
 
+- include_tasks: shell.yml
+  when: gnome_shell_conf is defined
+
 - include_tasks: terminal.yml
   with_dict: "{{ gnome_terminal_conf }}"
   loop_control:
