@@ -1,11 +1,22 @@
 ---
+- name: Install plugins
+  apt:
+    name: "{{ gnome_plugins }}"
+    state: present
+  become: true
+  when: gnome_plugins is defined
+
 - include_tasks: desktop.yml
   with_dict: "{{ gnome_desktop_conf }}"
   loop_control:
     loop_var: parent
 
-- include_tasks: shell.yml
-  when: gnome_shell_conf is defined
+- name: Configure /org/gnome/shell
+  dconf:
+    key: "/org/gnome/shell/{{ item.key }}"
+    value: "{{ item.value | string }}"
+    state: present
+  with_dict: "{{ gnome_shell_conf }}"
 
 - include_tasks: terminal.yml
   with_dict: "{{ gnome_terminal_conf }}"

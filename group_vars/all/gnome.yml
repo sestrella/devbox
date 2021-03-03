@@ -1,4 +1,6 @@
 ---
+gnome_plugins: network-manager-openvpn-gnome
+
 gnome_desktop_conf:
   input-sources:
     sources: "[('xkb', 'us'), ('xkb', 'latam')]"

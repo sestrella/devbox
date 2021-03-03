@@ -1,7 +1,0 @@
----
-- name: Configure /org/gnome/shell
-  dconf:
-    key: "/org/gnome/shell/{{ item.key }}"
-    value: "{{ item.value | string }}"
-    state: present
-  with_dict: "{{ gnome_shell_conf }}"
