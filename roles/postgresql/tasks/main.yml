@@ -1,0 +1,25 @@
+---
+- name: Install packages
+  apt:
+    name:
+      - postgresql
+      - python3-psycopg2
+    state: present
+  become: true
+
+- name: Create users
+  postgresql_user:
+    name: "{{ item.name }}"
+    role_attr_flags: "{{ item.roles }}"
+  loop: "{{ postgresql_users }}"
+  become: true
+  become_user: postgres
+
+- name: Create databases
+  postgresql_db:
+    name: "{{ item.name }}"
+    owner: "{{ item.owner }}"
+    state: present
+  loop: "{{ postgresql_databases }}"
+  become: true
+  become_user: postgres

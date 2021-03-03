@@ -1,9 +1,10 @@
 ---
-postgresql_databases:
-  - name: "{{ ansible_user_id }}"
-    state: present
-
 postgresql_users:
   - name: "{{ ansible_user_id }}"
-    role_attr_flags: CREATEDB
+    roles: SUPERUSER
+
+postgresql_databases:
+  - name: "{{ ansible_user_id }}"
+    owner: "{{ ansible_user_id }}"
     state: present
+

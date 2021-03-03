@@ -15,3 +15,5 @@
       tags: vim
     - role: gnome
       tags: gnome
+    - role: postgresql
+      tags: postgresql
