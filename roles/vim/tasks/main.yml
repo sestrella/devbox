@@ -1,7 +1,7 @@
 ---
 - name: Install package
   apt:
-    name: vim
+    name: "{{ vim_packages }}"
     state: present
   become: true
 

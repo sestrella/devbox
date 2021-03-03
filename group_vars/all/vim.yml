@@ -1,4 +1,9 @@
 ---
+vim_packages:
+  - fonts-powerline
+  - ripgrep
+  - vim
+
 vim_plugins:
   - aliou/bats.vim
   - altercation/vim-colors-solarized
