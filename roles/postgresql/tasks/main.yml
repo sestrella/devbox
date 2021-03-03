@@ -1,9 +1,7 @@
 ---
 - name: Install packages
   apt:
-    name:
-      - postgresql
-      - python3-psycopg2
+    name: "{{ postgresql_packages }}"
     state: present
   become: true
 
