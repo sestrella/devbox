@@ -11,6 +11,13 @@
   become: true
   when: plugin.dependencies is defined
 
+- name: "{{ plugin.name }} - Install extra dependencies"
+  apt:
+    name: "{{ plugin.extra_dependencies }}"
+    state: present
+  become: true
+  when: plugin.extra_dependencies is defined
+
 - name: "{{ plugin.name }} - Install versions"
   command:
     cmd: "{{ asdf_dir }}/bin/asdf install {{ plugin.name }} {{ item }}"

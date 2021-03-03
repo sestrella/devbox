@@ -35,4 +35,32 @@ asdf_plugins:
       - zlib1g-dev
 
   - name: ruby
+    dependencies:
+      - autoconf
+      - bison
+      - build-essential
+      - libdb-dev
+      - libffi-dev
+      - libgdbm-dev
+      - libgdbm6
+      - libncurses5-dev
+      - libreadline6-dev
+      - libssl-dev
+      - libyaml-dev
+      - zlib1g-dev
+    extra_dependencies:
+      # capybara-webkit
+      - g++
+      - gstreamer1.0-plugins-base
+      - gstreamer1.0-tools
+      - gstreamer1.0-x
+      - libqt5webkit5-dev
+      - qt5-default
+      # curb
+      - libcurl4
+      - libcurl3-gnutls
+      - libcurl4-openssl-dev
+      # pg
+      - libpq-dev
+
   - name: stack
