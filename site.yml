@@ -1,6 +1,8 @@
 ---
 - hosts: localhost
   roles:
+    - role: apt
+      tags: apt
     - role: fish
       tags: fish
     - role: git

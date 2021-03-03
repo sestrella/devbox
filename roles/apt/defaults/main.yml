@@ -1,3 +1,0 @@
----
-apt_source_distribution: "{{ ansible_distribution_release }}"
-apt_source_components: ''
