@@ -3,9 +3,15 @@ asdf_version: v0.8.0
 asdf_direnv_enabled: true
 
 asdf_plugins:
+  - name: cabal
+    repo: https://github.com/sestrella/asdf-cabal.git
+
   - name: direnv
     versions: [2.27.0]
     global: 2.27.0
+
+  - name: ghc
+    repo: https://github.com/sestrella/asdf-ghc.git
 
   - name: nodejs
     dependencies:
