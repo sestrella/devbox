@@ -10,6 +10,7 @@ vim_plugins:
   - ap/vim-css-color
   - bronson/vim-trailing-whitespace
   - ctrlpvim/ctrlp.vim
+  - direnv/direnv.vim
   - leafgarland/typescript-vim
   - pbrisbin/vim-syntax-shakespeare
   - peitalin/vim-jsx-typescript
