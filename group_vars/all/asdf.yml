@@ -70,3 +70,5 @@ asdf_plugins:
       - libpq-dev
 
   - name: stack
+    versions: [2.5.1]
+    global: 2.5.1

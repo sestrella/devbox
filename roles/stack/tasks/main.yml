@@ -1,0 +1,5 @@
+---
+- name: Create ~/.stack/config.yaml
+  template:
+    src: config.yaml.j2
+    dest: ~/.stack/config.yaml

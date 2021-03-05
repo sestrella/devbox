@@ -11,6 +11,8 @@
       tags: asdf
     - role: direnv
       tags: direnv
+    - role: stack
+      tags: stack
     - role: vim
       tags: vim
     - role: gnome
