@@ -1,27 +1,17 @@
 ---
-- name: Install package
-  apt:
+- name: Install fish
+  community.general.homebrew:
     name: fish
-    state: present
+
+- name: Add fish to /etc/shells
+  ansible.builtin.lineinfile:
+    path: /etc/shells
+    regexp: "^\/usr\/local\/bin\/fish$"
+    line: /usr/local/bin/fish
   become: true
 
 - name: Change user shell
-  user:
+  ansible.builtin.user:
     name: "{{ ansible_user_id }}"
-    shell: /usr/bin/fish
-    state: present
+    shell: /usr/local/bin/fish
   become: true
-
-- import_role:
-    name: config_files
-  vars:
-    config_files: "{{ fish_completions_files }}"
-    config_files_dir: "{{ fish_completions_dir }}"
-    config_files_extension: fish
-
-- import_role:
-    name: config_files
-  vars:
-    config_files: "{{ fish_confd_files }}"
-    config_files_dir: "{{ fish_confd_dir }}"
-    config_files_extension: fish

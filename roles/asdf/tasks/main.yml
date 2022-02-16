@@ -1,21 +1,9 @@
 ---
-- name: Clone repo
-  git:
-    repo: "{{ asdf_repo }}"
-    dest: "{{ asdf_dir }}"
-    version: "{{ asdf_version }}"
+- name: Install asdf
+  community.general.homebrew:
+    name: asdf
 
-- name: Copy shell completion
-  template:
-    src: completion.fish.j2
-    dest: ~/.config/fish/completions/asdf.fish
-
-- name: Copy shell configuration
-  template:
-    src: config.fish.j2
+- name: Add fish configuration
+  ansible.builtin.copy:
+    src: asdf.fish
     dest: ~/.config/fish/conf.d/asdf.fish
-
-- include_tasks: plugin.yml
-  loop: "{{ asdf_plugins }}"
-  loop_control:
-    loop_var: plugin

@@ -1,9 +1,25 @@
 ---
-- community.general.homebrew:
+- name: Install neovim
+  community.general.homebrew:
     name: neovim
-    state: present
 
-- ansible.builtin.copy:
+- name: Install plugin manager
+  ansible.builtin.git:
+    repo: https://github.com/wbthomason/packer.nvim
+    dest: ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    depth: 1
+
+- name: Create init.lua file
+  ansible.builtin.copy:
     src: init.lua
     dest: ~/.config/nvim/init.lua
-    force: true
+
+- name: Create lua directory
+  ansible.builtin.file:
+    path: ~/.config/nvim/lua
+    state: directory
+
+- name: Create lua/plugins.lua file
+  ansible.builtin.copy:
+    src: plugins.lua
+    dest: ~/.config/nvim/lua/plugins.lua
