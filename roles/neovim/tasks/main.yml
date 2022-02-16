@@ -1,0 +1,9 @@
+---
+- community.general.homebrew:
+    name: neovim
+    state: present
+
+- ansible.builtin.copy:
+    src: init.lua
+    dest: ~/.config/nvim/init.lua
+    force: true

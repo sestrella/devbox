@@ -1,3 +1,2 @@
 .direnv/
-group_vars/all/ngrok.yml
-playbooks/*.retry
+.venv/
