@@ -2,6 +2,7 @@
 - hosts: localhost
   roles:
     - asdf
+    - direnv
     - fish
     - git
     - neovim

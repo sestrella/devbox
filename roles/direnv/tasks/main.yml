@@ -1,17 +1,23 @@
 ---
-- name: Install package
-  apt:
+# Manual steps:
+# - asdf plugin add direnv
+# - asdf install direnv latest
+# - asdf global direnv latest
+
+- name: Install direnv
+  community.general.homebrew:
     name: direnv
-    state: present
-  become: true
-  when: not direnv_asdf_enabled
 
-- name: Create config directory
-  file:
-    path: ~/.config/direnv
-    state: directory
-
-- name: Create config file
-  template:
-    src: direnvrc.j2
+- name: Symlink direnvrc
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/direnvrc"
     dest: ~/.config/direnv/direnvrc
+    state: link
+  tags: dotfiles
+
+- name: Symlink direnv.fish
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/direnv.fish"
+    dest: ~/.config/fish/conf.d/direnv.fish
+    state: link
+  tags: dotfiles
