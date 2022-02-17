@@ -1,21 +1,27 @@
 ---
-- name: Install packages
-  apt:
-    name: "{{ tmux_packages }}"
-    state: present
-  become: yes
+- name: Install tmux
+  community.general.homebrew:
+    name: tmux
 
-- name: Clone plugin manager
-  git:
-    repo: https://github.com/tmux-plugins/tpm
-    dest: "{{ tmux_tpm_dir }}"
-    version: "{{ tmux_tpm_version }}"
-  when: tmux_plugins is defined
+- name: Clone tpm
+  ansible.builtin.git:
+    repo: https://github.com/tmux-plugins/tpm.git
+    dest: ~/.tmux/plugins/tpm
+    version: v3.0.0
   tags: dotfiles
 
-- name: Create configuration file
-  template:
-    src: tmux.conf.j2
-    dest: ~/.tmux.conf
-    mode: 0644
+- name: Symlink tmux.conf
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/tmux.conf"
+    dest: ~/.config/tmux/tmux.conf
+    state: link
+    force: true
+  tags: dotfiles
+
+- name: Symlink tmux.fish
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/tmux.fish"
+    dest: ~/.config/fish/conf.d/tmux.fish
+    state: link
+    force: true
   tags: dotfiles

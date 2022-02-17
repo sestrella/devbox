@@ -3,17 +3,19 @@
   community.general.homebrew:
     name: neovim
 
-- name: Install packer plugin manager
+- name: Clone packer
   ansible.builtin.git:
     repo: https://github.com/wbthomason/packer.nvim
     dest: ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     depth: 1
+  tags: dotfiles
 
 - name: Symlink init.lua
   ansible.builtin.file:
     src: "{{ role_path }}/files/init.lua"
     dest: ~/.config/nvim/init.lua
     state: link
+    force: true
   tags: dotfiles
 
 - name: Symlink lua directory
@@ -21,4 +23,5 @@
     src:  "{{ role_path }}/files/lua"
     dest: ~/.config/nvim/lua
     state: link
+    force: true
   tags: dotfiles

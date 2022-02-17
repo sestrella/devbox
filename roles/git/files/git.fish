@@ -1,3 +1,6 @@
+# Reference:
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+
 abbr ga git add
 abbr gaa git add --all
 abbr gc git commit -v
