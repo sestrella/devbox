@@ -1,7 +1,0 @@
----
-- hosts: localhost
-  roles:
-    - role: vim
-      tags: vim
-    - role: vscode
-      tags: vscode

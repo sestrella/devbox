@@ -1,6 +1,0 @@
----
-- name: Set timezone
-  timezone:
-    name: "{{ timezone_name }}"
-  become: yes
-  when: timezone_name is defined

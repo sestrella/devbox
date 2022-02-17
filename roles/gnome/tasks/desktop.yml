@@ -1,7 +1,0 @@
----
-- name: Configure /org/gnome/desktop
-  dconf:
-    key: "/org/gnome/desktop/{{ parent.key }}/{{ item.key }}"
-    value: "{{ item.value | string }}"
-    state: present
-  with_dict: "{{ parent.value }}"

@@ -1,7 +1,0 @@
----
-- name: Configure /org/gnome/terminal
-  dconf:
-    key: "/org/gnome/terminal/legacy/profiles:/:{{ parent.key }}/{{ item.key }}"
-    value: "{{ item.value | string }}"
-    state: present
-  with_dict: "{{ parent.value }}"
