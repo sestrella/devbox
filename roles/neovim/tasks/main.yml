@@ -10,6 +10,14 @@
     depth: 1
   tags: dotfiles
 
+- name: Symlink lua directory
+  ansible.builtin.file:
+    src:  "{{ role_path }}/files/lua"
+    dest: ~/.config/nvim/lua
+    state: link
+    force: true
+  tags: dotfiles
+
 - name: Symlink init.lua
   ansible.builtin.file:
     src: "{{ role_path }}/files/init.lua"
@@ -18,10 +26,10 @@
     force: true
   tags: dotfiles
 
-- name: Symlink lua directory
+- name: Symlink neovim.fish
   ansible.builtin.file:
-    src:  "{{ role_path }}/files/lua"
-    dest: ~/.config/nvim/lua
+    src: "{{ role_path }}/files/neovim.fish"
+    dest: ~/.config/fish/conf.d/neovim.fish
     state: link
     force: true
   tags: dotfiles
