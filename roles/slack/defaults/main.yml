@@ -1,6 +1,0 @@
----
-slack_repo_key: https://packagecloud.io/slacktechnologies/slack/gpgkey
-slack_repo: deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
-
-slack_packages:
-  - slack-desktop

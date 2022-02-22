@@ -1,0 +1,15 @@
+---
+- name: Install packages
+  community.general.homebrew:
+    name:
+      - tree
+      - ripgrep
+      - fd
+      - gh
+
+- name: Install packages
+  community.general.homebrew_cask:
+    name:
+      - google-chrome
+      - slack
+      - spotify

@@ -1,4 +1,0 @@
----
-- name: Install package
-  community.general.homebrew_cask:
-    name: google-chrome

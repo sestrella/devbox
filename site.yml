@@ -13,15 +13,11 @@
       tags: git
     - role: github_cli
       tags: git
-    - role: google_chrome
-      tags: cask
+    - role: homebrew
+      tags: homebrew
     - role: neovim
       tags: neovim
     - role: postgresql
       tags: postgresql
-    - role: slack
-      tags: cask
-    - role: spotify
-      tags: cask
     - role: starship
     - role: tmux
