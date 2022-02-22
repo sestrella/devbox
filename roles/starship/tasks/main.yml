@@ -3,7 +3,7 @@
     name: starship
 
 - ansible.builtin.file:
-    src: "{{ role_path }}/files/starship.conf"
+    src: "{{ role_path }}/files/starship.fish"
     dest: ~/.config/fish/conf.d/starship.fish
     state: link
     force: true
