@@ -12,5 +12,7 @@
     - role: github_cli
       tags: git
     - role: neovim
+    - role: slack
+      tags: slack
     - role: starship
     - role: tmux
