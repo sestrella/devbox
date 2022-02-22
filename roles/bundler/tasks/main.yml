@@ -1,7 +1,0 @@
----
-- name: Create config file
-  template:
-    src: config.j2
-    dest: ~/.bundle/config
-  when: bundler_config is defined
-  tags: dotfiles

@@ -1,7 +1,0 @@
----
-- import_role:
-    name: config_files
-  vars:
-    config_files: "{{ vim_ftplugin_files }}"
-    config_files_dir: "{{ vim_params.root_dir }}/ftplugin"
-    config_files_extension: vim

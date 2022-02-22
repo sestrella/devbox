@@ -1,6 +1,0 @@
----
-- name: clean_plugins
-  command: /usr/bin/vim +PlugClean! +qa
-
-- name: install_plugins
-  command: /usr/bin/vim +PlugInstall +qa

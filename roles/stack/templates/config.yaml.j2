@@ -1,8 +1,0 @@
-{{ ansible_managed | comment }}
-
----
-templates:
-  params:
-  {% for key, value in stack_template_params.items() %}
-    {{ key }}: {{ value }}
-  {% endfor %}
