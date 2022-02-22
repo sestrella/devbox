@@ -1,8 +1,7 @@
 ---
 - hosts: localhost
   roles:
-    - role: asdf
-      tags: asdf
+    - asdf
     - direnv
     - fish
     - git

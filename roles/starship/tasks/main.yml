@@ -2,10 +2,16 @@
 - community.general.homebrew:
     name: starship
 
-- ansible.builtin.copy:
-    src: starship.fish
+- ansible.builtin.file:
+    src: "{{ role_path }}/files/starship.conf"
     dest: ~/.config/fish/conf.d/starship.fish
+    state: link
+    force: true
+  tags: dotfiles
 
-- ansible.builtin.copy:
-    src: starship.toml
+- ansible.builtin.file:
+    src: "{{ role_path }}/files/starship.toml"
     dest: ~/.config/starship.toml
+    state: link
+    force: true
+  tags: dotfiles
