@@ -16,6 +16,8 @@
       tags: cask
     - role: neovim
       tags: neovim
+    - role: postgresql
+      tags: postgresql
     - role: slack
       tags: cask
     - role: spotify

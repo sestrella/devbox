@@ -1,23 +1,4 @@
 ---
-- name: Install packages
-  apt:
-    name: "{{ postgresql_packages }}"
-    state: present
-  become: true
-
-- name: Create users
-  postgresql_user:
-    name: "{{ item.name }}"
-    role_attr_flags: "{{ item.roles }}"
-  loop: "{{ postgresql_users }}"
-  become: true
-  become_user: postgres
-
-- name: Create databases
-  postgresql_db:
-    name: "{{ item.name }}"
-    owner: "{{ item.owner }}"
-    state: present
-  loop: "{{ postgresql_databases }}"
-  become: true
-  become_user: postgres
+- name: Install package
+  community.general.homebrew:
+    name: postgresql

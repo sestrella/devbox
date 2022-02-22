@@ -1,5 +1,5 @@
 ---
-- name: Install asdf
+- name: Install package
   community.general.homebrew:
     name: asdf
 
