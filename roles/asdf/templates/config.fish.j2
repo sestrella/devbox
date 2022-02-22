@@ -1,5 +1,0 @@
-source "{{ asdf_dir }}/asdf.fish"
-
-{% if asdf_direnv_enabled %}
-asdf exec direnv hook fish | source
-{% endif %}
