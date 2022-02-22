@@ -1,3 +1,0 @@
-[submodule "roles/asdf"]
-	path = roles/asdf
-	url = https://github.com/sestrella/ansible-role-asdf.git
