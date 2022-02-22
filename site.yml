@@ -2,6 +2,7 @@
 - hosts: localhost
   roles:
     - role: asdf
+      tags: fish
     - role: direnv
       tags: fish
     - role: fish
