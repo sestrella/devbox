@@ -1,6 +1,0 @@
----
-apt_packages:
-  - dnsutils
-  - htop
-  - nmap
-  - ripgrep

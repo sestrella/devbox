@@ -1,8 +1,0 @@
----
-git_config:
-  push:
-    default: current
-
-  user:
-    email: 2049686+sestrella@users.noreply.github.com
-    name: Sebastián Estrella
