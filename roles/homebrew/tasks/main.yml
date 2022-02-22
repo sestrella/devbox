@@ -2,14 +2,21 @@
 - name: Install packages
   community.general.homebrew:
     name:
+      - awscli
       - tree
       - ripgrep
       - fd
       - gh
 
-- name: Install packages
+- name: Install packages (cask)
   community.general.homebrew_cask:
     name:
+      - 1password
+      - authy
+      - docker
       - google-chrome
+      - iterm2
+      - notion
       - slack
       - spotify
+      - zoom

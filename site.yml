@@ -11,8 +11,6 @@
       tags: fish
     - role: git
       tags: git
-    - role: github_cli
-      tags: git
     - role: homebrew
       tags: homebrew
     - role: neovim

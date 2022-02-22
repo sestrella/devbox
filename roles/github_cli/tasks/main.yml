@@ -1,4 +1,0 @@
----
-- name: Install gh
-  community.general.homebrew:
-    name: gh
