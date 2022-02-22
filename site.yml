@@ -3,6 +3,7 @@
   roles:
     - role: asdf
     - role: direnv
+      tags: fish
     - role: fish
       tags: fish
     - role: fzf
@@ -12,6 +13,7 @@
     - role: github_cli
       tags: git
     - role: neovim
+      tags: neovim
     - role: slack
       tags: slack
     - role: starship
