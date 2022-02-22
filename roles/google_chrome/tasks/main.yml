@@ -1,19 +1,4 @@
 ---
-- name: Add repository key
-  apt_key:
-    url: "{{ google_chrome_repo_key }}"
-    state: present
-  become: true
-
-- name: Add repository
-  apt_repository:
-    repo: "{{ google_chrome_repo }}"
-    state: present
-    filename: google
-  become: true
-
-- name: Install packages
-  apt:
-    name: "{{ google_chrome_packages }}"
-    state: present
-  become: true
+- name: Install package
+  community.general.homebrew_cask:
+    name: google-chrome

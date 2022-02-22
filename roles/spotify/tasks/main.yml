@@ -1,18 +1,4 @@
 ---
-- name: Add repository key
-  apt_key:
-    url: https://download.spotify.com/debian/pubkey.gpg
-    state: present
-  become: true
-
-- name: Add repository
-  apt_repository:
-    repo: deb http://repository.spotify.com stable non-free
-    filename: spotify
-  become: true
-
 - name: Install package
-  apt:
-    name: spotify-client
-    state: present
-  become: true
+  community.general.homebrew_cask:
+    name: spotify
