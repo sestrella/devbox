@@ -1,27 +1,4 @@
 ---
-- name: Add repository key
-  apt_key:
-    keyserver: keyserver.ubuntu.com
-    id: C99B11DEB97541F0
-  become: true
-
-- name: Add repository
-  apt_repository:
-    repo: "deb https://cli.github.com/packages {{ ansible_distribution_release }} main"
-    state: present
-    filename: github-cli
-  become: true
-
-- name: Install package
-  apt:
+- name: Install gh
+  community.general.homebrew:
     name: gh
-    state: present
-    update_cache: true
-  become: true
-
-- name: Copy fish configuration file
-  copy:
-    src: github-cli.fish
-    dest: ~/.config/fish/conf.d/github-cli.fish
-    mode: 0644
-  when: ansible_user_shell == '/usr/bin/fish'

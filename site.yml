@@ -6,6 +6,9 @@
     - role: fish
       tags: fish
     - role: git
+      tags: git
+    - role: github_cli
+      tags: git
     - role: neovim
     - role: starship
     - role: tmux
