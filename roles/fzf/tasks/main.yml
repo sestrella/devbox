@@ -1,0 +1,9 @@
+---
+- name: Install package
+  community.general.homebrew:
+    name: fzf
+
+- name: Install fish plugin
+  ansible.builtin.shell:
+    cmd: fisher install PatrickF1/fzf.fish
+    executable: /usr/local/bin/fish

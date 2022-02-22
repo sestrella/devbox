@@ -1,7 +1,9 @@
 ---
-- name: Install fish
+- name: Install packages
   community.general.homebrew:
-    name: fish
+    name:
+      - fish
+      - fisher
 
 - name: Add fish to /etc/shells
   ansible.builtin.lineinfile:

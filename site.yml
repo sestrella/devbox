@@ -5,6 +5,8 @@
     - role: direnv
     - role: fish
       tags: fish
+    - role: fzf
+      tags: fish
     - role: git
       tags: git
     - role: github_cli
