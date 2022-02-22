@@ -6,7 +6,6 @@
 - name: Add fish to /etc/shells
   ansible.builtin.lineinfile:
     path: /etc/shells
-    regexp: "^\/usr\/local\/bin\/fish$"
     line: /usr/local/bin/fish
   become: true
 

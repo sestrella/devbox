@@ -1,10 +1,11 @@
 ---
 - hosts: localhost
   roles:
-    - asdf
-    - direnv
-    - fish
-    - git
-    - neovim
-    - starship
-    - tmux
+    - role: asdf
+    - role: direnv
+    - role: fish
+      tags: fish
+    - role: git
+    - role: neovim
+    - role: starship
+    - role: tmux
