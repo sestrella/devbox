@@ -15,7 +15,7 @@
   tags: dotfiles
 
 - name: Create fish configuration
-  ansible.builtin.file:
+  ansible.builtin.copy:
     src: direnv.fish
     dest: ~/.config/fish/conf.d/direnv.fish
   tags: dotfiles

@@ -5,7 +5,7 @@
 
 - name: Create fish configuration
   ansible.builtin.copy:
-    src: asdf.conf
+    src: asdf.fish
     dest: ~/.config/fish/conf.d/asdf.fish
   tags: dotfiles
 

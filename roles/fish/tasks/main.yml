@@ -5,7 +5,7 @@
       - fish
       - fisher
 
-- name: Add fish to /etc/shells
+- name: Add shell to /etc/shells
   ansible.builtin.lineinfile:
     path: /etc/shells
     line: /usr/local/bin/fish

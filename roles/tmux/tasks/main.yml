@@ -1,27 +1,23 @@
 ---
-- name: Install tmux
+- name: Install package
   community.general.homebrew:
     name: tmux
 
-- name: Clone tpm
+- name: Install plugin manager
   ansible.builtin.git:
     repo: https://github.com/tmux-plugins/tpm.git
     dest: ~/.tmux/plugins/tpm
     version: v3.0.0
   tags: dotfiles
 
-- name: Symlink tmux.conf
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/tmux.conf"
+- name: Create configuration
+  ansible.builtin.copy:
+    src: tmux.conf
     dest: ~/.config/tmux/tmux.conf
-    state: link
-    force: true
   tags: dotfiles
 
-- name: Symlink tmux.fish
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/tmux.fish"
+- name: Create fish configuration
+  ansible.builtin.copy:
+    src: tmux.fish
     dest: ~/.config/fish/conf.d/tmux.fish
-    state: link
-    force: true
   tags: dotfiles

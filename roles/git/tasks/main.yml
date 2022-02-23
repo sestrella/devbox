@@ -1,12 +1,10 @@
 ---
-- name: Install git
+- name: Install package
   community.general.homebrew:
     name: git
 
-- name: Symlink git.fish
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/git.fish"
+- name: Create fish configuration
+  ansible.builtin.copy:
+    src: git.fish
     dest: ~/.config/fish/conf.d/git.fish
-    state: link
-    force: true
   tags: dotfiles

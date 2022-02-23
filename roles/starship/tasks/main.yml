@@ -1,16 +1,16 @@
 ---
-- name: Install starship
+- name: Install package
   community.general.homebrew:
     name: starship
 
-- name: Symlink starship.fish
+- name: Create configuration
   ansible.builtin.copy:
-    src: "{{ role_path }}/files/starship.fish"
-    dest: ~/.config/fish/conf.d/starship.fish
+    src: starship.toml
+    dest: ~/.config/starship.toml
   tags: dotfiles
 
-- name: Symlink starship.toml
+- name: Create fish configuration
   ansible.builtin.copy:
-    src: "{{ role_path }}/files/starship.toml"
-    dest: ~/.config/starship.toml
+    src: starship.fish
+    dest: ~/.config/fish/conf.d/starship.fish
   tags: dotfiles
