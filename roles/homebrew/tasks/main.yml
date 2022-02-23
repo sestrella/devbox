@@ -6,6 +6,8 @@
       - fd
       - gh
       - htop
+      - postgresql
+      - redis
       - ripgrep
       - tree
 
