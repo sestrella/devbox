@@ -8,7 +8,6 @@
     repo: https://github.com/tmux-plugins/tpm.git
     dest: ~/.tmux/plugins/tpm
     version: v3.0.0
-  tags: dotfiles
 
 - name: Create configuration
   ansible.builtin.copy:
