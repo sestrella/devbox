@@ -9,6 +9,7 @@
     - role: homebrew
       tags: homebrew
     - neovim
-    - postgresql
+    - role: postgresql
+      tags: postgresql
     - starship
     - tmux

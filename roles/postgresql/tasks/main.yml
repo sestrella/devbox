@@ -2,3 +2,8 @@
 - name: Install package
   community.general.homebrew:
     name: postgresql
+
+- name: Create database
+  community.postgresql.postgresql_db:
+    name: "{{ ansible_user_id }}"
+    login_user: "{{ ansible_user_id }}"
