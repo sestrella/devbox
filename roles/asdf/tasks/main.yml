@@ -3,19 +3,18 @@
   community.general.homebrew:
     name: asdf
 
-- name: Symlink asdf.fish
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/asdf.conf"
+- name: Create fish configuration
+  ansible.builtin.copy:
+    src: asdf.conf
     dest: ~/.config/fish/conf.d/asdf.fish
-    state: link
-    force: true
   tags: dotfiles
 
-- name: Install asdf plugins
+- name: Install plugins
   ansible.builtin.command:
     cmd: "asdf plugin add {{ item }}"
     creates: "~/.asdf/plugins/{{ item }}"
   loop:
+    - direnv
     - nodejs
     - python
     - ruby

@@ -4,20 +4,18 @@
 # - asdf install direnv latest
 # - asdf global direnv latest
 
-- name: Install direnv
+- name: Install package
   community.general.homebrew:
     name: direnv
 
-- name: Symlink direnvrc
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/direnvrc"
+- name: Create configuration
+  ansible.builtin.copy:
+    src: direnvrc
     dest: ~/.config/direnv/direnvrc
-    state: link
   tags: dotfiles
 
-- name: Symlink direnv.fish
+- name: Create fish configuration
   ansible.builtin.file:
-    src: "{{ role_path }}/files/direnv.fish"
+    src: direnv.fish
     dest: ~/.config/fish/conf.d/direnv.fish
-    state: link
   tags: dotfiles
