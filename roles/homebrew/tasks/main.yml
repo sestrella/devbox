@@ -3,10 +3,11 @@
   community.general.homebrew:
     name:
       - awscli
-      - tree
-      - ripgrep
       - fd
       - gh
+      - htop
+      - ripgrep
+      - tree
 
 - name: Install packages (cask)
   community.general.homebrew_cask:
