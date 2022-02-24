@@ -18,6 +18,6 @@
   become: true
 
 - name: Create conf.d directory
-  file:
+  ansible.builtin.file:
     path: ~/.config/fish/conf.d
     state: directory
