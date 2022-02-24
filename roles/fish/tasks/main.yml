@@ -16,3 +16,8 @@
     name: "{{ ansible_user_id }}"
     shell: /usr/local/bin/fish
   become: true
+
+- name: Create conf.d directory
+  file:
+    path: ~/.config/fish/conf.d
+    state: directory
