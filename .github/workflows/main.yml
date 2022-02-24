@@ -13,4 +13,4 @@ jobs:
           python-version: '3.x'
           cache: 'pip'
       - run: pip install -r requirements.txt
-      - run: ansible-playbook site.yml
+      - run: ansible-playbook -C site.yml
