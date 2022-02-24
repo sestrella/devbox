@@ -15,7 +15,6 @@
   community.general.homebrew_cask:
     name:
       - 1password
-      - authy
       - docker
       - google-chrome
       - iterm2
