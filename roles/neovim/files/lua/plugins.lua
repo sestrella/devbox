@@ -20,4 +20,6 @@ return require('packer').startup(function()
       vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope find_files<cr>', {})
     end
   }
+
+  use 'neovimhaskell/haskell-vim'
 end)
