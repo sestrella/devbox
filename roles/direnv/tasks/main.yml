@@ -8,7 +8,12 @@
   community.general.homebrew:
     name: direnv
 
-- name: Create configuration
+- name: Create config directory
+  ansible.builtin.file:
+    path: ~/.config/direnv
+    state: directory
+
+- name: Create config file
   ansible.builtin.copy:
     src: direnvrc
     dest: ~/.config/direnv/direnvrc

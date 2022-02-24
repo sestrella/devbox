@@ -1,13 +1,14 @@
 ---
 - hosts: localhost
   roles:
+    # Primary roles
+    - fish
+    # Secondary roles
     - asdf
     - direnv
-    - fish
     - fzf
     - git
-    - role: homebrew
-      tags: homebrew
+    - homebrew
     - neovim
     - starship
     - tmux
