@@ -22,4 +22,11 @@ return require('packer').startup(function()
   }
 
   use 'neovimhaskell/haskell-vim'
+
+  use {
+    'overcache/NeoSolarized',
+    config = function()
+      vim.cmd('colorscheme NeoSolarized')
+    end
+  }
 end)

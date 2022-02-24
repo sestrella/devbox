@@ -9,20 +9,26 @@
     dest: ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     depth: 1
 
-- name: Create configuration
-  ansible.builtin.copy:
-    src: init.lua
+- name: Symlink init.lua file
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/init.lua"
     dest: ~/.config/nvim/init.lua
+    state: link
+    force: true
   tags: dotfiles
 
-- name: Create plugins configuration
-  ansible.builtin.copy:
-    src: lua/plugins.lua
-    dest: ~/.config/nvim/lua/plugins.lua
+- name: Symlink lua directory
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/lua"
+    dest: ~/.config/nvim/lua
+    state: link
+    force: true
   tags: dotfiles
 
-- name: Create fish configuration
-  ansible.builtin.copy:
-    src: neovim.fish
+- name: Symlink neovim.fish file
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/neovim.fish"
     dest: ~/.config/fish/conf.d/neovim.fish
+    state: link
+    force: true
   tags: dotfiles
