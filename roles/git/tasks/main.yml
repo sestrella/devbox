@@ -2,9 +2,3 @@
 - name: Install package
   community.general.homebrew:
     name: git
-
-- name: Create fish configuration
-  ansible.builtin.copy:
-    src: git.fish
-    dest: ~/.config/fish/conf.d/git.fish
-  tags: dotfiles

@@ -14,9 +14,3 @@
     src: tmux.conf
     dest: ~/.config/tmux/tmux.conf
   tags: dotfiles
-
-- name: Create fish configuration
-  ansible.builtin.copy:
-    src: tmux.fish
-    dest: ~/.config/fish/conf.d/tmux.fish
-  tags: dotfiles

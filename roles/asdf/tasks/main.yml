@@ -3,12 +3,6 @@
   community.general.homebrew:
     name: asdf
 
-- name: Create fish configuration
-  ansible.builtin.copy:
-    src: asdf.fish
-    dest: ~/.config/fish/conf.d/asdf.fish
-  tags: dotfiles
-
 - name: Install plugins
   ansible.builtin.command:
     cmd: "asdf plugin add {{ item }}"
@@ -18,5 +12,4 @@
     - nodejs
     - python
     - ruby
-    - rust
     - terraform

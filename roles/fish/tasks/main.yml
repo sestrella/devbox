@@ -17,7 +17,10 @@
     shell: /usr/local/bin/fish
   become: true
 
-- name: Create conf.d directory
+- name: Symlink conf.d directory
   ansible.builtin.file:
-    path: ~/.config/fish/conf.d
-    state: directory
+    src: "{{ role_path }}/files/conf.d"
+    dest: ~/.config/fish/conf.d
+    state: link
+    force: true
+  tags: dotfiles

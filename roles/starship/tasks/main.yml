@@ -8,9 +8,3 @@
     src: starship.toml
     dest: ~/.config/starship.toml
   tags: dotfiles
-
-- name: Create fish configuration
-  ansible.builtin.copy:
-    src: starship.fish
-    dest: ~/.config/fish/conf.d/starship.fish
-  tags: dotfiles

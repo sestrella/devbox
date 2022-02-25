@@ -24,11 +24,3 @@
     state: link
     force: true
   tags: dotfiles
-
-- name: Symlink neovim.fish file
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/neovim.fish"
-    dest: ~/.config/fish/conf.d/neovim.fish
-    state: link
-    force: true
-  tags: dotfiles
