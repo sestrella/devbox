@@ -5,10 +5,12 @@
       - awscli
       - fd
       - gh
+      - ghcup
       - htop
       - postgresql
       - redis
       - ripgrep
+      - rustup-init
       - tree
 
 - name: Install packages (cask)
