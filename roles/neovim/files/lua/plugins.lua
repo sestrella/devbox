@@ -23,10 +23,13 @@ return require('packer').startup(function()
 
   use 'neovimhaskell/haskell-vim'
 
-  use {
-    'overcache/NeoSolarized',
+  use  {
+    'ishan9299/nvim-solarized-lua',
     config = function()
-      vim.cmd('colorscheme NeoSolarized')
+      vim.o.bg = 'light'
+      vim.cmd('colorscheme solarized')
     end
   }
+
+  use '/khaveesh/vim-fish-syntax'
 end)
