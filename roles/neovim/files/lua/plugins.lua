@@ -26,7 +26,7 @@ return require('packer').startup(function()
   use  {
     'ishan9299/nvim-solarized-lua',
     config = function()
-      vim.o.bg = 'light'
+      vim.g.solarized_termtrans = 1
       vim.cmd('colorscheme solarized')
     end
   }

@@ -6,6 +6,7 @@
       - fd
       - gh
       - ghcup
+      - gpg
       - htop
       - postgresql
       - redis
@@ -13,12 +14,14 @@
       - rustup-init
       - tree
 
-- name: Install packages (cask)
+- name: Install casks packages
   community.general.homebrew_cask:
     name:
       - 1password
+      - authy
       - docker
       - google-chrome
+      - grammarly-desktop
       - iterm2
       - notion
       - slack
