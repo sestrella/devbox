@@ -7,3 +7,4 @@
   ansible.builtin.shell:
     cmd: fisher install PatrickF1/fzf.fish
     executable: /usr/local/bin/fish
+    creates: ~/config/fish/conf.d/fzf.fish
