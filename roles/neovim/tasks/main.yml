@@ -15,22 +15,18 @@
     state: directory
   tags: dotfiles
 
-- name: Copy config file
-  ansible.builtin.copy:
-    src: init.lua
-    dest: ~/.config/nvim/init.lua
-  tags: dotfiles
-
-- name: Create lua directory
+- name: Symlink config file
   ansible.builtin.file:
-    path: ~/.config/nvim/lua
-    state: directory
+    src: "{{ role_path }}/files/init.lua"
+    dest: ~/.config/nvim/init.lua
+    state: link
   tags: dotfiles
 
-- name: Copy plugins.lua file
-  ansible.builtin.copy:
-    src: plugins.lua
-    dest: ~/.config/nvim/lua/plugins.lua
+- name: Symlink lua directory
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/lua"
+    dest: ~/.config/nvim/lua
+    state: link
   tags: dotfiles
 
 - name: Check fish directory

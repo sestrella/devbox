@@ -7,6 +7,6 @@
     - { role: fzf }
     - { role: git }
     - { role: homebrew, tags: homebrew }
-    - { role: neovim }
+    - { role: neovim, tags: neovim }
     - { role: starship }
     - { role: tmux }
