@@ -12,7 +12,11 @@ return require('packer').startup(function()
     'kyazdani42/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
-      require('nvim-tree').setup()
+      require('nvim-tree').setup({
+        view = {
+          side = 'right'
+        }
+      })
       vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<cr>', {})
     end
   }
