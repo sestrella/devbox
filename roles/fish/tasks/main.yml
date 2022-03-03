@@ -4,6 +4,7 @@
     name:
       - fish
       - fisher
+  tags: homebrew
 
 - name: Add shell to /etc/shells
   ansible.builtin.lineinfile:
@@ -17,10 +18,8 @@
     shell: /usr/local/bin/fish
   become: true
 
-- name: Symlink conf.d directory
+- name: Create config directory
   ansible.builtin.file:
-    src: "{{ role_path }}/files/conf.d"
-    dest: ~/.config/fish/conf.d
-    state: link
-    force: true
+    path: ~/.config/fish/conf.d
+    state: directory
   tags: dotfiles
