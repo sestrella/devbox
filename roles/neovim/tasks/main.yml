@@ -29,7 +29,7 @@
 
 - name: Copy plugins.lua file
   ansible.builtin.copy:
-    src: lua/plugins.lua
+    src: plugins.lua
     dest: ~/.config/nvim/lua/plugins.lua
   tags: dotfiles
 
