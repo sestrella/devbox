@@ -22,11 +22,21 @@
     dest: ~/.config/tmux/tmux.conf
   tags: dotfiles
 
+- name: Check fish directory
+  ansible.builtin.stat:
+    path: ~/.config/fish/conf.d
+  register: fish_conf_dir
+  tags:
+    - dotfiles
+    - fish
+
 - name: Copy fish config
   ansible.builtin.copy:
     src: tmux.fish
     dest: ~/.config/fish/conf.d/tmux.fish
-  when: ansible_user_shell == "/usr/local/bin/fish"
+  when:
+    - ansible_user_shell == "/usr/local/bin/fish"
+    - fish_conf_dir.stat.exists
   tags:
     - dotfiles
     - fish

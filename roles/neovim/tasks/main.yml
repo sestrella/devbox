@@ -25,11 +25,21 @@
     force: true
   tags: dotfiles
 
+- name: Check fish directory
+  ansible.builtin.stat:
+    path: ~/.config/fish/conf.d
+  register: fish_conf_dir
+  tags:
+    - dotfiles
+    - fish
+
 - name: Copy fish config
   ansible.builtin.copy:
     src: neovim.fish
     dest: ~/.config/fish/conf.d/neovim.fish
-  when: ansible_user_shell == "/usr/local/bin/fish"
+  when:
+    - ansible_user_shell == "/usr/local/bin/fish"
+    - fish_conf_dir.stat.exists
   tags:
     - dotfiles
     - fish

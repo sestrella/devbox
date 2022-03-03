@@ -3,7 +3,7 @@
   roles:
     - { role: asdf, tags: asdf }
     - { role: direnv }
-    - { role: fish }
+    - { role: fish, tags: fish }
     - { role: fzf }
     - { role: git }
     - { role: homebrew, tags: homebrew }
