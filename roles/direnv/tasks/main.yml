@@ -7,14 +7,25 @@
 - name: Install package
   community.general.homebrew:
     name: direnv
+  tags: homebrew
 
 - name: Create config directory
   ansible.builtin.file:
     path: ~/.config/direnv
     state: directory
+  tags: dotfiles
 
 - name: Create config file
   ansible.builtin.copy:
     src: direnvrc
     dest: ~/.config/direnv/direnvrc
   tags: dotfiles
+
+- name: Copy fish config
+  ansible.builtin.copy:
+    src: direnv.fish
+    dest: ~/.config/fish/conf.d/direnv.fish
+  when: ansible_user_shell == "/usr/local/bin/fish"
+  tags:
+    - dotfiles
+    - fish

@@ -1,13 +1,12 @@
 ---
 - hosts: localhost
   roles:
-    - role: asdf
-    - role: direnv
-    - role: fish
-    - role: fzf
-    - role: git
-    - role: homebrew
-      tags: homebrew
-    - role: neovim
-    - role: starship
-    - role: tmux
+    - { role: asdf, tags: asdf }
+    - { role: direnv }
+    - { role: fish }
+    - { role: fzf }
+    - { role: git }
+    - { role: homebrew, tags: homebrew }
+    - { role: neovim }
+    - { role: starship }
+    - { role: tmux }

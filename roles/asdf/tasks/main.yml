@@ -2,6 +2,7 @@
 - name: Install package
   community.general.homebrew:
     name: asdf
+  tags: homebrew
 
 - name: Install plugins
   ansible.builtin.command:
@@ -12,4 +13,14 @@
     - nodejs
     - python
     - ruby
+    - rust
     - terraform
+
+- name: Copy fish config
+  ansible.builtin.copy:
+    src: asdf.fish
+    dest: ~/.config/fish/conf.d/asdf.fish
+  when: ansible_user_shell == "/usr/local/bin/fish"
+  tags:
+    - dotfiles
+    - fish
