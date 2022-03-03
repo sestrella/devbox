@@ -3,6 +3,11 @@ vim.cmd([[packadd packer.nvim]])
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
+  use 'khaveesh/vim-fish-syntax'
+  use 'neovim/nvim-lspconfig'
+  use 'neovimhaskell/haskell-vim'
+  use 'tpope/vim-surround'
+
   use {
     'kyazdani42/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons' },
@@ -21,8 +26,6 @@ return require('packer').startup(function()
     end
   }
 
-  use 'neovimhaskell/haskell-vim'
-
   use  {
     'ishan9299/nvim-solarized-lua',
     config = function()
@@ -30,6 +33,4 @@ return require('packer').startup(function()
       vim.cmd('colorscheme solarized')
     end
   }
-
-  use '/khaveesh/vim-fish-syntax'
 end)
