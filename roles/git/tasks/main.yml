@@ -2,3 +2,16 @@
 - name: Install package
   community.general.homebrew:
     name: git
+  tags: homebrew
+
+- name: Create config directory
+  ansible.builtin.file:
+    path: ~/.config/git
+    state: directory
+  tags: dotfiles
+
+- name: Create config file
+  ansible.builtin.copy:
+    src: config
+    dest: ~/.config/git/config
+  tags: dotfiles
