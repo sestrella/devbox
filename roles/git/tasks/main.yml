@@ -16,21 +16,11 @@
     dest: ~/.config/git/config
   tags: dotfiles
 
-- name: Check fish directory
-  ansible.builtin.stat:
-    path: ~/.config/fish/conf.d
-  register: fish_conf_dir
-  tags:
-    - dotfiles
-    - fish
-
 - name: Copy fish config
   ansible.builtin.copy:
     src: git.fish
     dest: ~/.config/fish/conf.d/git.fish
-  when:
-    - ansible_user_shell == "/usr/local/bin/fish"
-    - fish_conf_dir.stat.exists
+  when: ansible_user_shell == "/usr/local/bin/fish"
   tags:
     - dotfiles
     - fish
