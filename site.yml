@@ -7,7 +7,7 @@
     - { role: asdf, tags: asdf }
     - { role: direnv }
     - { role: fzf }
-    - { role: git }
+    - { role: git, tags: git }
     - { role: homebrew, tags: homebrew }
     - { role: neovim, tags: neovim }
     - { role: starship }

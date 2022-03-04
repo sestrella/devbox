@@ -1,3 +1,7 @@
+[init]
+defaultBranch = main
+[push]
+default = current
 [user]
 name = Sebastián Estrella
 email = "2049686+sestrella@users.noreply.github.com"
