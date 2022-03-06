@@ -1,7 +1,10 @@
 ---
 - name: Install package
   community.general.homebrew:
-    name: neovim
+    name:
+      - neovim
+      - rust-analyzer
+  tags: homebrew
 
 - name: Install plugin manager
   ansible.builtin.git:
