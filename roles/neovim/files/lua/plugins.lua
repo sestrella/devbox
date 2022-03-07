@@ -21,7 +21,10 @@ return require('packer').startup(function()
       end
 
       lspconfig.rust_analyzer.setup({
-        on_attach
+        on_attach,
+        flags = {
+          debounce_text_changes = 150
+        }
       })
     end
   }
