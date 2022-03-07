@@ -3,6 +3,7 @@ vim.cmd([[packadd packer.nvim]])
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
+  use 'hashivim/vim-terraform'
   use 'khaveesh/vim-fish-syntax'
   use 'neovimhaskell/haskell-vim'
   use 'tpope/vim-surround'
@@ -24,13 +25,19 @@ return require('packer').startup(function()
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
       end
 
-      lspconfig.rust_analyzer.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-        flags = {
-          debounce_text_changes = 150
-        }
-      })
+      local servers = {
+        'rust_analyzer',
+        'terraformls'
+      }
+      for _, lsp in ipairs(servers) do
+        lspconfig[lsp].setup({
+          capabilities = capabilities,
+          on_attach = on_attach,
+          flags = {
+            debounce_text_changes = 150
+          }
+        })
+      end
     end
   }
 
