@@ -7,24 +7,54 @@ return require('packer').startup(function()
   use 'neovimhaskell/haskell-vim'
   use 'tpope/vim-surround'
 
-  use  {
+  use {
     'neovim/nvim-lspconfig',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp'
+    },
     config = function()
-      local lspconfig = require('lspconfig')
-      local on_attach = function(_client, bufnr)
-        local opts = { noremap=true, silent=true }
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-        vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+      local lspconfig = require('lspconfig')
+      local on_attach = function(client, bufnr)
+        local opts = { noremap=true, silent=true }
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
       end
 
       lspconfig.rust_analyzer.setup({
-        on_attach,
+        capabilities = capabilities,
+        on_attach = on_attach,
         flags = {
           debounce_text_changes = 150
         }
+      })
+    end
+  }
+
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/vim-vsnip'
+    },
+    config = function()
+      local cmp = require('cmp')
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+          end
+        },
+        mapping = {
+          ['<Tab>'] = cmp.mapping.confirm({ select = true })
+        },
+        sources = cmp.config.sources({
+          { name = 'nvim_lsp' },
+          { name = 'vsnip' }
+        })
       })
     end
   }
