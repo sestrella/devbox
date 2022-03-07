@@ -8,4 +8,4 @@ packaging==21.3
 pycparser==2.21
 pyparsing==3.0.7
 PyYAML==6.0
-resolvelib==0.5.4
+resolvelib==0.8.1
