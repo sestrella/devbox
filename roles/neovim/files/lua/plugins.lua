@@ -32,10 +32,10 @@ return require('packer').startup(function()
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup({
           capabilities = capabilities,
-          on_attach = on_attach,
           flags = {
             debounce_text_changes = 150
-          }
+          },
+          on_attach = on_attach
         })
       end
     end
