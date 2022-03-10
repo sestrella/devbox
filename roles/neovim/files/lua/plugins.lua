@@ -34,26 +34,9 @@ return require('packer').startup(function()
       end
 
       local servers = {
-        'rust_analyzer',
-        'terraformls'
-      }
-      for _, lsp in ipairs(servers) do
-        lspconfig[lsp].setup({
-          capabilities = capabilities,
-          flags = {
-            debounce_text_changes = 150
-          },
-          on_attach = on_attach
-        })
-      end
-
-      lspconfig.yamlls.setup({
-        capabilities = capabilities,
-        flags = {
-          debounce_text_changes = 150
-        },
-        on_attach = on_attach,
-        settings = {
+        rust_analyzer = {},
+        terraformls = {},
+        yamlls = {
           yaml = {
             schemas = {
               ["https://json.schemastore.org/circleciconfig.json"] = "/.circleci/config.yml",
@@ -61,7 +44,17 @@ return require('packer').startup(function()
             }
           }
         }
-      })
+      }
+      for server, settings in pairs(servers) do
+        lspconfig[server].setup({
+          capabilities = capabilities,
+          flags = {
+            debounce_text_changes = 150
+          },
+          on_attach = on_attach,
+          settings = settings
+        })
+      end
     end
   }
 
