@@ -6,15 +6,19 @@
 
 - name: Install plugins
   ansible.builtin.command:
-    cmd: "asdf plugin add {{ item }}"
-    creates: "~/.asdf/plugins/{{ item }}"
+    cmd: "asdf plugin add {{ item.name }} {{ item.url | default('') }}"
+    creates: "~/.asdf/plugins/{{ item.name }}"
   loop:
-    - direnv
-    - nodejs
-    - python
-    - ruby
-    - rust
-    - terraform
+    - name: cabal
+      url: https://github.com/sestrella/asdf-ghcup
+    - name: direnv
+    - name: ghc
+      url: https://github.com/sestrella/asdf-ghcup
+    - name: nodejs
+    - name: python
+    - name: ruby
+    - name: rust
+    - name: terraform
 
 - name: Copy fish config
   ansible.builtin.copy:
