@@ -5,6 +5,7 @@
       - neovim
       - rust-analyzer
       - terraform-ls
+      - yaml-language-server
   tags: homebrew
 
 - name: Install plugin manager

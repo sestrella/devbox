@@ -46,6 +46,22 @@ return require('packer').startup(function()
           on_attach = on_attach
         })
       end
+
+      lspconfig.yamlls.setup({
+        capabilities = capabilities,
+        flags = {
+          debounce_text_changes = 150
+        },
+        on_attach = on_attach,
+        settings = {
+          yaml = {
+            schemas = {
+              ["https://json.schemastore.org/circleciconfig.json"] = "/.circleci/config.yml",
+              ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*.yml"
+            }
+          }
+        }
+      })
     end
   }
 
