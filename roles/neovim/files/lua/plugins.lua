@@ -9,6 +9,14 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
 
   use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function ()
+      require('lualine').setup()
+    end
+  }
+
+  use {
     'neovim/nvim-lspconfig',
     requires = {
       'hrsh7th/cmp-nvim-lsp'
