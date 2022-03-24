@@ -3,6 +3,7 @@
   community.general.homebrew:
     name:
       - awscli
+      - awsebcli
       - fd
       - gh
       - ghcup
