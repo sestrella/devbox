@@ -23,6 +23,7 @@
       - docker
       - google-chrome
       - grammarly-desktop
+      - ngrok
       - slack
       - spotify
       - zoom
