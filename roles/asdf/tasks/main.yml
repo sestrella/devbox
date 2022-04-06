@@ -21,9 +21,10 @@
     - name: terraform
 
 - name: Copy fish config
-  ansible.builtin.copy:
-    src: asdf.fish
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/asdf.fish"
     dest: ~/.config/fish/conf.d/asdf.fish
+    state: link
   when: ansible_user_shell == "/usr/local/bin/fish"
   tags:
     - dotfiles
