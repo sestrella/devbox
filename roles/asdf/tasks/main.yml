@@ -18,6 +18,8 @@
     - name: python
     - name: ruby
     - name: rust
+    - name: stack
+      url: https://github.com/sestrella/asdf-ghcup
     - name: terraform
 
 - name: Copy fish config
@@ -25,6 +27,7 @@
     src: "{{ role_path }}/files/asdf.fish"
     dest: ~/.config/fish/conf.d/asdf.fish
     state: link
+    force: true
   when: ansible_user_shell == "/usr/local/bin/fish"
   tags:
     - dotfiles
