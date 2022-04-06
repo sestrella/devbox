@@ -11,4 +11,4 @@
     - {role: homebrew, tags: homebrew}
     - {role: neovim, tags: neovim}
     - {role: starship}
-    - {role: tmux}
+    - {role: tmux, tags: tmux}
