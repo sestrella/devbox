@@ -10,17 +10,10 @@
     dest: ~/.tmux/plugins/tpm
     version: v3.0.0
 
-- name: Create config directory
-  ansible.builtin.file:
-    path: ~/.config/tmux
-    state: directory
-    mode: "0755"
-  tags: dotfiles
-
 - name: Create config file
   ansible.builtin.file:
     src: "{{ role_path }}/files/tmux.conf"
-    dest: ~/.config/tmux/tmux.conf
+    dest: ~/.tmux.conf
     state: link
     force: true
   tags: dotfiles
