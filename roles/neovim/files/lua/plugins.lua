@@ -113,4 +113,11 @@ return require('packer').startup(function()
       vim.cmd('colorscheme solarized')
     end
   }
+
+  use {
+    'cormacrelf/dark-notify',
+    config = function()
+      require('dark_notify').run()
+    end
+  }
 end)
