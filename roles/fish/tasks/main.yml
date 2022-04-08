@@ -1,9 +1,7 @@
 ---
-- name: Install packages
+- name: Install package
   community.general.homebrew:
-    name:
-      - fish
-      - fisher
+    name: fish
   tags: homebrew
 
 - name: Add shell to /etc/shells

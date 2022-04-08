@@ -1,4 +1,9 @@
 ---
+
+- name: Tap cask-versions repositories
+  community.general.homebrew_tap:
+    name: homebrew/cask-versions
+
 - name: Install packages
   community.general.homebrew:
     name:
@@ -23,6 +28,7 @@
       - docker
       - google-chrome
       - grammarly-desktop
+      - iterm2-beta
       - ngrok
       - slack
       - spotify
