@@ -9,6 +9,7 @@
     - {role: fzf}
     - {role: git, tags: git}
     - {role: homebrew, tags: homebrew}
+    - {role: iterm2, tags: iterm2}
     - {role: neovim, tags: neovim}
     - {role: starship}
     - {role: tmux, tags: tmux}
