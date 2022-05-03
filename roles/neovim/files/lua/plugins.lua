@@ -3,9 +3,11 @@ vim.cmd([[packadd packer.nvim]])
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
+  use 'evanleck/vim-svelte'
   use 'hashivim/vim-terraform'
   use 'khaveesh/vim-fish-syntax'
   use 'neovimhaskell/haskell-vim'
+  use 'rust-lang/rust.vim'
   use 'tpope/vim-surround'
 
   use {
