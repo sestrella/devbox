@@ -1,5 +1,16 @@
 vim.cmd([[packadd packer.nvim]])
 
+local group = vim.api.nvim_create_augroup('packer_user_config', {})
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+  pattern = "plugins.lua",
+  callback = function()
+    print("Calling PackerCompile")
+    vim.cmd([[source <afile> | PackerCompile]])
+  end,
+  group = group,
+})
+
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
