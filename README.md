@@ -1,6 +1,6 @@
 # devbox
 
-![CI](https://github.com/sestrella/devbox/workflows/CI/badge.svg)
+[![CI](https://github.com/sestrella/devbox/actions/workflows/ci.yml/badge.svg)](https://github.com/sestrella/devbox/actions/workflows/ci.yml)
 
 Ansible roles used to provision my local environment
 
