@@ -38,8 +38,13 @@ return require('packer').startup(function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-      vim.keymap.set("n", "<space>j", vim.diagnostic.goto_next, {})
-      vim.keymap.set("n", "<space>k", vim.diagnostic.goto_prev, {})
+      local keymap_set = function(lhs, rhs)
+        vim.keymap.set("n", lhs, rhs, {})
+      end
+
+      keymap_set("<space>j", vim.diagnostic.goto_next)
+      keymap_set("<space>k", vim.diagnostic.goto_prev)
+      keymap_set("<space><space>", vim.diagnostic.setloclist)
 
       local lspconfig = require('lspconfig')
       local on_attach = function(client, bufnr)
