@@ -21,6 +21,7 @@
       - redis
       - ripgrep
       - rustup-init
+      - terraform
       - tree
 
 - name: Install casks packages

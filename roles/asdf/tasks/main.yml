@@ -20,7 +20,6 @@
     - name: rust
     - name: stack
       url: https://github.com/sestrella/asdf-ghcup
-    - name: terraform
 
 - name: Copy fish config
   ansible.builtin.file:
