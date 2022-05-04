@@ -38,18 +38,18 @@ return require('packer').startup(function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-      local keymap_set = function(lhs, rhs)
+      local keymap_set_n = function(lhs, rhs)
         vim.keymap.set("n", lhs, rhs, {})
       end
 
-      keymap_set("<space>j", vim.diagnostic.goto_next)
-      keymap_set("<space>k", vim.diagnostic.goto_prev)
-      keymap_set("<space><space>", vim.diagnostic.setloclist)
+      keymap_set_n("<space>j", vim.diagnostic.goto_next)
+      keymap_set_n("<space>k", vim.diagnostic.goto_prev)
+      keymap_set_n("<space><space>", vim.diagnostic.setloclist)
 
       local lspconfig = require('lspconfig')
       local on_attach = function(client, bufnr)
         local buf_set_keymap = function(lhs, rhs)
-          local opts = { noremap=true, silent=true }
+          local opts = { noremap = true, silent = true }
           vim.api.nvim_buf_set_keymap(bufnr, 'n', lhs, rhs, opts)
         end
         buf_set_keymap('<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
@@ -147,8 +147,15 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require('telescope').setup()
-      vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>Telescope find_files<cr>', {})
+      local keymap_set_n = function(lhs, rhs)
+        vim.keymap.set("n", lhs, rhs, {})
+      end
+      local telescope = require('telescope.builtin')
+
+      -- deprecated
+      keymap_set_n("<c-p>", telescope.find_files)
+      keymap_set_n("ff", telescope.find_files)
+      keymap_set_n("fg", telescope.live_grep)
     end
   }
 
