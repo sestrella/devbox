@@ -3,6 +3,8 @@
   community.general.homebrew:
     name:
       - neovim
+      # servers
+      - lua-language-server
       - rust-analyzer
       - terraform-ls
       - yaml-language-server

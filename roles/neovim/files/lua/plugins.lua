@@ -13,7 +13,7 @@ return require('packer').startup(function()
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
-    config = function ()
+    config = function()
       require('lualine').setup()
     end
   }
@@ -29,15 +29,34 @@ return require('packer').startup(function()
 
       local lspconfig = require('lspconfig')
       local on_attach = function(client, bufnr)
-        local opts = { noremap=true, silent=true }
+        local opts = { noremap = true, silent = true }
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>td', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
       end
 
+      local runtime_path = vim.split(package.path, ';')
+      table.insert(runtime_path, "lua/?.lua")
+      table.insert(runtime_path, "lua/?/init.lua")
+
       local servers = {
         rust_analyzer = {},
+        sumneko_lua = {
+          -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
+          Lua = {
+            runtime = {
+              version = 'LuaJIT',
+              path = runtime_path,
+            },
+            diagnostics = {
+              globals = { 'vim' },
+            },
+            workspace = {
+              library = vim.api.nvim_get_runtime_file("", true),
+            },
+          },
+        },
         terraformls = {},
         yamlls = {
           yaml = {
@@ -108,7 +127,7 @@ return require('packer').startup(function()
     end
   }
 
-  use  {
+  use {
     'ishan9299/nvim-solarized-lua',
     config = function()
       vim.g.solarized_termtrans = 1
