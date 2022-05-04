@@ -38,13 +38,19 @@ return require('packer').startup(function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
+      vim.keymap.set("n", "<space>j", vim.diagnostic.goto_next, {})
+      vim.keymap.set("n", "<space>k", vim.diagnostic.goto_prev, {})
+
       local lspconfig = require('lspconfig')
       local on_attach = function(client, bufnr)
-        local opts = { noremap = true, silent = true }
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>td', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+        local buf_set_keymap = function(lhs, rhs)
+          local opts = { noremap=true, silent=true }
+          vim.api.nvim_buf_set_keymap(bufnr, 'n', lhs, rhs, opts)
+        end
+        buf_set_keymap('<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+        buf_set_keymap('<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+        buf_set_keymap('<space>r', '<cmd>lua vim.lsp.buf.rename()<CR>')
+        buf_set_keymap('<space>td', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
       end
 
       local runtime_path = vim.split(package.path, ';')
