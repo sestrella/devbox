@@ -20,3 +20,8 @@ vim.o.tabstop = 2
 -- windows
 vim.o.splitbelow = true
 vim.o.splitright = true
+-- splits
+vim.keymap.set("n", "<c-h>", "<c-w><c-h>", {})
+vim.keymap.set("n", "<c-j>", "<c-w><c-j>", {})
+vim.keymap.set("n", "<c-k>", "<c-w><c-k>", {})
+vim.keymap.set("n", "<c-l>", "<c-w><c-l>", {})
