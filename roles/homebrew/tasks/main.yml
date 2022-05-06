@@ -1,5 +1,4 @@
 ---
-
 - name: Tap repositories
   community.general.homebrew_tap:
     name:
@@ -23,6 +22,7 @@
       - rustup-init
       - terraform
       - tree
+      - watch
 
 - name: Install casks packages
   community.general.homebrew_cask:
