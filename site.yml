@@ -10,5 +10,5 @@
     - {role: git, tags: git}
     - {role: homebrew, tags: homebrew}
     - {role: neovim, tags: neovim}
-    - {role: starship}
+    - {role: starship, tags: starship}
     - {role: tmux, tags: tmux}
