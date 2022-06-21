@@ -132,31 +132,12 @@ return require('packer').startup(function()
 
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = function()
-      require('nvim-tree').setup({
-        view = {
-          side = 'right'
-        }
-      })
-      vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<cr>', {})
-    end
+    requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      local keymap_set_n = function(lhs, rhs)
-        vim.keymap.set("n", lhs, rhs, {})
-      end
-      local telescope = require('telescope.builtin')
-
-      -- deprecated
-      keymap_set_n("<c-p>", telescope.find_files)
-      keymap_set_n("ff", telescope.find_files)
-      keymap_set_n("fg", telescope.live_grep)
-    end
+    requires = { 'nvim-lua/plenary.nvim' }
   }
 
   use {
