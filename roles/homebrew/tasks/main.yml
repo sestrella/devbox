@@ -17,8 +17,6 @@
       - ghcup
       - gpg
       - htop
-      - postgresql
-      - redis
       - ripgrep
       - rustup-init
       - terraform
