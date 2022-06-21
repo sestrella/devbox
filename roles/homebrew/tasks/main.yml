@@ -8,6 +8,7 @@
 - name: Install packages
   community.general.homebrew:
     name:
+      - autojump
       - awscli
       - awsebcli
       - dark-notify
@@ -30,6 +31,7 @@
       - 1password
       - authy
       - docker
+      - fig
       - google-chrome
       - grammarly-desktop
       - iterm2-beta
