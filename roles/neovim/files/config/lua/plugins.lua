@@ -14,6 +14,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
+  use 'cormacrelf/dark-notify'
   use 'evanleck/vim-svelte'
   use 'hashivim/vim-terraform'
   use 'khaveesh/vim-fish-syntax'
@@ -23,10 +24,7 @@ return require('packer').startup(function()
 
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = function()
-      require('lualine').setup()
-    end
+    requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
   use {
@@ -39,7 +37,7 @@ return require('packer').startup(function()
     requires = {
       'hrsh7th/cmp-vsnip',
       'hrsh7th/vim-vsnip'
-    },
+    }
   }
 
   use {
@@ -57,13 +55,6 @@ return require('packer').startup(function()
     config = function()
       vim.g.solarized_termtrans = 1
       vim.cmd('colorscheme solarized')
-    end
-  }
-
-  use {
-    'cormacrelf/dark-notify',
-    config = function()
-      require('dark_notify').run()
     end
   }
 end)
