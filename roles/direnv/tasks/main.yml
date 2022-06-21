@@ -13,6 +13,7 @@
   ansible.builtin.file:
     path: ~/.config/direnv
     state: directory
+    mode: '0744'
   tags: dotfiles
 
 - name: Create config file

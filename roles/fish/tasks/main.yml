@@ -20,4 +20,5 @@
   ansible.builtin.file:
     path: ~/.config/fish/conf.d
     state: directory
+    mode: '0744'
   tags: dotfiles
