@@ -17,31 +17,10 @@
     version: 00ec5adef58c5ff9a07f11f45903b9dbbaa1b422
     depth: 1
 
-- name: Create config directory
-  ansible.builtin.file:
-    path: ~/.config/nvim
-    state: directory
-    mode: '0744'
-  tags: dotfiles
-
 - name: Symlink config file
   ansible.builtin.file:
-    src: "{{ role_path }}/files/init.lua"
-    dest: ~/.config/nvim/init.lua
-    state: link
-  tags: dotfiles
-
-- name: Symlink after directory
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/after"
-    dest: ~/.config/nvim/after
-    state: link
-  tags: dotfiles
-
-- name: Symlink lua directory
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/lua"
-    dest: ~/.config/nvim/lua
+    src: "{{ role_path }}/files/config"
+    dest: ~/.config/nvim
     state: link
   tags: dotfiles
 
