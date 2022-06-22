@@ -10,10 +10,12 @@ keymap_set_n("<space>k", vim.diagnostic.goto_prev)
 keymap_set_n("<space><space>", vim.diagnostic.setloclist)
 
 local lspconfig = require('lspconfig')
-local on_attach = function(client, bufnr)
+local on_attach = function(_client, bufnr)
   local buf_set_keymap = function(lhs, rhs)
-    local opts = { noremap = true, silent = true }
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', lhs, rhs, opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', lhs, rhs, {
+      noremap = true,
+      silent = true
+    })
   end
   buf_set_keymap('<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
   buf_set_keymap('<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
