@@ -22,3 +22,11 @@
     state: directory
     mode: '0744'
   tags: dotfiles
+
+- name: Copy fish config
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/greeting.fish"
+    dest: ~/.config/fish/conf.d/greeting.fish
+    state: link
+    force: true
+  tags: dotfiles
