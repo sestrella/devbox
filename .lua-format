@@ -1,3 +1,4 @@
 # vi: ft=yml
 
 indent_width: 2
+single_quote_to_double_quote: true

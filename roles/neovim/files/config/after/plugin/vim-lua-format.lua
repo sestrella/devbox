@@ -1,4 +1,4 @@
-local group = vim.api.nvim_create_augroup('lua_format', {})
+local group = vim.api.nvim_create_augroup("lua_format", {})
 
 vim.api.nvim_create_autocmd({"BufWrite"}, {
   pattern = "*.lua",

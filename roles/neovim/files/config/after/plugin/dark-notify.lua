@@ -1,1 +1,1 @@
-require('dark_notify').run()
+require("dark_notify").run()

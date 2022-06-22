@@ -1,6 +1,6 @@
 -- References:
 -- https://github.com/tjdevries/config_manager
-require('plugins')
+require("plugins")
 
 -- providers
 vim.g.loaded_node_provider = 0
