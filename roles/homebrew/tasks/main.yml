@@ -16,6 +16,7 @@
       - ghcup
       - gpg
       - htop
+      - luarocks
       - ripgrep
       - rustup-init
       - terraform
