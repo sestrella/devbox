@@ -5,6 +5,7 @@
     - {role: fish, tags: fish}
     # General
     - {role: asdf, tags: asdf}
+    - {role: autojump, tags: autojump}
     - {role: direnv}
     - {role: fzf}
     - {role: git, tags: git}
