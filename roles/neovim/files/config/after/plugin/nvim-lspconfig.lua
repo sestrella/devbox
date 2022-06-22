@@ -1,9 +1,7 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-local keymap_set_n = function(lhs, rhs)
-  vim.keymap.set("n", lhs, rhs, {})
-end
+local keymap_set_n = function(lhs, rhs) vim.keymap.set("n", lhs, rhs, {}) end
 
 keymap_set_n("<space>j", vim.diagnostic.goto_next)
 keymap_set_n("<space>k", vim.diagnostic.goto_prev)
@@ -12,10 +10,8 @@ keymap_set_n("<space><space>", vim.diagnostic.setloclist)
 local lspconfig = require('lspconfig')
 local on_attach = function(_client, bufnr)
   local buf_set_keymap = function(lhs, rhs)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', lhs, rhs, {
-      noremap = true,
-      silent = true
-    })
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', lhs, rhs,
+                                {noremap = true, silent = true})
   end
   buf_set_keymap('<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
   buf_set_keymap('<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
@@ -32,20 +28,11 @@ local servers = {
   sumneko_lua = {
     -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
     Lua = {
-      runtime = {
-        version = 'LuaJIT',
-        path = runtime_path,
-      },
-      diagnostics = {
-        globals = { 'vim' },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      telemetry = {
-        enable = false,
-      },
-    },
+      runtime = {version = 'LuaJIT', path = runtime_path},
+      diagnostics = {globals = {'vim'}},
+      workspace = {library = vim.api.nvim_get_runtime_file("", true)},
+      telemetry = {enable = false}
+    }
   },
   terraformls = {},
   yamlls = {
@@ -61,9 +48,7 @@ local servers = {
 for server, settings in pairs(servers) do
   lspconfig[server].setup({
     capabilities = capabilities,
-    flags = {
-      debounce_text_changes = 150
-    },
+    flags = {debounce_text_changes = 150},
     on_attach = on_attach,
     settings = settings
   })

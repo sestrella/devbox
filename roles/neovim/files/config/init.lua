@@ -1,6 +1,5 @@
 -- References:
 -- https://github.com/tjdevries/config_manager
-
 require('plugins')
 
 -- providers
