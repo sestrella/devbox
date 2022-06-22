@@ -57,4 +57,9 @@ return require('packer').startup(function()
       vim.cmd('colorscheme solarized')
     end
   }
+
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make'
+  }
 end)

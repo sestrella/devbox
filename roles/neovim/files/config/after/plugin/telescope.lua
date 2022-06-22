@@ -1,9 +1,5 @@
-local keymap_set_n = function(lhs, rhs)
-  vim.keymap.set("n", lhs, rhs, {})
-end
-local telescope = require('telescope.builtin')
+local telescope = require("telescope")
+telescope.load_extension("fzf")
 
--- deprecated
-keymap_set_n("<c-p>", telescope.find_files)
-keymap_set_n("ff", telescope.find_files)
-keymap_set_n("fg", telescope.live_grep)
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "<c-p>", builtin.git_files, {})
