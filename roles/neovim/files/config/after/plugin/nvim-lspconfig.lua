@@ -24,6 +24,9 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 local servers = {
+  ansiblels = {
+    cmd = {vim.fn.expand("~/.local/bin/ansible-language-server"), "--stdio"}
+  },
   bashls = {},
   dockerls = {
     cmd = {vim.fn.expand("~/.local/bin/docker-langserver"), "--stdio"}

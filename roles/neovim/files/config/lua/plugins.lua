@@ -20,6 +20,7 @@ return require("packer").startup(function()
   use "hashivim/vim-terraform"
   use "khaveesh/vim-fish-syntax"
   use "neovimhaskell/haskell-vim"
+  use "pearofducks/ansible-vim"
   use "rust-lang/rust.vim"
   use "tpope/vim-surround"
 
