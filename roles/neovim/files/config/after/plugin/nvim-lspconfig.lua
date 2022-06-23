@@ -1,22 +1,21 @@
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-
-local keymap_set_n = function(lhs, rhs) vim.keymap.set("n", lhs, rhs, {}) end
-
-keymap_set_n("<space>j", vim.diagnostic.goto_next)
-keymap_set_n("<space>k", vim.diagnostic.goto_prev)
-keymap_set_n("<space><space>", vim.diagnostic.setloclist)
+local opts = {noremap = true, silent = true}
+vim.keymap.set("n", "<space>k", vim.diagnostic.goto_prev, opts)
+vim.keymap.set("n", "<space>j", vim.diagnostic.goto_next, opts)
+vim.keymap.set("n", "<space><space>", vim.diagnostic.setloclist, opts)
 
 local lspconfig = require("lspconfig")
 local on_attach = function(_client, bufnr)
-  local buf_set_keymap = function(lhs, rhs)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", lhs, rhs,
-                                {noremap = true, silent = true})
-  end
-  buf_set_keymap("<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-  buf_set_keymap("<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
-  buf_set_keymap("<space>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
-  buf_set_keymap("<space>td", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
+  local bufopts = {noremap = true, silent = true, buffer = bufnr}
+  local keymaps = {
+    ["<space>ca"] = vim.lsp.buf.code_action,
+    ["<space>dc"] = vim.lsp.declaration,
+    ["<space>df"] = vim.lsp.buf.definition,
+    ["<space>f"] = vim.lsp.buf.formatting,
+    ["<space>r"] = vim.lsp.buf.rename,
+    ["<space>sh"] = vim.lsp.buf.signature_help,
+    ["<space>td"] = vim.lsp.buf.type_definition
+  }
+  for lhs, rhs in pairs(keymaps) do vim.keymap.set("n", lhs, rhs, bufopts) end
 end
 
 local runtime_path = vim.split(package.path, ";")
@@ -64,6 +63,9 @@ local servers = {
     }
   }
 }
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 local default_options = {
   capabilities = capabilities,
