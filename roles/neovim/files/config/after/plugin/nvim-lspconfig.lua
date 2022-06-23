@@ -53,7 +53,8 @@ local servers = {
       yaml = {
         schemas = {
           ["https://json.schemastore.org/circleciconfig.json"] = "/.circleci/config.yml",
-          ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*.yml"
+          ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*.yml",
+          ["https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-lint.json"] = "/.ansible-lint"
         }
       }
     }

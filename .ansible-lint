@@ -1,3 +1,5 @@
+# vi: ft=yaml
+
 ---
 skip_list:
   - 701
