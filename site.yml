@@ -1,5 +1,3 @@
-# vi: ft=yaml.ansible
-
 ---
 - hosts: localhost
   roles:

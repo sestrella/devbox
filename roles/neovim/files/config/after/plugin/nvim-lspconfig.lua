@@ -25,11 +25,15 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 local servers = {
   ansiblels = {
-    cmd = {vim.fn.expand("~/.local/bin/ansible-language-server"), "--stdio"}
+    cmd = {
+      "env", "ASDF_NODEJS_VERSION=18.4.0", "ansible-language-server", "--stdio"
+    }
   },
-  bashls = {},
+  bashls = {
+    cmd = {"env", "ASDF_NODEJS_VERSION=18.4.0", "bash-language-server", "start"}
+  },
   dockerls = {
-    cmd = {vim.fn.expand("~/.local/bin/docker-langserver"), "--stdio"}
+    cmd = {"env", "ASDF_NODEJS_VERSION=18.4.0", "docker-langserver", "--stdio"}
   },
   rust_analyzer = {},
   sumneko_lua = {
