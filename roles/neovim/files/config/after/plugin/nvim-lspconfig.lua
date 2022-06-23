@@ -52,10 +52,12 @@ local servers = {
   }
 }
 
+local default_options = {
+  capabilities = capabilities,
+  flags = {debounce_text_changes = 150},
+  on_attach = on_attach
+}
+
 for server, options in pairs(servers) do
-  lspconfig[server].setup(vim.tbl_extend("force", {
-    capabilities = capabilities,
-    flags = {debounce_text_changes = 150},
-    on_attach = on_attach
-  }, options))
+  lspconfig[server].setup(vim.tbl_extend("force", default_options, options))
 end
