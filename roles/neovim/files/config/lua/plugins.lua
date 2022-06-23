@@ -18,20 +18,18 @@ return require("packer").startup(function()
   use "cormacrelf/dark-notify"
   use "evanleck/vim-svelte"
   use "hashivim/vim-terraform"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-vsnip"
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/vim-vsnip"
   use "khaveesh/vim-fish-syntax"
+  use "neovim/nvim-lspconfig"
   use "neovimhaskell/haskell-vim"
   use "pearofducks/ansible-vim"
   use "rust-lang/rust.vim"
   use "tpope/vim-surround"
 
   use {"nvim-lualine/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
-
-  use {"neovim/nvim-lspconfig", requires = {"hrsh7th/cmp-nvim-lsp"}}
-
-  use {
-    "hrsh7th/nvim-cmp",
-    requires = {"hrsh7th/cmp-vsnip", "hrsh7th/vim-vsnip"}
-  }
 
   use {"kyazdani42/nvim-tree.lua", requires = {"kyazdani42/nvim-web-devicons"}}
 
