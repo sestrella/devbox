@@ -24,36 +24,38 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 local servers = {
+  dockerls = {
+    cmd = {vim.fn.expand("~/.local/bin/docker-langserver"), "--stdio"}
+  },
   rust_analyzer = {},
   sumneko_lua = {
-    -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
-    Lua = {
-      runtime = {version = "LuaJIT", path = runtime_path},
-      diagnostics = {globals = {"vim"}},
-      workspace = {library = vim.api.nvim_get_runtime_file("", true)},
-      telemetry = {enable = false}
+    settings = {
+      -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
+      Lua = {
+        runtime = {version = "LuaJIT", path = runtime_path},
+        diagnostics = {globals = {"vim"}},
+        workspace = {library = vim.api.nvim_get_runtime_file("", true)},
+        telemetry = {enable = false}
+      }
     }
   },
   terraformls = {},
   yamlls = {
-    yaml = {
-      schemas = {
-        ["https://json.schemastore.org/circleciconfig.json"] = "/.circleci/config.yml",
-        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*.yml"
+    settings = {
+      yaml = {
+        schemas = {
+          ["https://json.schemastore.org/circleciconfig.json"] = "/.circleci/config.yml",
+          ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*.yml"
+        }
       }
     }
   }
 }
 
-for server, settings in pairs(servers) do
-  lspconfig[server].setup({
+for server, options in pairs(servers) do
+  lspconfig[server].setup(vim.tbl_extend("force", {
     capabilities = capabilities,
     flags = {debounce_text_changes = 150},
-    on_attach = on_attach,
-    settings = settings
-  })
+    on_attach = on_attach
+  }, options))
 end
-
-lspconfig["dockerls"].setup({
-  cmd = {vim.fn.expand("~/.local/bin/docker-langserver"), "--stdio"}
-});
