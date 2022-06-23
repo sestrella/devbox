@@ -53,3 +53,7 @@ for server, settings in pairs(servers) do
     settings = settings
   })
 end
+
+lspconfig["dockerls"].setup({
+  cmd = {vim.fn.expand("~/.local/bin/docker-langserver"), "--stdio"}
+});

@@ -1,0 +1,2 @@
+---
+asdf_nodejs_dir: "{{ ansible_user_dir }}/.asdf/installs/nodejs/{{ neovim_asdf_nodejs_version }}"

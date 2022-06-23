@@ -2,13 +2,20 @@
 - name: Install package
   community.general.homebrew:
     name:
-      - neovim
-      # servers
       - lua-language-server
+      - neovim
       - rust-analyzer
       - terraform-ls
       - yaml-language-server
   tags: homebrew
+
+- name: Install Docker language server
+  community.general.npm:
+    name: dockerfile-language-server-nodejs
+    version: 0.9.0
+    global: true
+  environment:
+    PATH: "{{ asdf_nodejs_dir }}/bin:{{ ansible_env.PATH }}"
 
 - name: Install plugin manager
   ansible.builtin.git:
@@ -34,3 +41,9 @@
   tags:
     - dotfiles
     - fish
+
+- name: Create docker-langserver wrapper
+  ansible.builtin.template:
+    src: docker-langserver.j2
+    dest: ~/.local/bin/docker-langserver
+    mode: '0755'
