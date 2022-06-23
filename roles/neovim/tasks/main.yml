@@ -2,8 +2,9 @@
 - name: Install package
   community.general.homebrew:
     name:
-      - lua-language-server
       - neovim
+      # language servers
+      - lua-language-server
       - rust-analyzer
       - terraform-ls
       - yaml-language-server
@@ -11,11 +12,14 @@
 
 - name: Install Docker language server
   community.general.npm:
-    name: dockerfile-language-server-nodejs
-    version: 0.9.0
+    name: "{{ item.name }}"
+    version: "{{ item.version }}"
     global: true
   environment:
     PATH: "{{ asdf_nodejs_dir }}/bin:{{ ansible_env.PATH }}"
+  loop:
+    - { name: bash-language-server, version: 3.0.4 }
+    - { name: dockerfile-language-server-nodejs, version: 0.9.0 }
 
 - name: Install plugin manager
   ansible.builtin.git:
@@ -44,6 +48,9 @@
 
 - name: Create docker-langserver wrapper
   ansible.builtin.template:
-    src: docker-langserver.j2
-    dest: ~/.local/bin/docker-langserver
-    mode: '0755'
+    src: "{{ item }}.j2"
+    dest: "~/.local/bin/{{ item }}"
+    mode: "0755"
+  loop:
+    - bash-language-server
+    - docker-langserver
