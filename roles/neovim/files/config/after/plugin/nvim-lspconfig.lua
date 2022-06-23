@@ -49,12 +49,16 @@ local servers = {
   },
   terraformls = {},
   yamlls = {
+    cmd = {
+      "env", "ASDF_NODEJS_VERSION=18.4.0", "yaml-language-server", "--stdio"
+    },
     settings = {
       yaml = {
         schemas = {
           ["https://json.schemastore.org/circleciconfig.json"] = "/.circleci/config.yml",
           ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*.yml",
-          ["https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-lint.json"] = "/.ansible-lint"
+          ["https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-lint.json"] = "/.ansible-lint",
+          ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "/docker-compose*.yml"
         }
       }
     }
