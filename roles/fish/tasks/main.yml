@@ -1,7 +1,10 @@
 ---
-- name: Install package
+- name: Install packages
   community.general.homebrew:
-    name: fish
+    name:
+      - fish
+      - fisher
+      - fzf
   tags: homebrew
 
 - name: Add shell to /etc/shells
@@ -9,6 +12,11 @@
     path: /etc/shells
     line: /usr/local/bin/fish
   become: true
+
+- name: Install fzf plugin
+  ansible.builtin.shell:
+    cmd: fisher install PatrickF1/fzf.fish
+    executable: /usr/local/bin/fish
 
 - name: Change user shell
   ansible.builtin.user:
