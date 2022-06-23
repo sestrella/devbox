@@ -1,12 +1,16 @@
-local opts = {noremap = true, silent = true}
-vim.keymap.set("n", "<space>k", vim.diagnostic.goto_prev, opts)
-vim.keymap.set("n", "<space>j", vim.diagnostic.goto_next, opts)
-vim.keymap.set("n", "<space><space>", vim.diagnostic.setloclist, opts)
+local set_keymaps = function(keymaps, opts)
+  for lhs, rhs in pairs(keymaps) do vim.keymap.set("n", lhs, rhs, opts) end
+end
+
+set_keymaps({
+  ["<space>k"] = vim.diagnostic.goto_prev,
+  ["<space>j"] = vim.diagnostic.goto_next,
+  ["<space><space>"] = vim.diagnostic.setloclist
+}, {noremap = true, silent = true})
 
 local lspconfig = require("lspconfig")
 local on_attach = function(_client, bufnr)
-  local bufopts = {noremap = true, silent = true, buffer = bufnr}
-  local keymaps = {
+  set_keymaps({
     ["<space>ca"] = vim.lsp.buf.code_action,
     ["<space>dc"] = vim.lsp.declaration,
     ["<space>df"] = vim.lsp.buf.definition,
@@ -14,8 +18,7 @@ local on_attach = function(_client, bufnr)
     ["<space>r"] = vim.lsp.buf.rename,
     ["<space>sh"] = vim.lsp.buf.signature_help,
     ["<space>td"] = vim.lsp.buf.type_definition
-  }
-  for lhs, rhs in pairs(keymaps) do vim.keymap.set("n", lhs, rhs, bufopts) end
+  }, {noremap = true, silent = true, buffer = bufnr})
 end
 
 local runtime_path = vim.split(package.path, ";")
