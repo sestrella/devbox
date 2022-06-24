@@ -24,6 +24,9 @@ vim.o.tabstop = 2
 -- windows
 vim.o.splitbelow = true
 vim.o.splitright = true
+-- search
+vim.o.ignorecase = true
+vim.o.smartcase = true
 -- splits
 vim.keymap.set("n", "<c-h>", "<c-w><c-h>", {})
 vim.keymap.set("n", "<c-j>", "<c-w><c-j>", {})
