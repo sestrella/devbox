@@ -1,5 +1,11 @@
--- References:
--- https://github.com/tjdevries/config_manager
+-- ----
+-- Current settings are inspired by the following repositories:
+--
+-- - https://github.com/ThePrimeagen/.dotfiles/tree/master/nvim/.config/nvim
+-- - https://github.com/nvim-lua/kickstart.nvim
+-- - https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim
+-- ----
+
 -- providers
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
