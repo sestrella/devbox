@@ -31,6 +31,10 @@ return require("packer").startup(function(use)
     "nvim-treesitter/nvim-treesitter-textobjects",
     requires = {"nvim-treesitter/nvim-treesitter"}
   }
+  use {
+    "nvim-treesitter/nvim-treesitter-context",
+    requires = {"nvim-treesitter/nvim-treesitter"}
+  }
   use {"nvim-lualine/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
   use {"hrsh7th/nvim-cmp", requires = {"hrsh7th/cmp-nvim-lsp"}}
   use {"kyazdani42/nvim-tree.lua", requires = {"kyazdani42/nvim-web-devicons"}}
