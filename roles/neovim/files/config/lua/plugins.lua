@@ -1,5 +1,3 @@
-vim.cmd([[packadd packer.nvim]])
-
 local group = vim.api.nvim_create_augroup("packer_user_config", {})
 
 vim.api.nvim_create_autocmd({"BufWritePost"}, {
@@ -11,6 +9,8 @@ vim.api.nvim_create_autocmd({"BufWritePost"}, {
   group = group
 })
 
+vim.cmd([[packadd packer.nvim]])
+
 return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
 
@@ -18,9 +18,7 @@ return require("packer").startup(function(use)
   use "cormacrelf/dark-notify"
   use "evanleck/vim-svelte"
   use "hashivim/vim-terraform"
-  use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-vsnip"
-  use "hrsh7th/nvim-cmp"
   use "hrsh7th/vim-vsnip"
   use "khaveesh/vim-fish-syntax"
   use "neovim/nvim-lspconfig"
@@ -30,10 +28,10 @@ return require("packer").startup(function(use)
   use "tpope/vim-surround"
 
   use {"nvim-lualine/lualine.nvim", requires = {"kyazdani42/nvim-web-devicons"}}
-
+  use {"hrsh7th/nvim-cmp", requires = {"hrsh7th/cmp-nvim-lsp"}}
   use {"kyazdani42/nvim-tree.lua", requires = {"kyazdani42/nvim-web-devicons"}}
-
   use {"nvim-telescope/telescope.nvim", requires = {"nvim-lua/plenary.nvim"}}
+  use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
 
   use {
     "ishan9299/nvim-solarized-lua",
@@ -42,6 +40,4 @@ return require("packer").startup(function(use)
       vim.cmd("colorscheme solarized")
     end
   }
-
-  use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
 end)
