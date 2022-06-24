@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd({"BufWritePost"}, {
   group = group
 })
 
-return require("packer").startup(function()
+return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
 
   use "andrejlevkovitch/vim-lua-format"
