@@ -14,7 +14,6 @@ vim.cmd([[packadd packer.nvim]])
 return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
 
-  use "andrejlevkovitch/vim-lua-format"
   use "cormacrelf/dark-notify"
   use "evanleck/vim-svelte"
   use "hashivim/vim-terraform"
