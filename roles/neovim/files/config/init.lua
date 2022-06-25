@@ -2,6 +2,7 @@
 -- Current settings are inspired by the following repositories:
 --
 -- - https://github.com/ThePrimeagen/.dotfiles/tree/master/nvim/.config/nvim
+-- - https://github.com/jonhoo/configs/tree/master/editor/.config/nvim
 -- - https://github.com/nvim-lua/kickstart.nvim
 -- - https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim
 -- ----
