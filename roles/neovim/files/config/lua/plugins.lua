@@ -34,6 +34,7 @@ return require("packer").startup(function(use)
   use("neovim/nvim-lspconfig")
   use("neovimhaskell/haskell-vim")
   use("pearofducks/ansible-vim")
+  use("ray-x/lsp_signature.nvim")
   use("rust-lang/rust.vim")
   use("tpope/vim-surround")
 

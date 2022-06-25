@@ -21,6 +21,7 @@ local on_attach = function(_client, bufnr)
     ["<space>sh"] = vim.lsp.buf.signature_help,
     ["<space>td"] = vim.lsp.buf.type_definition,
   }, { noremap = true, silent = true, buffer = bufnr })
+  require("lsp_signature").on_attach()
 end
 
 local runtime_path = vim.split(package.path, ";")
