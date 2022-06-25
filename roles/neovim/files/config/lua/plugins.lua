@@ -10,7 +10,8 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 })
 
 local packer_bootstrap = false
-local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local install_path = vim.fn.stdpath("data")
+  .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   packer_bootstrap = vim.fn.system({
     "git",
@@ -27,6 +28,7 @@ return require("packer").startup(function(use)
 
   use("cormacrelf/dark-notify")
   use("evanleck/vim-svelte")
+  use("folke/which-key.nvim")
   use("hashivim/vim-terraform")
   use("hrsh7th/cmp-vsnip")
   use("hrsh7th/vim-vsnip")
@@ -46,10 +48,19 @@ return require("packer").startup(function(use)
     "nvim-treesitter/nvim-treesitter-context",
     requires = { "nvim-treesitter/nvim-treesitter" },
   })
-  use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+  use({
+    "nvim-lualine/lualine.nvim",
+    requires = { "kyazdani42/nvim-web-devicons" },
+  })
   use({ "hrsh7th/nvim-cmp", requires = { "hrsh7th/cmp-nvim-lsp" } })
-  use({ "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" } })
-  use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
+  use({
+    "kyazdani42/nvim-tree.lua",
+    requires = { "kyazdani42/nvim-web-devicons" },
+  })
+  use({
+    "nvim-telescope/telescope.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+  })
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
   use({

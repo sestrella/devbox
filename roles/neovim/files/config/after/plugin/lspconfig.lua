@@ -5,10 +5,17 @@ local set_keymaps = function(keymaps, opts)
 end
 
 set_keymaps({
-  ["<space>k"] = vim.diagnostic.goto_prev,
+  -- ["<space>k"] = vim.diagnostic.goto_prev,
   ["<space>j"] = vim.diagnostic.goto_next,
   ["<space><space>"] = vim.diagnostic.setloclist,
 }, { noremap = true, silent = true })
+
+vim.keymap.set(
+  "n",
+  "<space>k",
+  vim.diagnostic.goto_prev,
+  { noremap = true, silent = true, desc = "Go to prev error" }
+)
 
 local lspconfig = require("lspconfig")
 local on_attach = function(_client, bufnr)
@@ -38,10 +45,20 @@ local servers = {
     },
   },
   bashls = {
-    cmd = { "env", "ASDF_NODEJS_VERSION=18.4.0", "bash-language-server", "start" },
+    cmd = {
+      "env",
+      "ASDF_NODEJS_VERSION=18.4.0",
+      "bash-language-server",
+      "start",
+    },
   },
   dockerls = {
-    cmd = { "env", "ASDF_NODEJS_VERSION=18.4.0", "docker-langserver", "--stdio" },
+    cmd = {
+      "env",
+      "ASDF_NODEJS_VERSION=18.4.0",
+      "docker-langserver",
+      "--stdio",
+    },
   },
   rust_analyzer = {},
   sumneko_lua = {

@@ -51,3 +51,5 @@ for arrow, message in pairs(arrows) do
     print(message)
   end)
 end
+
+require("which-key").setup()
