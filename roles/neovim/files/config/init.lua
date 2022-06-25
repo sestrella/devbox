@@ -47,7 +47,7 @@ local arrows = {
   ["<left>"] = "Use l instead",
 }
 for arrow, message in pairs(arrows) do
-  vim.keymap.set("n", arrow, function()
+  vim.keymap.set({ "n", "v" }, arrow, function()
     print(message)
   end)
 end
