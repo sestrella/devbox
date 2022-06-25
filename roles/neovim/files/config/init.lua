@@ -39,3 +39,15 @@ vim.keymap.set("n", "<c-h>", "<c-w><c-h>", {})
 vim.keymap.set("n", "<c-j>", "<c-w><c-j>", {})
 vim.keymap.set("n", "<c-k>", "<c-w><c-k>", {})
 vim.keymap.set("n", "<c-l>", "<c-w><c-l>", {})
+
+local arrows = {
+  ["<right>"] = "Use h instead",
+  ["<down>"] = "Use j instead",
+  ["<up>"] = "Use k instead",
+  ["<left>"] = "Use l instead",
+}
+for arrow, message in pairs(arrows) do
+  vim.keymap.set("n", arrow, function()
+    print(message)
+  end)
+end
