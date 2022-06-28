@@ -9,22 +9,3 @@
     repo: https://github.com/tmux-plugins/tpm.git
     dest: ~/.tmux/plugins/tpm
     version: v3.0.0
-
-- name: Create config file
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/tmux.conf"
-    dest: ~/.tmux.conf
-    state: link
-    force: true
-  tags: dotfiles
-
-- name: Copy fish config
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/tmux.fish"
-    dest: ~/.config/fish/conf.d/tmux.fish
-    state: link
-    force: true
-  when: ansible_user_shell == "/usr/local/bin/fish"
-  tags:
-    - dotfiles
-    - fish
