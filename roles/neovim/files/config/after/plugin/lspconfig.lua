@@ -1,32 +1,60 @@
 local set_keymaps = function(keymaps, opts)
-  for lhs, rhs in pairs(keymaps) do
-    vim.keymap.set("n", lhs, rhs, opts)
+  for keymap, value in pairs(keymaps) do
+    vim.keymap.set(
+      "n",
+      keymap,
+      value.callback,
+      vim.tbl_extend("force", opts, value.opts)
+    )
   end
 end
 
 set_keymaps({
-  -- ["<space>k"] = vim.diagnostic.goto_prev,
-  ["<space>j"] = vim.diagnostic.goto_next,
-  ["<space><space>"] = vim.diagnostic.setloclist,
+  ["<space>k"] = {
+    callback = vim.diagnostic.goto_prev,
+    opts = { desc = "Go to the prev error" },
+  },
+  ["<space>j"] = {
+    callback = vim.diagnostic.goto_next,
+    opts = { desc = "Go to the next error" },
+  },
+  ["<space><space>"] = {
+    callback = vim.diagnostic.setloclist,
+    opts = { desc = "Show errors" },
+  },
 }, { noremap = true, silent = true })
-
-vim.keymap.set(
-  "n",
-  "<space>k",
-  vim.diagnostic.goto_prev,
-  { noremap = true, silent = true, desc = "Go to prev error" }
-)
 
 local lspconfig = require("lspconfig")
 local on_attach = function(_client, bufnr)
   set_keymaps({
-    ["<space>ca"] = vim.lsp.buf.code_action,
-    ["<space>dc"] = vim.lsp.declaration,
-    ["<space>df"] = vim.lsp.buf.definition,
-    ["<space>f"] = vim.lsp.buf.formatting,
-    ["<space>r"] = vim.lsp.buf.rename,
-    ["<space>sh"] = vim.lsp.buf.signature_help,
-    ["<space>td"] = vim.lsp.buf.type_definition,
+    ["<space>ca"] = {
+      callback = vim.lsp.buf.code_action,
+      opts = { desc = "Code action" },
+    },
+    ["<space>gd"] = {
+      callback = vim.lsp.buf.declaration,
+      opts = { desc = "Go to declaration" },
+    },
+    ["<space>gf"] = {
+      callback = vim.lsp.buf.definition,
+      opts = { desc = "Go to definition" },
+    },
+    ["<space>fc"] = {
+      callback = vim.lsp.buf.formatting,
+      opts = { desc = "Format code" },
+    },
+    ["<space>rn"] = {
+      callback = vim.lsp.buf.rename,
+      opts = { desc = "Rename" },
+    },
+    ["<space>sh"] = {
+      callback = vim.lsp.buf.signature_help,
+      opts = { desc = "Show signature" },
+    },
+    ["<space>td"] = {
+      callback = vim.lsp.buf.type_definition,
+      opts = { desc = "Show type definition" },
+    },
   }, { noremap = true, silent = true, buffer = bufnr })
   require("lsp_signature").on_attach()
 end
