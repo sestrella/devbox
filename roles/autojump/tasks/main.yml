@@ -3,13 +3,3 @@
   community.general.homebrew:
     name: autojump
   tags: homebrew
-
-- name: Copy fish config
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/autojump.fish"
-    dest: ~/.config/fish/conf.d/autojump.fish
-    state: link
-    force: true
-  tags:
-    - dotfiles
-    - fish

@@ -3,27 +3,3 @@
   community.general.homebrew:
     name: git
   tags: homebrew
-
-- name: Create config directory
-  ansible.builtin.file:
-    path: ~/.config/git
-    state: directory
-    mode: '0744'
-  tags: dotfiles
-
-- name: Create config file
-  ansible.builtin.copy:
-    src: config
-    dest: ~/.config/git/config
-  tags: dotfiles
-
-- name: Copy fish config
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/git.fish"
-    dest: ~/.config/fish/conf.d/git.fish
-    state: link
-    force: true
-  when: ansible_user_shell == "/usr/local/bin/fish"
-  tags:
-    - dotfiles
-    - fish

@@ -2,7 +2,8 @@
 
 [![CI](https://github.com/sestrella/devbox/actions/workflows/ci.yml/badge.svg)](https://github.com/sestrella/devbox/actions/workflows/ci.yml)
 
-Ansible roles used to provision my local environment
+Ansible playbook to provision my local environment. All the dotfiles could be
+found in a separate [repository][dotfiles].
 
 ## Requirements
 
@@ -53,3 +54,4 @@ ansible-playbook site.yml -K
 
 [asdf]: https://github.com/asdf-vm/asdf
 [asdf-python]: https://github.com/danhper/asdf-python
+[dotfiles]: https://github.com/sestrella/dotfiles

@@ -20,14 +20,3 @@
     - name: rust
     - name: stack
       url: https://github.com/sestrella/asdf-ghcup
-
-- name: Copy fish config
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/asdf.fish"
-    dest: ~/.config/fish/conf.d/asdf.fish
-    state: link
-    force: true
-  when: ansible_user_shell == "/usr/local/bin/fish"
-  tags:
-    - dotfiles
-    - fish
