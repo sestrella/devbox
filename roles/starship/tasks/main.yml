@@ -3,22 +3,3 @@
   community.general.homebrew:
     name: starship
   tags: homebrew
-
-- name: Create config file
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/starship.toml"
-    dest: ~/.config/starship.toml
-    state: link
-    force: true
-  tags: dotfiles
-
-- name: Copy fish config
-  ansible.builtin.file:
-    src: "{{ role_path }}/files/starship.fish"
-    dest: ~/.config/fish/conf.d/starship.fish
-    state: link
-    force: true
-  when: ansible_user_shell == "/usr/local/bin/fish"
-  tags:
-    - dotfiles
-    - fish
