@@ -11,12 +11,15 @@
       - awscli
       - awsebcli
       - dark-notify
+      - direnv
       - fd
       - gh
       - ghcup
       - gpg
+      - haskell-stack
       - htop
       - luarocks
+      - rcm
       - ripgrep
       - rustup-init
       - terraform
