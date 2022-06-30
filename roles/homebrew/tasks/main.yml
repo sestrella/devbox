@@ -24,6 +24,7 @@
       - rcm
       - ripgrep
       - rustup-init
+      - starship
       - terraform
       - tmate
       - tree

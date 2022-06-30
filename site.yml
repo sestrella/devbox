@@ -8,5 +8,4 @@
     - {role: asdf, tags: asdf}
     - {role: fzf}
     - {role: neovim, tags: neovim}
-    - {role: starship, tags: starship}
     - {role: tmux, tags: tmux}
