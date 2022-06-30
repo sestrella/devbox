@@ -4,7 +4,6 @@
     name:
       - fish
       - fisher
-      - fzf
   tags: homebrew
 
 - name: Add shell to /etc/shells
