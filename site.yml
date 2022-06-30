@@ -10,5 +10,4 @@
     - {role: git, tags: git}
     - {role: neovim, tags: neovim}
     - {role: starship, tags: starship}
-    - {role: tmate, tags: tmate}
     - {role: tmux, tags: tmux}

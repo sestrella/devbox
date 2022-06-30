@@ -24,6 +24,7 @@
       - ripgrep
       - rustup-init
       - terraform
+      - tmate
       - tree
       - watch
 
