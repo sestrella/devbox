@@ -4,6 +4,7 @@
     name:
       - neovim
       # language servers
+      - bash-language-server
       - lua-language-server
       - rust-analyzer
       - terraform-ls
@@ -16,7 +17,6 @@
     global: true
   loop:
     - { name: "@ansible/ansible-language-server", version: 0.7.2 }
-    - { name: "bash-language-server", version: 3.0.4 }
     - { name: "dockerfile-language-server-nodejs", version: 0.9.0 }
     - { name: "yaml-language-server", version: 1.8.0 }
 
