@@ -8,6 +8,7 @@
       - lua-language-server
       - rust-analyzer
       - terraform-ls
+      - yaml-language-server
   tags: homebrew
 
 - name: Install Docker language server
@@ -18,15 +19,3 @@
   loop:
     - { name: "@ansible/ansible-language-server", version: 0.7.2 }
     - { name: "dockerfile-language-server-nodejs", version: 0.9.0 }
-    - { name: "yaml-language-server", version: 1.8.0 }
-
-- name: Create docker-langserver wrapper
-  ansible.builtin.template:
-    src: "{{ item }}.j2"
-    dest: "~/.local/bin/{{ item }}"
-    mode: "0755"
-  loop:
-    - ansible-language-server
-    - bash-language-server
-    - docker-langserver
-    - yaml-language-server
