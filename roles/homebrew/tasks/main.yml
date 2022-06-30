@@ -8,6 +8,7 @@
 - name: Install packages
   community.general.homebrew:
     name:
+      - autojump
       - awscli
       - awsebcli
       - dark-notify

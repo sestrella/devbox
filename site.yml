@@ -6,7 +6,6 @@
     - {role: fish, tags: fish}
     # General
     - {role: asdf, tags: asdf}
-    - {role: autojump, tags: autojump}
     - {role: fzf}
     - {role: git, tags: git}
     - {role: neovim, tags: neovim}
