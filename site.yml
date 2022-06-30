@@ -6,6 +6,5 @@
     - {role: fish, tags: fish}
     # General
     - {role: asdf, tags: asdf}
-    - {role: fzf}
     - {role: neovim, tags: neovim}
     - {role: tmux, tags: tmux}

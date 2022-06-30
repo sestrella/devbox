@@ -13,13 +13,16 @@
     line: /usr/local/bin/fish
   become: true
 
-- name: Install fzf plugin
-  ansible.builtin.shell:
-    cmd: fisher install PatrickF1/fzf.fish
-    executable: /usr/local/bin/fish
-
 - name: Change user shell
   ansible.builtin.user:
     name: "{{ ansible_user_id }}"
     shell: /usr/local/bin/fish
   become: true
+
+- name: Install fisher plugins
+  ansible.builtin.shell:
+    cmd: "fisher install {{ item.name }}"
+    executable: /usr/local/bin/fish
+    creates: "{{ item.creates }}"
+  loop:
+    - { name: PatrickF1/fzf.fish, creates: ~/.config/fish/conf.d/fzf.fish }
