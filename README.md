@@ -1,6 +1,6 @@
 # devbox
 
-[![CI](https://github.com/sestrella/devbox/actions/workflows/ci.yml/badge.svg)](https://github.com/sestrella/devbox/actions/workflows/ci.yml)
+[![Build](https://github.com/sestrella/devbox/actions/workflows/build.yml/badge.svg)](https://github.com/sestrella/devbox/actions/workflows/build.yml)
 
 Ansible playbook to provision my local environment. All dotfiles are located in
 a separate [repository][dotfiles] for better reusability.
