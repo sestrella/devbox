@@ -16,6 +16,7 @@
       - fd
       - gh
       - ghcup
+      - git
       - gpg
       - haskell-stack
       - htop

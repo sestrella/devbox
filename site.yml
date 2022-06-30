@@ -7,7 +7,6 @@
     # General
     - {role: asdf, tags: asdf}
     - {role: fzf}
-    - {role: git, tags: git}
     - {role: neovim, tags: neovim}
     - {role: starship, tags: starship}
     - {role: tmux, tags: tmux}
