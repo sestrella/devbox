@@ -2,21 +2,14 @@
 
 [![CI](https://github.com/sestrella/devbox/actions/workflows/ci.yml/badge.svg)](https://github.com/sestrella/devbox/actions/workflows/ci.yml)
 
-Ansible playbook to provision my local environment. All the dotfiles could be
-found in a separate [repository][dotfiles].
+Ansible playbook to provision my local environment. All dotfiles are located in
+a separate [repository][dotfiles] for better reusability.
 
 ## Requirements
 
-- Install [asdf][asdf]
-- Install [asdf-python][asdf-python]
+- Python 3
 
 ## Getting Started
-
-Install python:
-
-```sh
-asdf install
-```
 
 Create a virtual environment:
 
@@ -39,19 +32,10 @@ Install Python dependencies:
 pip install -r requirements.txt
 ```
 
-Install Ansible dependencies:
-
-```sh
-ansible-galaxy install -r requirements.yml
-```
-
-Adjust all [group_vars/all](group_vars/all) variables accordingly, and run the
-main playbook:
+Run the playbook:
 
 ```sh
 ansible-playbook site.yml -K
 ```
 
-[asdf]: https://github.com/asdf-vm/asdf
-[asdf-python]: https://github.com/danhper/asdf-python
 [dotfiles]: https://github.com/sestrella/dotfiles
