@@ -12,6 +12,7 @@
     - { name: cabal, url: https://github.com/sestrella/asdf-ghcup }
     - { name: direnv }
     - { name: ghc, url: https://github.com/sestrella/asdf-ghcup }
+    - { name: hls, url: https://github.com/sestrella/asdf-ghcup }
     - { name: nodejs }
     - { name: python }
     - { name: ruby }
