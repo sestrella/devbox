@@ -18,5 +18,4 @@
     version: "{{ item.version }}"
     global: true
   loop:
-    - { name: "@ansible/ansible-language-server", version: 0.7.2 }
     - { name: "dockerfile-language-server-nodejs", version: 0.9.0 }
