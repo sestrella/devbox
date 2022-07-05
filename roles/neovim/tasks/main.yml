@@ -4,6 +4,7 @@
     name:
       - neovim
       # language servers
+      - ansible-language-server
       - bash-language-server
       - lua-language-server
       - rust-analyzer
