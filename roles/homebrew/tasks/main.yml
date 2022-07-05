@@ -9,6 +9,7 @@
   community.general.homebrew:
     name:
       - autojump
+      - aws-vault
       - awscli
       - awsebcli
       - dark-notify
@@ -42,8 +43,8 @@
       - iterm2-beta
       - ngrok
       - notion
+      - rectangle
       - slack
-      - spectacle
       - spotify
       - tunnelblick
       - visual-studio-code
