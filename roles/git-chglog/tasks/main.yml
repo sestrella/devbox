@@ -1,0 +1,6 @@
+---
+- community.general.homebrew_tap:
+    name: git-chglog/git-chglog
+
+- community.general.homebrew:
+    name: git-chglog
