@@ -2,8 +2,9 @@
 - name: Tap repositories
   community.general.homebrew_tap:
     name:
-      - cormacrelf/tap
-      - homebrew/cask-versions
+      - cormacrelf/tap # dark-notify
+      - git-chglog/git-chglog
+      - homebrew/cask-versions # iterm2-beta
 
 - name: Install packages
   community.general.homebrew:
@@ -19,6 +20,7 @@
       - gh
       - ghcup
       - git
+      - git-chglog
       - gpg
       - haskell-stack
       - htop
