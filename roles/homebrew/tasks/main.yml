@@ -30,6 +30,7 @@
       - rustup-init
       - starship
       - terraform
+      - tfsec
       - tmate
       - tree
       - watch
