@@ -14,3 +14,7 @@ neovim_extra_plugins:
         local telescope = require("telescope.builtin")
         vim.keymap.set("n", "<C-p>", telescope.git_files, {})
       end
+
+neovim_lspconfig_servers:
+  ansiblels:
+    dependencies: [ansible-language-server]

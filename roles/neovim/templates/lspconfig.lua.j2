@@ -1,0 +1,15 @@
+local lspconfig = require("lspconfig")
+
+local on_attach = function(client, bufnr)
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, bufopts)
+end
+
+{% for name, opts in neovim_lspconfig_servers.items() %}
+lspconfig[{{ name | to_json }}].setup({
+  on_attach = on_attach,
+{% if opts.settings is defined %}
+  settings = {{ opts.settings }},
+{% endif %}
+})
+{% endfor %}
