@@ -1,0 +1,11 @@
+---
+- name: "{{ item.key }} - Add plugin"
+  ansible.builtin.command:
+    cmd: "asdf plugin add {{ item.key }} {{ item.value.git_url | default }}"
+    creates: "{{ asdf_dir }}/plugins/{{ item.key }}"
+
+- name: "{{ item.key }} - Install plugin dependencies"
+  community.general.homebrew:
+    name: "{{ item.value.dependencies }}"
+  when: item.value.dependencies is defined
+  tags: homebrew

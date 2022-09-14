@@ -1,0 +1,26 @@
+---
+asdf_plugins:
+  cabal:
+    git_url: https://github.com/sestrella/asdf-ghcup.git
+    dependencies: [ghcup]
+  ghc:
+    git_url: https://github.com/sestrella/asdf-ghcup.git
+    dependencies: [ghcup]
+  nodejs: {}
+  python:
+    # https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+    dependencies:
+      - openssl
+      - readline
+      - sqlite3
+      - xz
+      - zlib
+      - tcl-tk
+  ruby:
+    # https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
+    dependencies:
+      - libyaml
+      - openssl@1.1
+      - readline
+  rust: {}
+  stack: {}

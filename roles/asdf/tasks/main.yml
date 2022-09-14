@@ -1,19 +1,28 @@
+# vi: ft=yaml.ansible
 ---
 - name: Install package
-  community.general.homebrew:
+  ansible.builtin.homebrew:
     name: asdf
   tags: homebrew
 
-- name: Install plugins
-  ansible.builtin.command:
-    cmd: "asdf plugin add {{ item.name }} {{ item.url | default('') }}"
-    creates: "~/.asdf/plugins/{{ item.name }}"
-  loop:
-    - { name: cabal, url: https://github.com/sestrella/asdf-ghcup }
-    - { name: direnv }
-    - { name: ghc, url: https://github.com/sestrella/asdf-ghcup }
-    - { name: hls, url: https://github.com/sestrella/asdf-ghcup }
-    - { name: nodejs }
-    - { name: python }
-    - { name: ruby }
-    - { name: rust }
+- name: List installed plugins
+  ansible.builtin.command: asdf plugin list
+  register: asdf_plugin_list
+
+- name: Declare installed and required plugins
+  ansible.builtin.set_fact:
+    installed_plugins: "{{ asdf_plugin_list.stdout_lines }}"
+    required_plugins: "{{ asdf_plugins.keys() }}"
+
+- name: Declare untracked plugins
+  ansible.builtin.set_fact:
+    untracked_plugins: "{{ installed_plugins | difference(required_plugins) }}"
+
+- name: Remove untracked plugins
+  ansible.builtin.command: asdf plugin remove {{ item }}
+  when: untracked_plugins | length > 0
+  loop: "{{ untracked_plugins }}"
+
+- name: Add plugins
+  ansible.builtin.include_tasks: plugin.yml
+  with_dict: "{{ asdf_plugins }}"
