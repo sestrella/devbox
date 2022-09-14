@@ -1,2 +1,5 @@
 ---
-neovim_asdf_nodejs_version: 18.4.0
+neovim_cursorline: false
+neovim_extra_plugins: {}
+neovim_laststatus: 2
+neovim_number: false

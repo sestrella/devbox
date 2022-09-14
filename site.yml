@@ -1,5 +1,7 @@
 # vi: ft=yaml.ansible
 ---
 - hosts: localhost
+  gather_facts: false
   roles:
-    - asdf
+    # - asdf
+    - neovim

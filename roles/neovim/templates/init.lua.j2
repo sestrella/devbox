@@ -1,0 +1,13 @@
+vim.o.cursorline = {{ neovim_cursorline | to_json }}
+vim.o.laststatus = {{ neovim_laststatus }}
+vim.o.number = {{ neovim_number | to_json }}
+{% if neovim_reversesplit is defined %}
+vim.o.splitbelow = true
+vim.o.splitright = true
+{% endif %}
+{% if neovim_tabstop is defined %}
+vim.o.expandtab = true
+vim.o.shiftwidth = {{ neovim_tabstop }}
+vim.o.tabstop = {{ neovim_tabstop }}
+{% endif %}
+require("plugins")

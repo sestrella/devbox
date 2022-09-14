@@ -1,0 +1,15 @@
+require('packer').startup(function(use)
+{% for name, opts in neovim_plugins.items() %}
+  use({
+    {{ name | to_json }},
+{% if opts.requires is defined %}
+    requires = {
+      {{ opts.requires | map('to_json') | join(',') }}
+    },
+{% endif %}
+{% if opts.config is defined %}
+    config = {{ opts.config }}
+{% endif %}
+  })
+{% endfor %}
+end)

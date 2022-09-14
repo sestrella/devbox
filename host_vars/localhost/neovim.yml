@@ -1,0 +1,16 @@
+---
+neovim_cursorline: true
+neovim_laststatus: 3
+neovim_number: true
+neovim_reversesplit: true
+neovim_tabstop: 2
+
+neovim_extra_plugins:
+  neovim/nvim-lspconfig: {}
+  nvim-telescope/telescope.nvim:
+    requires: [nvim-lua/plenary.nvim]
+    config: |
+      function()
+        local telescope = require("telescope.builtin")
+        vim.keymap.set("n", "<C-p>", telescope.git_files, {})
+      end
