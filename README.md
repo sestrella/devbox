@@ -1,3 +1,5 @@
+**Note:** This repository’s Ansible configuration is out of date; instead, look at [home-manager.config](https://github.com/sestrella/home-manager.config) for a more recent version.
+
 # devbox
 
 [![Build](https://github.com/sestrella/devbox/actions/workflows/build.yml/badge.svg)](https://github.com/sestrella/devbox/actions/workflows/build.yml)
